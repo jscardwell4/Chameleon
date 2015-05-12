@@ -37,17 +37,73 @@ import UIKit
 
 private(set) var gradientImageKey = "gradientImage"
 
-func rgba(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
-  return UIColor(red: r/255, green: g/255, blue: b/255, alpha: a)
+public func rgba(r: Int, g: Int, b: Int, a: Int) -> UIColor {
+  return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: CGFloat(a))
 }
-func rgb(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
-  return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1)
+public func rgb(r: Int, g: Int, b: Int) -> UIColor {
+  return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
 }
-func hsba(h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
-  return UIColor(hue: h/360, saturation: s/100, brightness: b/100, alpha: a)
+public func hsba(h: Int, s: Int, b: Int, a: Int) -> UIColor {
+  return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: CGFloat(a))
 }
-func hsb(h: CGFloat, s: CGFloat, b: CGFloat) -> UIColor {
-  return UIColor(hue: h/360, saturation: s/100, brightness: b/100, alpha: 1)
+public func hsb(h: Int, s: Int, b: Int) -> UIColor {
+  return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: 1)
+}
+
+public func hsbToRGB(h: Int, var s: Int, var b: Int) -> (r: Int, g: Int, b: Int) {
+
+  let s = CGFloat(s) / 100
+  let b = CGFloat(b) / 100
+  let c = s * b
+  let hPrime = CGFloat(h) / 60
+  let x = c * (1 - abs(fmod(hPrime, 2) - 1))
+
+  let (r1, g1, b1): (CGFloat, CGFloat, CGFloat)
+  switch hPrime {
+  case 0 ..< 1: (r1, g1, b1) = (c, x, 0)
+  case 1 ..< 2: (r1, g1, b1) = (x, c, 0)
+  case 2 ..< 3: (r1, g1, b1) = (0, c, x)
+  case 3 ..< 4: (r1, g1, b1) = (0, x, c)
+  case 4 ..< 5: (r1, g1, b1) = (x, 0, c)
+  case 5 ..< 6: (r1, g1, b1) = (c, 0, x)
+  default:      (r1, g1, b1) = (0, 0, 0)
+  }
+
+  let m = b - c
+  return (r: Int((r1 + m) * 255), g: Int((g1 + m) * 255), b: Int((b1 + m) * 255))
+}
+
+public func rgbToHSB(r: Int, g: Int, b: Int) -> (h: Int, s: Int, b: Int) {
+  let r = CGFloat(r) / 255, g = CGFloat(g) / 255, b = CGFloat(b) / 255
+  let M = max(r, g, b)
+  let m = min(r, g, b)
+  let c = M - m
+  let hPrime: CGFloat
+  switch (c, M) {
+  case (0, _): hPrime = 0
+  case (_, r): hPrime = fmod((g - b) / c, 6)
+  case (_, g): hPrime = (b - r) / c + 2
+  case (_, b): hPrime = (r - g) / c + 4
+  default:     hPrime = 0
+  }
+  let h = Int(60 * hPrime)
+  let v = Int(M * 100)
+  let s = Int(v == 0 ? 0 : c / M * 100)
+  return (h: h, s: s, b: v)
+}
+
+public func hexStringFromRGB(r: Int, g: Int, b: Int) -> String {
+  assert(contains(0...255, r) && contains(0...255, g) && contains(0...255, b), "rgb values expected to be in the range 0...255")
+  let hex = (r << 16) | (g << 8) | b
+  var string = String(hex, radix: 16, uppercase: false)
+  while count(string) < 6 { string.insert(Character("0"), atIndex: string.startIndex) }
+  string.insert(Character("#"), atIndex: string.startIndex)
+  return string
+}
+
+public func hexStringFromHSB(h: Int, s: Int, b: Int) -> String {
+  let (r, g, b) = hsbToRGB(h, s, b)
+  return hexStringFromRGB(r, g, b)
 }
 
 extension UIColor {
@@ -363,7 +419,7 @@ extension UIColor {
     red *= 0.2126; green *= 0.7152; blue *= 0.0722
     luminance = red + green + blue
 
-    return luminance > 0.5 ? rgba(0, 0, 0, alpha) : rgba(255, 255, 255, alpha)
+    return luminance > 0.5 ? rgba(0, 0, 0, Int(alpha)) : rgba(255, 255, 255, Int(alpha))
   }
 
   public var contrastingFlatColor: UIColor {
@@ -378,41 +434,39 @@ extension UIColor {
     red *= 0.2126; green *= 0.7152; blue *= 0.0722
     luminance = red + green + blue
 
-    return luminance > 0.5 ? hsba(0, 0, 15, alpha) : hsba(192, 2, 95, alpha)
+    return luminance > 0.5 ? hsba(0, 0, 15, Int(alpha)) : hsba(192, 2, 95, Int(alpha))
   }
 
   // MARK: - Random Color Methods
 
   public typealias ShadeStyle = Chameleon.ShadeStyle
 
-  public static func randomFlatColor(shadeStyle: ShadeStyle = .None) -> UIColor {
+  public static func randomFlatColor(shadeStyle: ShadeStyle = .Any) -> UIColor {
+
+    // Get color array based on shade style
+    let colors = shadeStyle.colors
 
     // Helper function to generate an appropriate random number
-    func randomNumberWithMax(max: Int) -> Int { return Int(arc4random_uniform(UInt32(max))) }
+    func randomColorIndex() -> Int { return Int(arc4random_uniform(UInt32(colors.count))) }
 
-    //Number of colors to choose from
-    let colorCount = shadeStyle == .None ? 48 : 24
-
-    //Chose one of those colors at random
-    var randomNumber = randomNumberWithMax(colorCount)
 
     let defaults = NSUserDefaults.standardUserDefaults()
-    let key = "previousRandomNumber"
+    let key = "Chameleon.RandomColorIndex"
+
+    //Chose one of those colors at random
+    var index: Int
 
     //Check if a previous random number exists
     let previous = defaults.integerForKey(key)
-    if previous == randomNumber {
-      //Keep generating a random number until it is different than the one generated last time
-      do {
-        randomNumber = randomNumberWithMax(colorCount)
-      } while previous == randomNumber
-    }
+
+    //Keep generating a random number until it is different than the one generated last time
+    do { index = randomColorIndex() } while previous == index
 
     //Return a color depending on the specified shade
     switch shadeStyle {
-      case .Dark:  return Chameleon.darkColors[randomNumber]
-      case .Light: return Chameleon.lightColors[randomNumber]
-      case .None:  return Chameleon.flatColors[randomNumber]
+      case .Dark:  return Chameleon.darkColors[index]
+      case .Light: return Chameleon.lightColors[index]
+      case .Any:  return Chameleon.flatColors[index]
     }
 
   }
