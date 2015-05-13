@@ -327,7 +327,10 @@
     
     //Get total difference
     CGFloat TotalDifference = sqrt(pow((DeltaPrimeL / (KL * SL)), 2) + pow((DeltaPrimeC / (KC * SC)), 2) + pow((deltaHPrime / (KH * SH)), 2) + RT * (DeltaC / (KC * SC)) * (deltaHPrime / (KH * SH)));
-    
+
+    NSLog(@"<%@>l1 = %f, l2 = %f, a1 = %f, a2 = %f, b1 = %f, b2 = %f, total differnece = %f",
+          NSStringFromSelector(_cmd), L1, L2, A1, A2, B1, B2, TotalDifference);
+
     return TotalDifference;
 }
 
@@ -378,6 +381,9 @@
     CGFloat red, green, blue;
     [[[self flatColors] objectAtIndex:index] getRed:&red green:&green blue:&blue alpha:nil];
     
+    NSLog(@"<%@>l1 = %f, a1 = %f, b1 = %f, alpha = %f, resulting index = %f",
+          NSStringFromSelector(_cmd), l1, a1, b1, alpha, index);
+
     //Return the closest flat color
     return rgba(red*255, green*255, blue*255, alpha);
 }

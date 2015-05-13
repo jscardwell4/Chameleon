@@ -3,6 +3,10 @@
 import UIKit
 import Chameleon
 
+// Expect 30.497502
+UIColor.totalSumOfDifferencesFromL1(44.24255, L2: 17.697838, A1: 10.953821, A2: 0, B1: -42.812382, B2: -0.000001)
+
+
 let baseColor = Chameleon.flatMintDark
 let analogousColors = Chameleon.colorsForScheme(.Analogous, with: baseColor, flat: true)
 

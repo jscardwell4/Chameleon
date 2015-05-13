@@ -38,13 +38,13 @@ import UIKit
 private(set) var gradientImageKey = "gradientImage"
 
 public func rgba(r: Int, g: Int, b: Int, a: Int) -> UIColor {
-  return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: CGFloat(a))
+  return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: CGFloat(a)/255)
 }
 public func rgb(r: Int, g: Int, b: Int) -> UIColor {
   return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
 }
 public func hsba(h: Int, s: Int, b: Int, a: Int) -> UIColor {
-  return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: CGFloat(a))
+  return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: CGFloat(a)/100)
 }
 public func hsb(h: Int, s: Int, b: Int) -> UIColor {
   return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: 1)
@@ -115,106 +115,46 @@ extension UIColor {
     set { objc_setAssociatedObject(self, &gradientImageKey, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC)) }
   }
 
-  // MARK: - CIELab Public Getter Methods
-
-  /**
-  getValuesForX:Y:Z:A:
-
-  :param: x CGFloat
-  :param: y CGFloat
-  :param: z CGFloat
-  :param: a CGFloat
-
-  :returns: Bool
-  */
-  public func getValuesForX(inout x: CGFloat, inout Y y: CGFloat, inout Z z: CGFloat, inout alpha: CGFloat) -> Bool {
-
-   var red = CGFloat(), green = CGFloat(), blue = CGFloat(), alph = CGFloat()
-   if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-     let values = UIColor.XYZValuesForR(red, G: green, B: blue, A: alph)
-    x = values.0; y = values.1; z = values.2; alpha = values.3
-     return true
-   } else { return false}
+  public var RGB: (r: CGFloat, g: CGFloat, b: CGFloat) {
+    let (r, g, b, _) = RGBA
+    return (r: r, g: g, b: b)
   }
 
-  /**
-  getLightness:A:B:inout:
-
-  :param: l CGFloat
-  :param: a CGFloat
-  :param: b CGFloat
-  :param: alpha CGFloat
-
-  :returns: Bool
-  */
-  public func getLightness(inout l: CGFloat, inout A a: CGFloat, inout B b: CGFloat, inout alpha: CGFloat) -> Bool {
-
-    var red = CGFloat(), green = CGFloat(), blue = CGFloat(), alph = CGFloat()
-
-    if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-
-      //Run our input color's RGB values through the XYZ algorithm to convert them into XYZ values
-      let values = UIColor.XYZValuesForR(red, G: green, B: blue, A: alph)
-
-      //Run our new XYZ values through our LAB algorithm to convert them into LAB values
-      let labValues = UIColor.LABValuesForX(red, Y: green, Z: blue, alpha: alph)
-
-      l = labValues.0; a = labValues.1; b = labValues.2; alpha = labValues.3
-
-      return true
-    } else { return false}
-
+  public var RGBA: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+    var r = CGFloat(), g = CGFloat(), b = CGFloat(), a = CGFloat()
+    getRed(&r, green: &g, blue: &b, alpha: &a)
+    return (r: r, g: g, b: b, a: a)
   }
 
-  /// MARK: - CIELab Internal Helper Methods
 
-  /**
-  XYZValuesForR:G:B:A:
+  public var HSB: (h: CGFloat, s: CGFloat, b: CGFloat) {
+    let (h, s, b, _) = HSBA
+    return (h: h, s: s, b: b)
+  }
 
-  :param: r CGFloat
-  :param: g CGFloat
-  :param: b CGFloat
-  :param: alpha CGFloat
+  public var HSBA: (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) {
+    var h = CGFloat(), s = CGFloat(), b = CGFloat(), a = CGFloat()
+    getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+    return (h: h, s: s, b: b, a: a)
+  }
 
-  :returns: (CGFloat, CGFloat, CGFloat, CGFloat)
-  */
-  static func XYZValuesForR(var r: CGFloat,
-                      var G g: CGFloat,
-                      var B b: CGFloat,
-                          A alpha: CGFloat) -> (CGFloat, CGFloat, CGFloat, CGFloat)
-  {
-
-    // Let's begin by converting from RGB to sRGB. We're going to use the Reverse Transformation Equation.
-    // http://en.wikipedia.org/wiki/SRGB
+  public var sRGB: (r: CGFloat, g: CGFloat, b: CGFloat) {
+    var (r, g, b) = RGB
     func sRGB(inout c: CGFloat) { c = c > 0.04045 ? pow((c + 0.055) / 1.055, 2.4) : c / 12.92 }
     sRGB(&r); sRGB(&g); sRGB(&b)
+    return (r: r, g: g, b: b)
+  }
 
-    // Now we're going to convert to XYZ values, using a matrix multiplication of the linear values
-    // http://upload.wikimedia.org/math/4/3/3/433376fc18cccd887758beffb7e7c625.png
-
+  public var XYZ: (x: CGFloat, y: CGFloat, z: CGFloat) {
+    let (r, g, b) = sRGB
     let x = (r * 0.4124 + g * 0.3576 + b * 0.1805) * 100.0
     let y = (r * 0.2126 + g * 0.7152 + b * 0.0722) * 100.0
     let z = (r * 0.0193 + g * 0.1192 + b * 0.9505) * 100.0
-
-    return (x, y, z, alpha)
+    return (x: x, y: y, z: z)
   }
 
-  /**
-  LABValuesForX:Y:Z:alpha:
-
-  :param: x CGFloat
-  :param: y CGFloat
-  :param: z CGFloat
-  :param: alpha CGFloat
-
-  :returns: (CGFloat, CGFloat, CGFloat, CGFloat)
-  */
-  static func LABValuesForX(var x: CGFloat,
-                      var Y y: CGFloat,
-                      var Z z: CGFloat,
-                      alpha: CGFloat) -> (CGFloat, CGFloat, CGFloat, CGFloat)
-  {
-
+  public var LAB: (l: CGFloat, a: CGFloat, b: CGFloat) {
+    var (x, y, z) = XYZ
     // The corresponding original XYZ values are such that white is D65 with unit luminance (X,Y,Z = 0.9505, 1.0000, 1.0890).
     // Calculations are also to assume the 2° standard colorimetric observer.
     // D65: http://en.wikipedia.org/wiki/CIE_Standard_Illuminant_D65
@@ -238,7 +178,7 @@ extension UIColor {
     let a = CGFloat(500.0 * (x - y))
     let b = CGFloat(200.0 * (y - z))
 
-    return (l, a, b, alpha)
+    return (l: l, a: a, b: b)
   }
 
   /**
@@ -254,12 +194,12 @@ extension UIColor {
 
   :returns: CGFloat
   */
-  static func totalSumOfDifferencesFromL1(l1: CGFloat,
-                                       L2 l2: CGFloat,
-                                       A1 a1: CGFloat,
-                                       A2 a2: CGFloat,
-                                       B1 b1: CGFloat,
-                                       B2 b2: CGFloat) -> CGFloat
+  public static func totalSumOfDifferencesFromL1(l1: CGFloat,
+                                              L2 l2: CGFloat,
+                                              A1 a1: CGFloat,
+                                              A2 a2: CGFloat,
+                                              B1 b1: CGFloat,
+                                              B2 b2: CGFloat) -> CGFloat
   {
 
     //Get C Values in LCH from LAB Values
@@ -326,6 +266,8 @@ extension UIColor {
     return totalDifference
   }
 
+
+
   /**
   nearestFlatColorForL:A:B:alpha:
 
@@ -336,11 +278,10 @@ extension UIColor {
 
   :returns: UIColor
   */
-  static func nearestFlatColorForL(l1: CGFloat, A a1: CGFloat, B b1: CGFloat, alpha: CGFloat) -> UIColor {
+  public static func nearestFlatColorForL(l1: CGFloat, A a1: CGFloat, B b1: CGFloat, alpha: CGFloat) -> UIColor {
     let flatColors = Chameleon.flatColors
     let totalDifferences = flatColors.map { color -> CGFloat in
-      var l2 = CGFloat(), a2 = CGFloat(), b2 = CGFloat(), alpha2 = CGFloat()
-      color.getLightness(&l2, A: &a2, B: &b2, alpha: &alpha2)
+      let (l2, a2, b2) = color.LAB
       return UIColor.totalSumOfDifferencesFromL1(l1, L2: l2, A1: a1, A2: a2, B1: b1, B2: b2)
     }
     let color = reduce(zip(flatColors, totalDifferences), (UIColor.clearColor(), CGFloat.max), {$0.1 < $1.1 ? $0 : $1}).0
@@ -371,23 +312,11 @@ extension UIColor {
     return result
   }
 
-  public var flatColor: UIColor {
-    //Get LAB values for our color
-    var  l = CGFloat(), a = CGFloat(), b = CGFloat(), alpha = CGFloat()
-    rgbColor.getLightness(&l, A: &a, B: &b, alpha: &alpha)
-
-    //Find the nearest flat color
-    return UIColor.nearestFlatColorForL(l, A: a, B: b, alpha: 1.0)
-  }
+  public var flatColor: UIColor { let (l, a, b) = rgbColor.LAB; return UIColor.nearestFlatColorForL(l, A: a, B: b, alpha: 1.0) }
 
   public var complementaryFlatColor: UIColor {
 
-    // Extract & Check to make sure we have an actual color to work with (Clear returns clear)
-    var hue = CGFloat(), saturation = CGFloat(), brightness = CGFloat(), alpha = CGFloat()
-    rgbColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha:&alpha)
-
-    //Check if color is transparent
-    if alpha == 0 { return UIColor.clearColor() }
+    var (hue, saturation, brightness, alpha) = rgbColor.HSBA
 
     //Multiply our value by their max values to convert
     hue *= 360
@@ -404,37 +333,27 @@ extension UIColor {
     brightness = round(brightness)
 
     //Retrieve LAB values from our complimentary nonflat color & return nearest flat color
-    return UIColor(hue: hue/360, saturation: saturation/100, brightness: brightness/100, alpha: alpha).flatColor
+    return hsba(Int(hue), Int(saturation), Int(brightness), Int(alpha * 100)).flatColor
   }
 
   public var contrastingColor: UIColor {
-    //Calculate Luminance
-    var luminance = CGFloat(), red = CGFloat(), green = CGFloat(), blue = CGFloat(), alpha = CGFloat()
-    rgbColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-
-    //Check if color is transparent
-    if alpha == 0.0 { return UIColor.clearColor() }
+    var (red, green, blue, alpha) = rgbColor.RGBA
 
     // Relative luminance in colorimetric spaces - http://en.wikipedia.org/wiki/Luminance_(relative)
     red *= 0.2126; green *= 0.7152; blue *= 0.0722
-    luminance = red + green + blue
+    let luminance = red + green + blue
 
-    return luminance > 0.5 ? rgba(0, 0, 0, Int(alpha)) : rgba(255, 255, 255, Int(alpha))
+    return luminance > 0.5 ? rgba(0, 0, 0, Int(alpha * 255)) : rgba(255, 255, 255, Int(alpha * 255))
   }
 
   public var contrastingFlatColor: UIColor {
-    //Calculate Luminance
-    var luminance = CGFloat(), red = CGFloat(), green = CGFloat(), blue = CGFloat(), alpha = CGFloat()
-    rgbColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-
-    //Check if color is transparent
-    if alpha == 0.0 { return UIColor.clearColor() }
+    var (red, green, blue, alpha) = RGBA
 
     // Relative luminance in colorimetric spaces - http://en.wikipedia.org/wiki/Luminance_(relative)
     red *= 0.2126; green *= 0.7152; blue *= 0.0722
-    luminance = red + green + blue
+    let luminance = red + green + blue
 
-    return luminance > 0.5 ? hsba(0, 0, 15, Int(alpha)) : hsba(192, 2, 95, Int(alpha))
+    return luminance > 0.5 ? hsba(0, 0, 15, Int(alpha * 100)) : hsba(192, 2, 95, Int(alpha * 100))
   }
 
   // MARK: - Random Color Methods
