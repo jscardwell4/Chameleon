@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		C2878DEF1B0252EB004ECFF2 /* SchemeEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2878DEE1B0252EB004ECFF2 /* SchemeEditor.xib */; };
 		C2878DF11B02533A004ECFF2 /* SchemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2878DF01B02533A004ECFF2 /* SchemeEditor.swift */; };
+		C2878DF21B02D56B004ECFF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D994301B01A72D00745137 /* Images.xcassets */; };
 		C29649A11B010E39000C2D4A /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = C29649A01B010E39000C2D4A /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C29649DB1B01111E000C2D4A /* Chameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649DA1B01111E000C2D4A /* Chameleon.swift */; };
 		C29649DD1B018A53000C2D4A /* UIViewController+Chameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649DC1B018A53000C2D4A /* UIViewController+Chameleon.swift */; };
 		C29649DF1B018A8F000C2D4A /* UIColor+Chameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649DE1B018A8F000C2D4A /* UIColor+Chameleon.swift */; };
 		C2D9942A1B01A72D00745137 /* ChameleonAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */; };
-		C2D9942C1B01A72D00745137 /* ChameleonAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D9942B1B01A72D00745137 /* ChameleonAppViewController.swift */; };
 		C2D9942F1B01A72D00745137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D9942D1B01A72D00745137 /* Main.storyboard */; };
-		C2D994311B01A72D00745137 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D994301B01A72D00745137 /* Images.xcassets */; };
 		C2D994341B01A72D00745137 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D994321B01A72D00745137 /* LaunchScreen.xib */; };
 		C2D994471B01A76100745137 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C296499B1B010E39000C2D4A /* Chameleon.framework */; };
 		C2D994481B01A76100745137 /* Chameleon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C296499B1B010E39000C2D4A /* Chameleon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -59,9 +58,8 @@
 		C2D994251B01A72D00745137 /* ChameleonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChameleonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D994281B01A72D00745137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonAppDelegate.swift; sourceTree = "<group>"; };
-		C2D9942B1B01A72D00745137 /* ChameleonAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonAppViewController.swift; sourceTree = "<group>"; };
 		C2D9942E1B01A72D00745137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C2D994301B01A72D00745137 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C2D994301B01A72D00745137 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Chameleon/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		C2D994331B01A72D00745137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +103,7 @@
 		C296499D1B010E39000C2D4A /* Chameleon */ = {
 			isa = PBXGroup;
 			children = (
+				C2D994301B01A72D00745137 /* Images.xcassets */,
 				C29649DC1B018A53000C2D4A /* UIViewController+Chameleon.swift */,
 				C29649DE1B018A8F000C2D4A /* UIColor+Chameleon.swift */,
 				C29649DA1B01111E000C2D4A /* Chameleon.swift */,
@@ -129,9 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */,
-				C2D9942B1B01A72D00745137 /* ChameleonAppViewController.swift */,
 				C2D9942D1B01A72D00745137 /* Main.storyboard */,
-				C2D994301B01A72D00745137 /* Images.xcassets */,
 				C2D994321B01A72D00745137 /* LaunchScreen.xib */,
 				C2D994271B01A72D00745137 /* Supporting Files */,
 			);
@@ -239,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2878DEF1B0252EB004ECFF2 /* SchemeEditor.xib in Resources */,
+				C2878DF21B02D56B004ECFF2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +246,6 @@
 			files = (
 				C2D9942F1B01A72D00745137 /* Main.storyboard in Resources */,
 				C2D994341B01A72D00745137 /* LaunchScreen.xib in Resources */,
-				C2D994311B01A72D00745137 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +267,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D9942C1B01A72D00745137 /* ChameleonAppViewController.swift in Sources */,
 				C2D9942A1B01A72D00745137 /* ChameleonAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

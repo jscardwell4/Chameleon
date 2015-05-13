@@ -11,17 +11,14 @@ import UIKit
 
 public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+  convenience init() { self.init(nibName: "SchemeEditor", bundle: NSBundle(forClass: SchemeEditor.self)) }
+
   // MARK: - Interface builder outlets and collections
 
   @IBOutlet weak var pickerView: UIPickerView!
 
-  @IBOutlet weak var color1View: UIView!
-  @IBOutlet weak var color2View: UIView!
-  @IBOutlet weak var color3View: UIView!
-  @IBOutlet weak var color4View: UIView!
-  @IBOutlet weak var color5View: UIView!
-
   @IBOutlet var indicators: [UIImageView]!
+  @IBOutlet var colorViews: [UIView]!
 
   @IBOutlet weak var gradientView: UIView!
 
@@ -74,16 +71,16 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   :param: sender UISegmentedControl
   */
   @IBAction func selectShadeStyle(sender: UISegmentedControl) {
-    shadeStyle = Chameleon.ShadeStyle(rawValue: sender.selectedSegmentIndex + 1)!
+    shadeStyle = Chameleon.ShadeStyle(rawValue: sender.selectedSegmentIndex)!
   }
 
   private func refresh() {
     let colors = Chameleon.colorsForScheme(scheme, with: baseColor, flat: flat)
-    color1View.backgroundColor = colors[0]
-    color2View.backgroundColor = colors[1]
-    color3View.backgroundColor = colors[2]
-    color4View.backgroundColor = colors[3]
-    color5View.backgroundColor = colors[4]
+    colorViews[0].backgroundColor = colors[0]
+    colorViews[1].backgroundColor = colors[1]
+    colorViews[2].backgroundColor = colors[2]
+    colorViews[3].backgroundColor = colors[3]
+    colorViews[4].backgroundColor = colors[4]
     let gColors = gradientColors.map { colors[$0] }
 
     let gradientColor = Chameleon.gradientWithStyle(gradientStyle, withFrame: gradientView.bounds, andColors: gColors)
@@ -96,9 +93,9 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
       pickerView.reloadAllComponents()
       let row: Int
       switch currentPicker {
-      case .Scheme:        row = scheme.rawValue
-      case .GradientStyle: row = gradientStyle.rawValue
-      case .BaseColor:     row = find(baseColorTitles, baseColorName)!
+        case .Scheme:        row = scheme.rawValue
+        case .GradientStyle: row = gradientStyle.rawValue
+        case .BaseColor:     row = find(baseColorTitles, baseColorName)!
       }
       pickerView.selectRow(row, inComponent: 0, animated: !pickerView.hidden)
     }
