@@ -22,6 +22,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C201B2BA1B02EE8700983F73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0CC0046019812351008E24FD;
+			remoteInfo = ChameleonDemo;
+		};
+		C201B2BC1B02EE8700983F73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0CC0048119812352008E24FD;
+			remoteInfo = ChameleonDemoTests;
+		};
 		C2D994491B01A76100745137 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C29649921B010E39000C2D4A /* Project object */;
@@ -46,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChameleonDemo.xcodeproj; path = ../ChameleonDemo/ChameleonDemo.xcodeproj; sourceTree = "<group>"; };
 		C2878DEE1B0252EB004ECFF2 /* SchemeEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchemeEditor.xib; sourceTree = "<group>"; };
 		C2878DF01B02533A004ECFF2 /* SchemeEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemeEditor.swift; sourceTree = "<group>"; };
 		C2878DF71B02E834004ECFF2 /* ColorSchemeTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ColorSchemeTests.playground; sourceTree = "<group>"; };
@@ -83,9 +98,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C201B2B61B02EE8600983F73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C201B2BB1B02EE8700983F73 /* ChameleonDemo.app */,
+				C201B2BD1B02EE8700983F73 /* ChameleonDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C29649911B010E39000C2D4A = {
 			isa = PBXGroup;
 			children = (
+				C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */,
 				C296499D1B010E39000C2D4A /* Chameleon */,
 				C2D994261B01A72D00745137 /* ChameleonApp */,
 				C296499C1B010E39000C2D4A /* Products */,
@@ -224,6 +249,12 @@
 			mainGroup = C29649911B010E39000C2D4A;
 			productRefGroup = C296499C1B010E39000C2D4A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C201B2B61B02EE8600983F73 /* Products */;
+					ProjectRef = C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C296499A1B010E39000C2D4A /* Chameleon */,
@@ -231,6 +262,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C201B2BB1B02EE8700983F73 /* ChameleonDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ChameleonDemo.app;
+			remoteRef = C201B2BA1B02EE8700983F73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C201B2BD1B02EE8700983F73 /* ChameleonDemoTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChameleonDemoTests.xctest;
+			remoteRef = C201B2BC1B02EE8700983F73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C29649991B010E39000C2D4A /* Resources */ = {
