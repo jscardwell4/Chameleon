@@ -17,8 +17,16 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
 
   @IBOutlet weak var pickerView: UIPickerView!
 
-  @IBOutlet var indicators: [UIImageView]!
-  @IBOutlet var colorViews: [UIView]!
+  @IBOutlet var indicators: [UIImageView]! {
+    didSet {
+      println("indicators = \(indicators.map {$0.tag})")
+    }
+  }
+  @IBOutlet var colorViews: [UIView]! {
+    didSet {
+      println("colorViews = \(colorViews.map {$0.tag})")
+    }
+  }
 
   @IBOutlet weak var gradientView: UIView!
 

@@ -48,13 +48,14 @@
 /* Begin PBXFileReference section */
 		C2878DEE1B0252EB004ECFF2 /* SchemeEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchemeEditor.xib; sourceTree = "<group>"; };
 		C2878DF01B02533A004ECFF2 /* SchemeEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemeEditor.swift; sourceTree = "<group>"; };
+		C2878DF71B02E834004ECFF2 /* ColorSchemeTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ColorSchemeTests.playground; sourceTree = "<group>"; };
 		C296499B1B010E39000C2D4A /* Chameleon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chameleon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C296499F1B010E39000C2D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C29649A01B010E39000C2D4A /* Chameleon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chameleon.h; sourceTree = "<group>"; };
 		C29649DA1B01111E000C2D4A /* Chameleon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.swift; sourceTree = "<group>"; };
 		C29649DC1B018A53000C2D4A /* UIViewController+Chameleon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Chameleon.swift"; sourceTree = "<group>"; };
 		C29649DE1B018A8F000C2D4A /* UIColor+Chameleon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Chameleon.swift"; sourceTree = "<group>"; };
-		C29649E01B019728000C2D4A /* Chameleon.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Chameleon.playground; sourceTree = "<group>"; };
+		C29649E01B019728000C2D4A /* FlatColors.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FlatColors.playground; sourceTree = "<group>"; };
 		C2D994251B01A72D00745137 /* ChameleonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChameleonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D994281B01A72D00745137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonAppDelegate.swift; sourceTree = "<group>"; };
@@ -103,13 +104,14 @@
 		C296499D1B010E39000C2D4A /* Chameleon */ = {
 			isa = PBXGroup;
 			children = (
+				C2878DF71B02E834004ECFF2 /* ColorSchemeTests.playground */,
 				C2D994301B01A72D00745137 /* Images.xcassets */,
 				C29649DC1B018A53000C2D4A /* UIViewController+Chameleon.swift */,
 				C29649DE1B018A8F000C2D4A /* UIColor+Chameleon.swift */,
 				C29649DA1B01111E000C2D4A /* Chameleon.swift */,
 				C29649A01B010E39000C2D4A /* Chameleon.h */,
 				C296499E1B010E39000C2D4A /* Supporting Files */,
-				C29649E01B019728000C2D4A /* Chameleon.playground */,
+				C29649E01B019728000C2D4A /* FlatColors.playground */,
 				C2878DEE1B0252EB004ECFF2 /* SchemeEditor.xib */,
 				C2878DF01B02533A004ECFF2 /* SchemeEditor.swift */,
 			);
