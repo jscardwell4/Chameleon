@@ -8,24 +8,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SchemeEditor" customModule="Chameleon" customModuleProvider="target">
             <connections>
-                <outlet property="colorButton" destination="HjI-9p-5Y6" id="foD-Sn-e9y"/>
-                <outlet property="flatSwitch" destination="kg2-02-XsY" id="FQj-sV-u8g"/>
-                <outlet property="gradientButton" destination="g4b-LD-rol" id="kYS-vV-Hse"/>
-                <outlet property="gradientView" destination="HSV-LM-g9h" id="uQ7-ZH-qdN"/>
-                <outlet property="pickerView" destination="S3w-Ss-HiC" id="U1b-M0-5Ks"/>
-                <outlet property="schemeButton" destination="bQR-4S-PFW" id="lkH-pD-6y6"/>
-                <outlet property="shadeControl" destination="B1f-eh-qOZ" id="0J5-zC-uvn"/>
+                <outlet property="baseColorButton" destination="HjI-9p-5Y6" id="UiQ-N4-Ff7"/>
+                <outlet property="colorPaletteButton" destination="8Bf-DR-0ll" id="UWA-yu-g0e"/>
+                <outlet property="colorSchemeButton" destination="bQR-4S-PFW" id="8iB-CW-8Es"/>
+                <outlet property="flatSwitch" destination="kg2-02-XsY" id="yX4-8U-ecp"/>
+                <outlet property="gradientStyleButton" destination="g4b-LD-rol" id="NCJ-J5-JzS"/>
+                <outlet property="gradientView" destination="HSV-LM-g9h" id="8OB-EB-IsP"/>
+                <outlet property="pickerView" destination="S3w-Ss-HiC" id="bhE-Gt-Wex"/>
+                <outlet property="shadeSegmentedControl" destination="B1f-eh-qOZ" id="Ovf-nA-Zmk"/>
                 <outlet property="view" destination="zza-vu-peu" id="ZV6-Go-IJe"/>
-                <outletCollection property="indicators" destination="AwZ-xM-wHk" collectionClass="NSMutableArray" id="nUC-zo-ChX"/>
-                <outletCollection property="indicators" destination="hvE-oD-aG1" collectionClass="NSMutableArray" id="58d-6F-EtJ"/>
-                <outletCollection property="indicators" destination="rHW-wx-WXf" collectionClass="NSMutableArray" id="OhA-Yr-fir"/>
-                <outletCollection property="indicators" destination="tPm-ea-Yv4" collectionClass="NSMutableArray" id="XTl-oj-ptZ"/>
-                <outletCollection property="indicators" destination="U7f-ue-Ci1" collectionClass="NSMutableArray" id="Wl2-45-L1c"/>
-                <outletCollection property="colorViews" destination="g1h-FM-7CU" collectionClass="NSMutableArray" id="8Y0-0Q-QRa"/>
-                <outletCollection property="colorViews" destination="SUs-k3-li7" collectionClass="NSMutableArray" id="WIN-K5-Wnk"/>
-                <outletCollection property="colorViews" destination="Y66-ID-EN4" collectionClass="NSMutableArray" id="mS4-MD-ZMa"/>
-                <outletCollection property="colorViews" destination="O2C-oT-D6X" collectionClass="NSMutableArray" id="2uc-w6-QPB"/>
-                <outletCollection property="colorViews" destination="OTt-ue-hMb" collectionClass="NSMutableArray" id="BZI-Pm-fp8"/>
+                <outletCollection property="colorViews" destination="g1h-FM-7CU" collectionClass="NSMutableArray" id="aud-U0-8s8"/>
+                <outletCollection property="colorViews" destination="SUs-k3-li7" collectionClass="NSMutableArray" id="rXp-gk-zDa"/>
+                <outletCollection property="colorViews" destination="Y66-ID-EN4" collectionClass="NSMutableArray" id="MrH-55-kbS"/>
+                <outletCollection property="colorViews" destination="O2C-oT-D6X" collectionClass="NSMutableArray" id="jXB-um-6M9"/>
+                <outletCollection property="colorViews" destination="OTt-ue-hMb" collectionClass="NSMutableArray" id="iXb-hX-O35"/>
+                <outletCollection property="indicators" destination="AwZ-xM-wHk" collectionClass="NSMutableArray" id="Gyc-XA-Nsa"/>
+                <outletCollection property="indicators" destination="hvE-oD-aG1" collectionClass="NSMutableArray" id="eyi-fC-YIr"/>
+                <outletCollection property="indicators" destination="rHW-wx-WXf" collectionClass="NSMutableArray" id="g24-AU-rSP"/>
+                <outletCollection property="indicators" destination="tPm-ea-Yv4" collectionClass="NSMutableArray" id="3hd-8r-qA5"/>
+                <outletCollection property="indicators" destination="U7f-ue-Ci1" collectionClass="NSMutableArray" id="NzS-29-UEJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -69,19 +70,8 @@
                         <constraint firstAttribute="width" secondItem="AwZ-xM-wHk" secondAttribute="height" multiplier="1:1" id="cDb-Xe-j5o"/>
                     </constraints>
                 </imageView>
-                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTt-ue-hMb">
-                    <rect key="frame" x="470" y="44" width="102" height="100"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="N2r-AV-4MX"/>
-                    </constraints>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="Ker-JK-Qpe" appends="YES" id="g2p-Dg-fkC"/>
-                    </connections>
-                </view>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kg2-02-XsY">
-                    <rect key="frame" x="523" y="427" width="51" height="31"/>
+                    <rect key="frame" x="523" y="464" width="51" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="8li-9y-xsU"/>
                         <constraint firstAttribute="height" constant="20" id="Dba-Ib-9uO"/>
@@ -97,13 +87,13 @@
                     </connections>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBB-D2-elP">
-                    <rect key="frame" x="28" y="433" width="28" height="20"/>
+                    <rect key="frame" x="28" y="470" width="28" height="20"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B1f-eh-qOZ">
-                    <rect key="frame" x="483" y="383" width="89" height="29"/>
+                    <rect key="frame" x="483" y="420" width="89" height="29"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="yK3-Nd-Rb4"/>
                     </constraints>
@@ -118,11 +108,11 @@
                         </mask>
                     </variation>
                     <connections>
-                        <action selector="selectShadeStyle:" destination="-1" eventType="valueChanged" id="PiP-OJ-DQ2"/>
+                        <action selector="selectShade:" destination="-1" eventType="valueChanged" id="Av1-bQ-aOu"/>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WY-4R-saI">
-                    <rect key="frame" x="28" y="387" width="48" height="20"/>
+                    <rect key="frame" x="28" y="424" width="48" height="20"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -178,6 +168,17 @@
                         </mask>
                     </variation>
                 </view>
+                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTt-ue-hMb">
+                    <rect key="frame" x="470" y="44" width="102" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="N2r-AV-4MX"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Ker-JK-Qpe" appends="YES" id="g2p-Dg-fkC"/>
+                    </connections>
+                </view>
                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2C-oT-D6X">
                     <rect key="frame" x="359" y="44" width="103" height="100"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,7 +224,7 @@
                     </connections>
                 </view>
                 <pickerView hidden="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="S3w-Ss-HiC">
-                    <rect key="frame" x="8" y="507" width="584" height="162"/>
+                    <rect key="frame" x="8" y="491" width="584" height="162"/>
                     <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="DAq-Vu-oyU"/>
@@ -240,6 +241,22 @@
                         <action selector="togglePickerView:" destination="-1" eventType="touchUpInside" id="x0O-Uk-O30"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palette" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erX-uH-ol6">
+                    <rect key="frame" x="28" y="387" width="53" height="20"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bf-DR-0ll">
+                    <rect key="frame" x="542" y="383" width="30" height="29"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <state key="normal" title="Flat">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="togglePickerView:" destination="-1" eventType="touchUpInside" id="pqL-P1-Hj3"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.111818932" green="0.11183650050000001" blue="0.1118125319" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,11 +265,11 @@
                 <constraint firstItem="8WY-4R-saI" firstAttribute="top" secondItem="qsp-j1-Ens" secondAttribute="bottom" constant="16" id="0Vt-kL-KxV"/>
                 <constraint firstItem="SUs-k3-li7" firstAttribute="top" secondItem="Y66-ID-EN4" secondAttribute="top" id="0YR-38-Ayd"/>
                 <constraint firstItem="rHW-wx-WXf" firstAttribute="height" secondItem="hvE-oD-aG1" secondAttribute="height" id="1Ao-YG-ltj"/>
+                <constraint firstAttribute="bottom" secondItem="S3w-Ss-HiC" secondAttribute="bottom" id="2tG-49-QtX"/>
                 <constraint firstItem="Y66-ID-EN4" firstAttribute="top" secondItem="OTt-ue-hMb" secondAttribute="top" id="3dv-7b-lSH"/>
                 <constraint firstItem="S3w-Ss-HiC" firstAttribute="leading" secondItem="zza-vu-peu" secondAttribute="leadingMargin" id="6Vp-MP-nVa"/>
                 <constraint firstItem="O2C-oT-D6X" firstAttribute="leading" secondItem="Y66-ID-EN4" secondAttribute="trailing" constant="8" symbolic="YES" id="6ey-TB-ULj"/>
                 <constraint firstItem="HSV-LM-g9h" firstAttribute="top" secondItem="Y66-ID-EN4" secondAttribute="bottom" constant="8" id="7uc-mJ-Xlc"/>
-                <constraint firstItem="B1f-eh-qOZ" firstAttribute="top" secondItem="HjI-9p-5Y6" secondAttribute="bottom" constant="8" id="8LZ-Fy-VfM"/>
                 <constraint firstItem="d3y-Oo-9oZ" firstAttribute="leading" secondItem="zza-vu-peu" secondAttribute="leadingMargin" constant="20" id="8fh-Fo-B1O"/>
                 <constraint firstItem="HSV-LM-g9h" firstAttribute="leading" secondItem="g1h-FM-7CU" secondAttribute="trailing" constant="8" symbolic="YES" id="9dz-bg-Gch"/>
                 <constraint firstItem="8WY-4R-saI" firstAttribute="baseline" secondItem="B1f-eh-qOZ" secondAttribute="baseline" id="9eh-t8-6nL"/>
@@ -263,6 +280,7 @@
                 <constraint firstAttribute="trailingMargin" secondItem="HSV-LM-g9h" secondAttribute="trailing" constant="20" id="CLa-0X-sgr"/>
                 <constraint firstItem="pBB-D2-elP" firstAttribute="top" secondItem="8WY-4R-saI" secondAttribute="bottom" constant="26" id="Eg6-qo-BiI"/>
                 <constraint firstItem="Y66-ID-EN4" firstAttribute="top" secondItem="g1h-FM-7CU" secondAttribute="top" id="F0q-IT-sHO"/>
+                <constraint firstItem="8Bf-DR-0ll" firstAttribute="trailing" secondItem="HjI-9p-5Y6" secondAttribute="trailing" id="FGl-B7-9OK"/>
                 <constraint firstItem="HSV-LM-g9h" firstAttribute="bottom" secondItem="8WY-4R-saI" secondAttribute="bottom" id="G3D-1a-Fn4"/>
                 <constraint firstItem="HSV-LM-g9h" firstAttribute="leading" secondItem="Y66-ID-EN4" secondAttribute="leading" id="Gsk-WZ-bSE"/>
                 <constraint firstItem="OTt-ue-hMb" firstAttribute="width" secondItem="O2C-oT-D6X" secondAttribute="width" id="HAI-wS-4Z2"/>
@@ -274,6 +292,7 @@
                 <constraint firstItem="AwZ-xM-wHk" firstAttribute="centerX" secondItem="g1h-FM-7CU" secondAttribute="centerX" id="ODD-1b-TrZ"/>
                 <constraint firstItem="HSV-LM-g9h" firstAttribute="leading" secondItem="g1h-FM-7CU" secondAttribute="leading" id="Ozh-G8-oxE"/>
                 <constraint firstItem="HSV-LM-g9h" firstAttribute="top" secondItem="d3y-Oo-9oZ" secondAttribute="top" id="PJx-FV-zrt"/>
+                <constraint firstItem="erX-uH-ol6" firstAttribute="baseline" secondItem="8Bf-DR-0ll" secondAttribute="baseline" id="Q39-OR-E21"/>
                 <constraint firstItem="bQR-4S-PFW" firstAttribute="trailing" secondItem="HSV-LM-g9h" secondAttribute="trailing" id="QNB-It-QLu"/>
                 <constraint firstItem="g1h-FM-7CU" firstAttribute="leading" secondItem="zza-vu-peu" secondAttribute="leadingMargin" constant="20" id="QiA-7Y-yON"/>
                 <constraint firstItem="HSV-LM-g9h" firstAttribute="leading" secondItem="zza-vu-peu" secondAttribute="leadingMargin" constant="20" id="RQU-i8-ylr"/>
@@ -292,6 +311,7 @@
                 <constraint firstItem="SUs-k3-li7" firstAttribute="leading" secondItem="g1h-FM-7CU" secondAttribute="trailing" constant="8" symbolic="YES" id="Xzr-BV-s3p"/>
                 <constraint firstItem="Y66-ID-EN4" firstAttribute="leading" secondItem="SUs-k3-li7" secondAttribute="trailing" constant="8" symbolic="YES" id="Yd8-Bt-NUJ"/>
                 <constraint firstItem="kg2-02-XsY" firstAttribute="leading" secondItem="pBB-D2-elP" secondAttribute="trailing" constant="8" id="Yzf-ND-CAH"/>
+                <constraint firstItem="erX-uH-ol6" firstAttribute="leading" secondItem="qsp-j1-Ens" secondAttribute="leading" id="Z9r-aZ-0GU"/>
                 <constraint firstItem="pBB-D2-elP" firstAttribute="centerY" secondItem="kg2-02-XsY" secondAttribute="centerY" id="cDl-Qf-gjQ"/>
                 <constraint firstItem="kg2-02-XsY" firstAttribute="top" secondItem="B1f-eh-qOZ" secondAttribute="bottom" constant="16" id="cmS-vW-gNo"/>
                 <constraint firstItem="g4b-LD-rol" firstAttribute="top" secondItem="bQR-4S-PFW" secondAttribute="bottom" constant="8" id="gND-Ta-kOx"/>
@@ -301,10 +321,12 @@
                 <constraint firstItem="OTt-ue-hMb" firstAttribute="leading" secondItem="O2C-oT-D6X" secondAttribute="trailing" constant="8" symbolic="YES" id="hjy-XD-mlv"/>
                 <constraint firstItem="kg2-02-XsY" firstAttribute="trailing" secondItem="B1f-eh-qOZ" secondAttribute="trailing" id="hrp-vz-jSP"/>
                 <constraint firstItem="AwZ-xM-wHk" firstAttribute="centerY" secondItem="rHW-wx-WXf" secondAttribute="centerY" id="jJC-QF-Xbl"/>
+                <constraint firstItem="8Bf-DR-0ll" firstAttribute="top" secondItem="HjI-9p-5Y6" secondAttribute="bottom" constant="8" id="jfi-jH-sWp"/>
                 <constraint firstItem="d3y-Oo-9oZ" firstAttribute="top" secondItem="HSV-LM-g9h" secondAttribute="bottom" constant="26" id="kmK-DM-5VI"/>
                 <constraint firstItem="HjI-9p-5Y6" firstAttribute="top" secondItem="g4b-LD-rol" secondAttribute="bottom" constant="8" id="kqN-qA-j55"/>
                 <constraint firstItem="bQR-4S-PFW" firstAttribute="top" secondItem="HSV-LM-g9h" secondAttribute="bottom" constant="16" id="mVb-lV-rim"/>
                 <constraint firstItem="rHW-wx-WXf" firstAttribute="top" secondItem="zza-vu-peu" secondAttribute="top" constant="20" id="oyF-dD-XV5"/>
+                <constraint firstItem="B1f-eh-qOZ" firstAttribute="top" secondItem="8Bf-DR-0ll" secondAttribute="bottom" constant="8" id="pno-GL-anm"/>
                 <constraint firstItem="Y66-ID-EN4" firstAttribute="top" secondItem="O2C-oT-D6X" secondAttribute="top" id="qb3-Iy-GR3"/>
                 <constraint firstItem="S3w-Ss-HiC" firstAttribute="top" secondItem="kg2-02-XsY" secondAttribute="bottom" constant="-20" id="r4y-M5-ccV"/>
                 <constraint firstItem="g4b-LD-rol" firstAttribute="trailing" secondItem="HjI-9p-5Y6" secondAttribute="trailing" id="rb9-OJ-Y2H"/>
@@ -335,6 +357,7 @@
                     <exclude reference="Yzf-ND-CAH"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="128" y="695"/>
         </view>
         <tapGestureRecognizer id="0FI-N3-gOY">
             <connections>

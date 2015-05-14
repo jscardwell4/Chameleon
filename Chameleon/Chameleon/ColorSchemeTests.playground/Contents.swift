@@ -8,6 +8,12 @@ UIColor.totalSumOfDifferencesFromL1(44.24255, L2: 17.697838, A1: 10.953821, A2: 
 
 
 let baseColor = Chameleon.flatMintDark
+
+baseColor.contrastingColor
+baseColor.contrastingFlatColor
+
+baseColor.complementaryFlatColor
+
 let analogousColors = Chameleon.colorsForScheme(.Analogous, with: baseColor, flat: true)
 
 analogousColors[0]

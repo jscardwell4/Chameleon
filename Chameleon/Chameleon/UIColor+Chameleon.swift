@@ -40,12 +40,15 @@ private(set) var gradientImageKey = "gradientImage"
 public func rgba(r: Int, g: Int, b: Int, a: Int) -> UIColor {
   return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: CGFloat(a)/255)
 }
+
 public func rgb(r: Int, g: Int, b: Int) -> UIColor {
   return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
 }
+
 public func hsba(h: Int, s: Int, b: Int, a: Int) -> UIColor {
   return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: CGFloat(a)/100)
 }
+
 public func hsb(h: Int, s: Int, b: Int) -> UIColor {
   return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: 1)
 }
@@ -92,6 +95,78 @@ public func rgbToHSB(r: Int, g: Int, b: Int) -> (h: Int, s: Int, b: Int) {
   return (h: h, s: s, b: v)
 }
 
+public func rgbTosRGB(r: CGFloat, g: CGFloat, b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+  func convert(c: CGFloat) -> CGFloat { return c > 0.04045 ? pow((c + 0.055) / 1.055, 2.4) : c / 12.92 }
+  return (r: convert(r), g: convert(g), b: convert(b))
+}
+
+public func sRGBToXYZ(r: CGFloat, g: CGFloat, b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
+  let x = (r * 0.4124 + g * 0.3576 + b * 0.1805) * 100.0
+  let y = (r * 0.2126 + g * 0.7152 + b * 0.0722) * 100.0
+  let z = (r * 0.0193 + g * 0.1192 + b * 0.9505) * 100.0
+  return (x: x, y: y, z: z)
+}
+
+public func rgbToXYZ(var r: CGFloat, var g: CGFloat, var b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
+  (r, g, b) = rgbTosRGB(r, g, b)
+  return sRGBToXYZ(r, g, b)
+}
+
+public func rgbToLAB(r: CGFloat, g: CGFloat, b: CGFloat) -> (l: CGFloat, a: CGFloat, b: CGFloat) {
+  let (x, y, z) = rgbToXYZ(r, g, b)
+  return xyzToLAB(x, y, z)
+}
+
+public func xyzToLAB(var x: CGFloat, var y: CGFloat, var z: CGFloat) -> (l: CGFloat, a: CGFloat, b: CGFloat) {
+  // The corresponding original XYZ values are such that white is D65 with unit luminance (X,Y,Z = 0.9505, 1.0000, 1.0890).
+  // Calculations are also to assume the 2° standard colorimetric observer.
+  // D65: http://en.wikipedia.org/wiki/CIE_Standard_Illuminant_D65
+  // Standard Colorimetric Observer: http://en.wikipedia.org/wiki/Standard_colorimetric_observer#CIE_standard_observer
+  // Since we mutiplied our XYZ values by 100 to produce a percentage we should also multiply our unit luminance values
+  // by 100.
+  x /= 95.05; y /= 100.0; z /= 108.9
+
+  // Use the forward transformation function for CIELAB-CIEXYZ conversions
+  // Function: http://upload.wikimedia.org/math/e/5/1/e513d25d50d406bfffb6ed3c854bd8a4.png
+  // 0.0088564517 = pow(6.0 / 29.0, 3.0)
+  // 7.787037037 = 1.0 / 3.0 * pow(29.0 / 6.0, 2.0)
+  // 0.1379310345 = 4.0 / 29.0
+  func convert(f: CGFloat) -> CGFloat { return f > 0.0088564517 ? pow(f, 1.0 / 3.0) : 7.787037037 * f + 0.1379310345 }
+  (x, y, z) = (convert(x), convert(y), convert(z))
+  return (l: 116.0 * y - 16.0, a: 500.0 * (x - y), b: 200.0 * (y - z))
+}
+
+public func labToXYZ(l: CGFloat, a: CGFloat, b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
+  var y1 = (l + 16)/116
+  var x1 = a/500 + y1
+  var z1 = -b/200 + y1
+  func convert(f: CGFloat) -> CGFloat { return f > 0.206893 ? pow(f, 3) : (f - 16/116)/7.787 }
+  x1 = convert(x1); y1 = convert(y1); z1 = convert(z1)
+  return (x: x1 * 95.05, y: y1 * 100, z: z1 * 108.9)
+}
+
+public func xyzTosRGB(x: CGFloat, y: CGFloat, z: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+  let r = (3.2406 * x - 1.5372 * y - 0.4986 * z)/100
+  let g = (-0.9689 * x + 1.8758 * y + 0.0415 * z)/100
+  let b = (0.0557 * x - 0.204 * y + 1.057 * z) / 100
+  return (r: r, g: g, b: b)
+}
+
+public func sRGBToRGB(r: CGFloat, g: CGFloat, b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+  func convert(f: CGFloat) -> CGFloat { return f > 0.0031308 ? 1.055 * pow(f, 1/2.4) - 0.055 : 12.92 * f }
+  return (r: convert(r), g: convert(g), b: convert(b))
+}
+
+public func xyzToRGB(x: CGFloat, y: CGFloat, z: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+  let (r, g, b) = xyzTosRGB(x, y, z)
+  return sRGBToRGB(r, g, b)
+}
+
+public func labToRGB(l: CGFloat, a: CGFloat, b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+  let (x, y, z) = labToXYZ(l, a, b)
+  return xyzToRGB(x, y, z)
+}
+
 public func hexStringFromRGB(r: Int, g: Int, b: Int) -> String {
   assert(contains(0...255, r) && contains(0...255, g) && contains(0...255, b), "rgb values expected to be in the range 0...255")
   let hex = (r << 16) | (g << 8) | b
@@ -107,8 +182,6 @@ public func hexStringFromHSB(h: Int, s: Int, b: Int) -> String {
 }
 
 extension UIColor {
-
-  // MARK: - Getter & Setter Methods for Instance Variables
 
   public var gradientImage: UIImage! {
     get { return objc_getAssociatedObject(self, &gradientImageKey) as? UIImage }
@@ -126,7 +199,6 @@ extension UIColor {
     return (r: r, g: g, b: b, a: a)
   }
 
-
   public var HSB: (h: CGFloat, s: CGFloat, b: CGFloat) {
     let (h, s, b, _) = HSBA
     return (h: h, s: s, b: b)
@@ -139,46 +211,36 @@ extension UIColor {
   }
 
   public var sRGB: (r: CGFloat, g: CGFloat, b: CGFloat) {
-    var (r, g, b) = RGB
-    func sRGB(inout c: CGFloat) { c = c > 0.04045 ? pow((c + 0.055) / 1.055, 2.4) : c / 12.92 }
-    sRGB(&r); sRGB(&g); sRGB(&b)
+    let (r, g, b, _) = sRGBA
     return (r: r, g: g, b: b)
   }
 
+  public var sRGBA: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+    var (r, g, b, a) = RGBA
+    (r, g, b) = rgbTosRGB(r, g, b)
+    return (r: r, g: g, b: b, a: a)
+  }
+
   public var XYZ: (x: CGFloat, y: CGFloat, z: CGFloat) {
-    let (r, g, b) = sRGB
-    let x = (r * 0.4124 + g * 0.3576 + b * 0.1805) * 100.0
-    let y = (r * 0.2126 + g * 0.7152 + b * 0.0722) * 100.0
-    let z = (r * 0.0193 + g * 0.1192 + b * 0.9505) * 100.0
+    let (x, y, z, _) = XYZA
     return (x: x, y: y, z: z)
   }
 
+  public var XYZA: (x: CGFloat, y: CGFloat, z: CGFloat, a: CGFloat) {
+    let (r, g, b, a) = sRGBA
+    let (x, y, z) = sRGBToXYZ(r, g, b)
+    return (x: x, y: y, z: z, a: a)
+  }
+
   public var LAB: (l: CGFloat, a: CGFloat, b: CGFloat) {
-    var (x, y, z) = XYZ
-    // The corresponding original XYZ values are such that white is D65 with unit luminance (X,Y,Z = 0.9505, 1.0000, 1.0890).
-    // Calculations are also to assume the 2° standard colorimetric observer.
-    // D65: http://en.wikipedia.org/wiki/CIE_Standard_Illuminant_D65
-    // Standard Colorimetric Observer: http://en.wikipedia.org/wiki/Standard_colorimetric_observer#CIE_standard_observer
-
-    // Since we mutiplied our XYZ values by 100 to produce a percentage we should also multiply our unit luminance values by 100.
-    x /= 95.05; y /= 100.0; z /= 108.9
-
-
-    // Next we need to use the forward transformation function for CIELAB-CIEXYZ conversions
-    // Function: http://upload.wikimedia.org/math/e/5/1/e513d25d50d406bfffb6ed3c854bd8a4.png
-    func XYZtoLAB(inout f: CGFloat) {
-      f = f > pow(6.0 / 29.0, 3.0) ? pow(f, 1.0 / 3.0) : 1.0 / 3.0 * pow(29.0 / 6.0, 2.0) * f + 4.0 / 29.0
-    }
-    XYZtoLAB(&x); XYZtoLAB(&y); XYZtoLAB(&z)
-
-    // Next we get our LAB values using the following equations and the results from the function above
-    // http://upload.wikimedia.org/math/0/0/6/006164b74314e2fdcdc34ac9d0aa6fe4.png
-
-    let l = CGFloat(116.0 * y - 16.0)
-    let a = CGFloat(500.0 * (x - y))
-    let b = CGFloat(200.0 * (y - z))
-
+    let (l, a, b, _) = LABA
     return (l: l, a: a, b: b)
+  }
+
+  public var LABA: (l: CGFloat, a: CGFloat, b: CGFloat, alpha: CGFloat) {
+    let (x, y, z, alpha) = XYZA
+    let (l, a, b) = xyzToLAB(x, y, z)
+    return (l: l, a: a, b: b, alpha)
   }
 
   /**
@@ -187,7 +249,8 @@ extension UIColor {
   More info: http://en.wikipedia.org/wiki/Color_difference
 
   :param: l1 CGFloat
-  :param: l2 CGFloat a1 CGFloat
+  :param: l2 CGFloat
+  :param: a1 CGFloat
   :param: a2 CGFloat
   :param: b1 CGFloat
   :param: b2 CGFloat
@@ -213,45 +276,45 @@ extension UIColor {
 
     //Variables specifically set for CIE:2000
     let deltaPrimeL = CGFloat(l2 - l1)
-    let meanL       = CGFloat(((l1 + l2) / 2.0))
-    let meanC       = CGFloat(((c1 + c2) / 2.0))
-    let a1Prime     = CGFloat(a1 + a1 / 2.0 * CGFloat(1.0 - sqrt(pow(meanC, 7) / (pow(meanC, 7.0) + pow(25.0, 7.0)))))
-    let a2Prime     = CGFloat(a2 + a2 / 2.0 * CGFloat(1.0 - sqrt(pow(meanC, 7) / (pow(meanC, 7.0) + pow(25.0, 7.0)))))
+    let meanL       = CGFloat(((l1 + l2)/2))
+    let meanC       = CGFloat(((c1 + c2)/2))
+    let a1Prime     = CGFloat(a1 + a1/2 * CGFloat(1 - sqrt(pow(meanC, 7) / (pow(meanC, 7) + pow(25, 7)))))
+    let a2Prime     = CGFloat(a2 + a2/2 * CGFloat(1 - sqrt(pow(meanC, 7) / (pow(meanC, 7) + pow(25, 7)))))
     let c1Prime     = sqrt(pow(a1Prime, 2) + pow(b1, 2))
     let c2Prime     = sqrt(pow(a2Prime, 2) + pow(b2, 2))
     let deltaPrimeC = c1Prime - c2Prime
     let deltaC      = c1 - c2
-    let meanCPrime  = CGFloat((c1Prime + c2Prime) / 2.0)
-    let h1Prime     = CGFloat(fmodf(Float(atan2(b1, a1Prime)), Float(360.0) * Float(M_PI) / Float(180.0)))
-    let h2Prime     = CGFloat(fmodf(Float(atan2(b2, a2Prime)), Float(360.0) * Float(M_PI) / Float(180.0)))
+    let meanCPrime  = CGFloat((c1Prime + c2Prime)/2)
+    let h1Prime     = CGFloat(fmodf(Float(atan2(b1, a1Prime)), Float(360) * Float(M_PI) / Float(180)))
+    let h2Prime     = CGFloat(fmodf(Float(atan2(b2, a2Prime)), Float(360) * Float(M_PI) / Float(180)))
 
     //Run everything through our △H' Function
     let hDeltaPrime: CGFloat
-    if fabs(h1Prime - h2Prime) <= CGFloat(180.0 * M_PI/180) { hDeltaPrime = h2Prime - h1Prime }
-    else if h2Prime <= h1Prime                       { hDeltaPrime = (h2Prime - h1Prime) + CGFloat((360.0 * M_PI/180.0)) }
-    else                                             { hDeltaPrime = (h2Prime - h1Prime) - CGFloat((360.0 * M_PI/180.0)) }
+    if fabs(h1Prime - h2Prime) <= CGFloat(180 * M_PI/180) { hDeltaPrime = h2Prime - h1Prime }
+    else if h2Prime <= h1Prime                       { hDeltaPrime = (h2Prime - h1Prime) + CGFloat((360 * M_PI/180)) }
+    else                                             { hDeltaPrime = (h2Prime - h1Prime) - CGFloat((360 * M_PI/180)) }
 
-    let deltaHPrime = CGFloat(2.0 * (sqrt(c1Prime*c2Prime)) * sin(hDeltaPrime/2.0))
+    let deltaHPrime = CGFloat(2 * (sqrt(c1Prime*c2Prime)) * sin(hDeltaPrime/2))
 
     //Get Mean H' Value
     let meanHPrime: CGFloat
-    if fabs(h1Prime-h2Prime) > CGFloat(180.0 * M_PI/180.0) { meanHPrime = (h1Prime + h2Prime + CGFloat(360.0 * M_PI / 180)) / 2.0 }
-    else { meanHPrime = (h1Prime + h2Prime) / 2.0 }
+    if fabs(h1Prime-h2Prime) > CGFloat(180 * M_PI/180) { meanHPrime = (h1Prime + h2Prime + CGFloat(360 * M_PI / 180))/2 }
+    else { meanHPrime = (h1Prime + h2Prime)/2 }
 
     var t = CGFloat(1)
-    t -= CGFloat(0.17 * cos(meanHPrime - CGFloat(30.0 * M_PI / 180.0)))
-    t += CGFloat(0.24 * cos(2.0 * meanHPrime))
-    t += CGFloat(0.32 * cos(3.0 * meanHPrime + CGFloat(6.0 * M_PI / 180.0)))
-    t -= CGFloat(0.20 * cos(4.0 * meanHPrime - CGFloat(63.0 * M_PI / 180.0)))
+    t -= CGFloat(0.17 * cos(meanHPrime - CGFloat(30 * M_PI/180)))
+    t += CGFloat(0.24 * cos(2 * meanHPrime))
+    t += CGFloat(0.32 * cos(3 * meanHPrime + CGFloat(6 * M_PI/180)))
+    t -= CGFloat(0.20 * cos(4 * meanHPrime - CGFloat(63 * M_PI/180)))
 
 
-    let sL = CGFloat(1.0 + (0.015 * pow((meanL - 50.0), 2)) / sqrt(20.0 + pow((meanL - 50.0), 2)))
-    let sC = CGFloat(1.0 + 0.045 * meanCPrime)
-    let sH = CGFloat(1.0 + 0.015 * meanCPrime * t)
+    let sL = CGFloat(1 + (0.015 * pow((meanL - 50), 2))/sqrt(20.0 + pow((meanL - 50.0), 2)))
+    let sC = CGFloat(1 + 0.045 * meanCPrime)
+    let sH = CGFloat(1 + 0.015 * meanCPrime * t)
 
     let rT = CGFloat(
-      CGFloat(-2.0) * CGFloat(sqrt(pow(meanCPrime, 7) / CGFloat(pow(meanCPrime, 7))
-      + pow(CGFloat(25.0), 7))) * sin(CGFloat(60.0 * M_PI/180) * exp(-1 * pow((meanCPrime - CGFloat(275.0 * M_PI / 180)) / CGFloat(25.0 * M_PI / 180), 2)))
+      -2 * CGFloat(sqrt(pow(meanCPrime, 7) / CGFloat(pow(meanCPrime, 7))
+      + pow(25, 7))) * sin(CGFloat(60 * M_PI/180) * exp(-1 * pow((meanCPrime - CGFloat(275 * M_PI/180))/CGFloat(25 * M_PI/180), 2)))
     )
 
 
@@ -266,29 +329,17 @@ extension UIColor {
     return totalDifference
   }
 
+  /** The color's relative luminance */
+  public var luminance: CGFloat {
+    var (red, green, blue, alpha) = rgbColor.RGBA
 
-
-  /**
-  nearestFlatColorForL:A:B:alpha:
-
-  :param: l1 CGFloat
-  :param: a1 CGFloat
-  :param: b1 CGFloat
-  :param: alpha CGFloat
-
-  :returns: UIColor
-  */
-  public static func nearestFlatColorForL(l1: CGFloat, A a1: CGFloat, B b1: CGFloat, alpha: CGFloat) -> UIColor {
-    let flatColors = Chameleon.flatColors
-    let totalDifferences = flatColors.map { color -> CGFloat in
-      let (l2, a2, b2) = color.LAB
-      return UIColor.totalSumOfDifferencesFromL1(l1, L2: l2, A1: a1, A2: a2, B1: b1, B2: b2)
-    }
-    let color = reduce(zip(flatColors, totalDifferences), (UIColor.clearColor(), CGFloat.max), {$0.1 < $1.1 ? $0 : $1}).0
-    return color.colorWithAlphaComponent(alpha)
+    // Relative luminance in colorimetric spaces - http://en.wikipedia.org/wiki/Luminance_(relative)
+    red *= 0.2126; green *= 0.7152; blue *= 0.0722
+    return red + green + blue
   }
 
-  var rgbColor: UIColor {
+  /// The color if it is not a pattern-based color, otherwise a derived rgb color from the pattern-based color
+  public var rgbColor: UIColor {
     if CGColorGetPattern(self.CGColor) == nil { return self }
 
     //Let's find the average color of the image and contrast against that.
@@ -312,16 +363,25 @@ extension UIColor {
     return result
   }
 
-  public var flatColor: UIColor { let (l, a, b) = rgbColor.LAB; return UIColor.nearestFlatColorForL(l, A: a, B: b, alpha: 1.0) }
+  /// The nearest flat color for the color
+  public var flatColor: UIColor {
+    let (l1, a1, b1) = rgbColor.LAB
+    let flatColors = lazy(Chameleon.flatColors)
+    let totalDifferences = flatColors.map { color -> CGFloat in
+      let (l2, a2, b2) = color.LAB
+      return UIColor.totalSumOfDifferencesFromL1(l1, L2: l2, A1: a1, A2: a2, B1: b1, B2: b2)
+    }
+    let color = reduce(zip(flatColors, totalDifferences), (UIColor.clearColor(), CGFloat.max), {$0.1 < $1.1 ? $0 : $1}).0
+    return color
+  }
 
-  public var complementaryFlatColor: UIColor {
+  /// A complementary color object 180 degrees away in the HSB colorspace
+  public var complementaryColor: UIColor {
 
     var (hue, saturation, brightness, alpha) = rgbColor.HSBA
 
     //Multiply our value by their max values to convert
-    hue *= 360
-    saturation *= 100
-    brightness *= 100
+    hue *= 360; saturation *= 100; brightness *= 100
 
     //Select a color with a hue 180 degrees away on the colorwheel (i.e. for 50 it would be 230).
     hue += 180
@@ -333,41 +393,40 @@ extension UIColor {
     brightness = round(brightness)
 
     //Retrieve LAB values from our complimentary nonflat color & return nearest flat color
-    return hsba(Int(hue), Int(saturation), Int(brightness), Int(alpha * 100)).flatColor
+    return hsba(Int(hue), Int(saturation), Int(brightness), Int(alpha * 100))
   }
 
+  /// A complementary flat color object 180 degrees away in the HSB colorspace
+  public var complementaryFlatColor: UIColor { return complementaryColor.flatColor }
+
+  /// White or black based on the color's luminance
   public var contrastingColor: UIColor {
-    var (red, green, blue, alpha) = rgbColor.RGBA
-
-    // Relative luminance in colorimetric spaces - http://en.wikipedia.org/wiki/Luminance_(relative)
-    red *= 0.2126; green *= 0.7152; blue *= 0.0722
-    let luminance = red + green + blue
-
-    return luminance > 0.5 ? rgba(0, 0, 0, Int(alpha * 255)) : rgba(255, 255, 255, Int(alpha * 255))
+    return luminance > 0.5
+             ? UIColor(white: 0, alpha: CGColorGetAlpha(CGColor))
+             : UIColor(white: 1, alpha: CGColorGetAlpha(CGColor))
   }
 
-  public var contrastingFlatColor: UIColor {
-    var (red, green, blue, alpha) = RGBA
-
-    // Relative luminance in colorimetric spaces - http://en.wikipedia.org/wiki/Luminance_(relative)
-    red *= 0.2126; green *= 0.7152; blue *= 0.0722
-    let luminance = red + green + blue
-
-    return luminance > 0.5 ? hsba(0, 0, 15, Int(alpha * 100)) : hsba(192, 2, 95, Int(alpha * 100))
-  }
+  /// White or black flat color based on the color's luminance
+  public var contrastingFlatColor: UIColor { return contrastingColor.flatColor }
 
   // MARK: - Random Color Methods
 
-  public typealias ShadeStyle = Chameleon.ShadeStyle
+  public typealias Shade = Chameleon.FlatColor.Shade
 
-  public static func randomFlatColor(shadeStyle: ShadeStyle = .Any) -> UIColor {
+  /**
+  Returns a randomly generated flat color object with an alpha value of 1.0 in either a light or dark shade.
+
+  :param: shadeStyle Shade = .Any
+
+  :returns: UIColor
+  */
+  public static func randomFlatColor(shadeStyle: Shade = .Any) -> UIColor {
 
     // Get color array based on shade style
-    let colors = shadeStyle.colors
+    let colors = Array(shadeStyle.colors)
 
     // Helper function to generate an appropriate random number
     func randomColorIndex() -> Int { return Int(arc4random_uniform(UInt32(colors.count))) }
-
 
     let defaults = NSUserDefaults.standardUserDefaults()
     let key = "Chameleon.RandomColorIndex"
@@ -381,12 +440,10 @@ extension UIColor {
     //Keep generating a random number until it is different than the one generated last time
     do { index = randomColorIndex() } while previous == index
 
-    //Return a color depending on the specified shade
-    switch shadeStyle {
-      case .Dark:  return Chameleon.darkColors[index]
-      case .Light: return Chameleon.lightColors[index]
-      case .Any:  return Chameleon.flatColors[index]
-    }
+    defaults.setInteger(randomColorIndex(), forKey: key)
+    defaults.synchronize()
+
+    return colors[index]
 
   }
 
