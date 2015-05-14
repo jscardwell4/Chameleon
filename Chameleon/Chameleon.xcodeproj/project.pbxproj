@@ -16,6 +16,8 @@
 		C29649DB1B01111E000C2D4A /* Chameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649DA1B01111E000C2D4A /* Chameleon.swift */; };
 		C29649DD1B018A53000C2D4A /* UIViewController+Chameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649DC1B018A53000C2D4A /* UIViewController+Chameleon.swift */; };
 		C29649DF1B018A8F000C2D4A /* UIColor+Chameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649DE1B018A8F000C2D4A /* UIColor+Chameleon.swift */; };
+		C297BA421B0534E10087E8BD /* Chameleon.DarculaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BA401B0534E10087E8BD /* Chameleon.DarculaColor.swift */; };
+		C297BA431B0534E10087E8BD /* Chameleon.QuietLightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BA411B0534E10087E8BD /* Chameleon.QuietLightColor.swift */; };
 		C2D9942A1B01A72D00745137 /* ChameleonAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */; };
 		C2D9942F1B01A72D00745137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D9942D1B01A72D00745137 /* Main.storyboard */; };
 		C2D994341B01A72D00745137 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D994321B01A72D00745137 /* LaunchScreen.xib */; };
@@ -76,6 +78,8 @@
 		C29649DC1B018A53000C2D4A /* UIViewController+Chameleon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Chameleon.swift"; sourceTree = "<group>"; };
 		C29649DE1B018A8F000C2D4A /* UIColor+Chameleon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Chameleon.swift"; sourceTree = "<group>"; };
 		C29649E01B019728000C2D4A /* FlatColors.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FlatColors.playground; sourceTree = "<group>"; };
+		C297BA401B0534E10087E8BD /* Chameleon.DarculaColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.DarculaColor.swift; sourceTree = "<group>"; };
+		C297BA411B0534E10087E8BD /* Chameleon.QuietLightColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.QuietLightColor.swift; sourceTree = "<group>"; };
 		C2BCE5811B03AC4400DDD41E /* CSSColors.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CSSColors.playground; sourceTree = "<group>"; };
 		C2D994251B01A72D00745137 /* ChameleonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChameleonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D994281B01A72D00745137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		C296499D1B010E39000C2D4A /* Chameleon */ = {
 			isa = PBXGroup;
 			children = (
+				C297BA401B0534E10087E8BD /* Chameleon.DarculaColor.swift */,
+				C297BA411B0534E10087E8BD /* Chameleon.QuietLightColor.swift */,
 				C2878DF71B02E834004ECFF2 /* ColorSchemeTests.playground */,
 				C2D994301B01A72D00745137 /* Images.xcassets */,
 				C29649DC1B018A53000C2D4A /* UIViewController+Chameleon.swift */,
@@ -319,8 +325,10 @@
 				C202DA171B03919C007ADD80 /* Chameleon.FlatColor.swift in Sources */,
 				C202DA1B1B03922E007ADD80 /* Chameleon.CSSColor.swift in Sources */,
 				C29649DD1B018A53000C2D4A /* UIViewController+Chameleon.swift in Sources */,
+				C297BA431B0534E10087E8BD /* Chameleon.QuietLightColor.swift in Sources */,
 				C2878DF11B02533A004ECFF2 /* SchemeEditor.swift in Sources */,
 				C29649DF1B018A8F000C2D4A /* UIColor+Chameleon.swift in Sources */,
+				C297BA421B0534E10087E8BD /* Chameleon.DarculaColor.swift in Sources */,
 				C29649DB1B01111E000C2D4A /* Chameleon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

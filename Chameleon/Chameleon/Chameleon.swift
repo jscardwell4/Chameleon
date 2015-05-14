@@ -74,6 +74,24 @@ public final class Chameleon {
     public static var all: [ColorScheme] { return [.Analogous, .Triadic, .Complementary] }
   }
 
+  // MARK: - Shade type
+
+  /** Defines the shade of a any flat color. */
+  public enum Shade: Int {
+    case Light /** Returns the light shade version of a flat color. */
+    case Dark  /** Returns the dark shade version of a flat color. */
+    case Any  /** Returns either a light or dark version of a flat color */
+
+    public var colors: SequenceOf<UIColor> {
+      switch self {
+        case .Light: return SequenceOf(Chameleon.lightColors)
+        case .Dark:  return SequenceOf(Chameleon.darkColors)
+        case .Any:   return Chameleon.flatColors
+      }
+    }
+  }
+
+
   // MARK: - GradientStyle type
 
   /** Defines the gradient style and direction of the gradient color. */
@@ -111,9 +129,16 @@ public final class Chameleon {
 
   /** Represents the collection of colors to use when inputting colors */
   public enum ColorPalette: Int, Printable {
-    case Flat, CSS
-    public var description: String { switch self { case .Flat: return "Flat"; case .CSS: return  "CSS" } }
-    public static var all: [ColorPalette] { return [.Flat, .CSS] }
+    case Flat, CSS, Darcula, QuietLight
+    public var description: String {
+      switch self {
+        case .Flat: return "Flat"
+        case .CSS: return  "CSS"
+        case .Darcula: return "Darcula"
+        case .QuietLight: return "QuietLight"
+      }
+    }
+    public static var all: [ColorPalette] { return [.Flat, .CSS, .Darcula, .QuietLight] }
   }
 
   // MARK: - UIStatusBar Methods

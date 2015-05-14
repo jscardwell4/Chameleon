@@ -147,7 +147,7 @@ extension Chameleon {
 
     public var name: String { switch self { case .Light(let b): return b.name; case .Dark(let b):  return b.name + "Dark"} }
     public var base: Base { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
-    public var shade: Shade { switch self { case .Light: return .Light; case .Dark:  return .Dark } }
+    public var shade: Chameleon.Shade { switch self { case .Light: return .Light; case .Dark:  return .Dark } }
 
     // MARK: - Light Shades
     public static let lightColors = [
@@ -212,14 +212,14 @@ extension Chameleon {
       }
     }
 
-    public init(base: Base, shade: Shade = .Light) {
+    public init(base: Base, shade: Chameleon.Shade = .Light) {
       switch shade {
         case .Dark: self = .Dark(base)
         default: self = .Light(base)
       }
     }
 
-    public init?(name: String, shade: Shade = .Light) {
+    public init?(name: String, shade: Chameleon.Shade = .Light) {
       switch name.lowercaseString {
         case Base.Black.name.lowercaseString:       self = shade == .Dark ? .Dark(.Black)       : .Light(.Black)
         case Base.Blue.name.lowercaseString:        self = shade == .Dark ? .Dark(.Blue)        : .Light(.Blue)
