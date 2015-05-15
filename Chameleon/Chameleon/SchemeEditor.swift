@@ -11,6 +11,8 @@ import UIKit
 
 public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+  override public func prefersStatusBarHidden() -> Bool { return true }
+
   // Some typealiases of convenience
   typealias ColorScheme     = Chameleon.ColorScheme
   typealias GradientStyle   = Chameleon.GradientStyle

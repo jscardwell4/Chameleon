@@ -18,9 +18,8 @@
 		C29649DF1B018A8F000C2D4A /* UIColor+Chameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649DE1B018A8F000C2D4A /* UIColor+Chameleon.swift */; };
 		C297BA421B0534E10087E8BD /* Chameleon.DarculaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BA401B0534E10087E8BD /* Chameleon.DarculaColor.swift */; };
 		C297BA431B0534E10087E8BD /* Chameleon.QuietLightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BA411B0534E10087E8BD /* Chameleon.QuietLightColor.swift */; };
+		C297BA4E1B055FE50087E8BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D994301B01A72D00745137 /* Images.xcassets */; };
 		C2D9942A1B01A72D00745137 /* ChameleonAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */; };
-		C2D9942F1B01A72D00745137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D9942D1B01A72D00745137 /* Main.storyboard */; };
-		C2D994341B01A72D00745137 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D994321B01A72D00745137 /* LaunchScreen.xib */; };
 		C2D994471B01A76100745137 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C296499B1B010E39000C2D4A /* Chameleon.framework */; };
 		C2D994481B01A76100745137 /* Chameleon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C296499B1B010E39000C2D4A /* Chameleon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -84,9 +83,7 @@
 		C2D994251B01A72D00745137 /* ChameleonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChameleonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D994281B01A72D00745137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonAppDelegate.swift; sourceTree = "<group>"; };
-		C2D9942E1B01A72D00745137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2D994301B01A72D00745137 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Chameleon/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		C2D994331B01A72D00745137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,8 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				C2D994291B01A72D00745137 /* ChameleonAppDelegate.swift */,
-				C2D9942D1B01A72D00745137 /* Main.storyboard */,
-				C2D994321B01A72D00745137 /* LaunchScreen.xib */,
 				C2D994271B01A72D00745137 /* Supporting Files */,
 			);
 			path = ChameleonApp;
@@ -251,6 +246,7 @@
 					};
 					C2D994241B01A72D00745137 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = JT6STF4SHA;
 					};
 				};
 			};
@@ -310,8 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D9942F1B01A72D00745137 /* Main.storyboard in Resources */,
-				C2D994341B01A72D00745137 /* LaunchScreen.xib in Resources */,
+				C297BA4E1B055FE50087E8BD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,25 +345,6 @@
 			targetProxy = C2D994491B01A76100745137 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C2D9942D1B01A72D00745137 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C2D9942E1B01A72D00745137 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C2D994321B01A72D00745137 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C2D994331B01A72D00745137 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C29649AF1B010E39000C2D4A /* Debug */ = {
@@ -469,6 +445,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Chameleon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -484,6 +461,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Chameleon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -494,14 +472,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ChameleonApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = $TARGET_NAME;
+				SDKROOT = iphoneos8.4;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -509,10 +492,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ChameleonApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = $TARGET_NAME;
+				SDKROOT = iphoneos8.4;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
