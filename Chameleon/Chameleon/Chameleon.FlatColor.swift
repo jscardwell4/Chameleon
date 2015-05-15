@@ -80,10 +80,10 @@ extension Chameleon {
     })
   }
 
-  public enum FlatColor {
+  public enum FlatColor: ColorType {
 
-    case Light (Base)
-    case Dark (Base)
+    case Light (FlatColorBase)
+    case Dark (FlatColorBase)
 
     /** Defines the shade of a any flat color. */
     public enum Shade: Int {
@@ -101,11 +101,11 @@ extension Chameleon {
     }
 
     /** Defines the base of any flat color */
-    public enum Base {
+    public enum FlatColorBase: ColorBaseType {
       case Black, Blue, Brown, Coffee, ForestGreen, Gray, Green, Lime, Magenta, Maroon, Mint, NavyBlue, Orange,
          Pink, Plum, PowderBlue, Purple, Red, Sand, SkyBlue, Teal, Watermelon, White, Yellow
 
-      public static var all: [Base] {
+      public static var all: [FlatColorBase] {
         return [.Black, .Blue, .Brown, .Coffee, .ForestGreen, .Gray, .Green, .Lime, .Magenta, .Maroon, .Mint,
                 .NavyBlue, .Orange, .Pink, .Plum, .PowderBlue, .Purple, .Red, .Sand, .SkyBlue, .Teal,
                 .Watermelon, .White, .Yellow]
@@ -142,67 +142,67 @@ extension Chameleon {
     }
 
     static var all:      [FlatColor] { return allLight + allDark                 }
-    static var allLight: [FlatColor] { return Base.all.map {FlatColor.Light($0)} }
-    static var allDark:  [FlatColor] { return Base.all.map {FlatColor.Dark($0)}  }
+    static var allLight: [FlatColor] { return FlatColorBase.all.map {FlatColor.Light($0)} }
+    static var allDark:  [FlatColor] { return FlatColorBase.all.map {FlatColor.Dark($0)}  }
 
     public var name: String { switch self { case .Light(let b): return b.name; case .Dark(let b):  return b.name + "Dark"} }
-    public var base: Base { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
+    public var base: FlatColorBase { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
     public var shade: Chameleon.Shade { switch self { case .Light: return .Light; case .Dark:  return .Dark } }
 
     // MARK: - Light Shades
     public static let lightColors = [
-      Base.Black.name:       hsb(  0,  0,  17),
-      Base.Blue.name:        hsb(224, 50,  63),
-      Base.Brown.name:       hsb( 24, 45,  37),
-      Base.Coffee.name:      hsb( 25, 31,  64),
-      Base.ForestGreen.name: hsb(138, 45,  37),
-      Base.Gray.name:        hsb(184, 10,  65),
-      Base.Green.name:       hsb(145, 77,  80),
-      Base.Lime.name:        hsb( 74, 70,  78),
-      Base.Magenta.name:     hsb(283, 51,  71),
-      Base.Maroon.name:      hsb(  5, 65,  47),
-      Base.Mint.name:        hsb(168, 86,  74),
-      Base.NavyBlue.name:    hsb(210, 45,  37),
-      Base.Orange.name:      hsb( 28, 85,  90),
-      Base.Pink.name:        hsb(324, 49,  96),
-      Base.Plum.name:        hsb(300, 45,  37),
-      Base.PowderBlue.name:  hsb(222, 24,  95),
-      Base.Purple.name:      hsb(253, 52,  77),
-      Base.Red.name:         hsb(  6, 74,  91),
-      Base.Sand.name:        hsb( 42, 25,  94),
-      Base.SkyBlue.name:     hsb(204, 76,  86),
-      Base.Teal.name:        hsb(195, 55,  51),
-      Base.Watermelon.name:  hsb(356, 53,  94),
-      Base.White.name:       hsb(192,  2,  95),
-      Base.Yellow.name:      hsb( 48, 99, 100)
+      FlatColorBase.Black.name:       hsb(  0,  0,  17),
+      FlatColorBase.Blue.name:        hsb(224, 50,  63),
+      FlatColorBase.Brown.name:       hsb( 24, 45,  37),
+      FlatColorBase.Coffee.name:      hsb( 25, 31,  64),
+      FlatColorBase.ForestGreen.name: hsb(138, 45,  37),
+      FlatColorBase.Gray.name:        hsb(184, 10,  65),
+      FlatColorBase.Green.name:       hsb(145, 77,  80),
+      FlatColorBase.Lime.name:        hsb( 74, 70,  78),
+      FlatColorBase.Magenta.name:     hsb(283, 51,  71),
+      FlatColorBase.Maroon.name:      hsb(  5, 65,  47),
+      FlatColorBase.Mint.name:        hsb(168, 86,  74),
+      FlatColorBase.NavyBlue.name:    hsb(210, 45,  37),
+      FlatColorBase.Orange.name:      hsb( 28, 85,  90),
+      FlatColorBase.Pink.name:        hsb(324, 49,  96),
+      FlatColorBase.Plum.name:        hsb(300, 45,  37),
+      FlatColorBase.PowderBlue.name:  hsb(222, 24,  95),
+      FlatColorBase.Purple.name:      hsb(253, 52,  77),
+      FlatColorBase.Red.name:         hsb(  6, 74,  91),
+      FlatColorBase.Sand.name:        hsb( 42, 25,  94),
+      FlatColorBase.SkyBlue.name:     hsb(204, 76,  86),
+      FlatColorBase.Teal.name:        hsb(195, 55,  51),
+      FlatColorBase.Watermelon.name:  hsb(356, 53,  94),
+      FlatColorBase.White.name:       hsb(192,  2,  95),
+      FlatColorBase.Yellow.name:      hsb( 48, 99, 100)
     ]
 
     // MARK: - Dark Shades
     public static let darkColors = [
-      Base.Black.name:       hsb(  0,   0,  15),
-      Base.Blue.name:        hsb(224,  56,  51),
-      Base.Brown.name:       hsb( 25,  45,  31),
-      Base.Coffee.name:      hsb( 25,  34,  56),
-      Base.ForestGreen.name: hsb(135,  44,  31),
-      Base.Gray.name:        hsb(184,  10,  55),
-      Base.Green.name:       hsb(145,  78,  68),
-      Base.Lime.name:        hsb( 74,  81,  69),
-      Base.Magenta.name:     hsb(282,  61,  68),
-      Base.Maroon.name:      hsb(  4,  68,  40),
-      Base.Mint.name:        hsb(168,  86,  63),
-      Base.NavyBlue.name:    hsb(210,  45,  31),
-      Base.Orange.name:      hsb( 24, 100,  83),
-      Base.Pink.name:        hsb(327,  57,  83),
-      Base.Plum.name:        hsb(300,  46,  31),
-      Base.PowderBlue.name:  hsb(222,  28,  84),
-      Base.Purple.name:      hsb(253,  56,  64),
-      Base.Red.name:         hsb(  6,  78,  75),
-      Base.Sand.name:        hsb( 42,  30,  84),
-      Base.SkyBlue.name:     hsb(204,  78,  73),
-      Base.Teal.name:        hsb(196,  54,  45),
-      Base.Watermelon.name:  hsb(358,  61,  85),
-      Base.White.name:       hsb(204,   5,  78),
-      Base.Yellow.name:      hsb( 40, 100, 100)
+      FlatColorBase.Black.name:       hsb(  0,   0,  15),
+      FlatColorBase.Blue.name:        hsb(224,  56,  51),
+      FlatColorBase.Brown.name:       hsb( 25,  45,  31),
+      FlatColorBase.Coffee.name:      hsb( 25,  34,  56),
+      FlatColorBase.ForestGreen.name: hsb(135,  44,  31),
+      FlatColorBase.Gray.name:        hsb(184,  10,  55),
+      FlatColorBase.Green.name:       hsb(145,  78,  68),
+      FlatColorBase.Lime.name:        hsb( 74,  81,  69),
+      FlatColorBase.Magenta.name:     hsb(282,  61,  68),
+      FlatColorBase.Maroon.name:      hsb(  4,  68,  40),
+      FlatColorBase.Mint.name:        hsb(168,  86,  63),
+      FlatColorBase.NavyBlue.name:    hsb(210,  45,  31),
+      FlatColorBase.Orange.name:      hsb( 24, 100,  83),
+      FlatColorBase.Pink.name:        hsb(327,  57,  83),
+      FlatColorBase.Plum.name:        hsb(300,  46,  31),
+      FlatColorBase.PowderBlue.name:  hsb(222,  28,  84),
+      FlatColorBase.Purple.name:      hsb(253,  56,  64),
+      FlatColorBase.Red.name:         hsb(  6,  78,  75),
+      FlatColorBase.Sand.name:        hsb( 42,  30,  84),
+      FlatColorBase.SkyBlue.name:     hsb(204,  78,  73),
+      FlatColorBase.Teal.name:        hsb(196,  54,  45),
+      FlatColorBase.Watermelon.name:  hsb(358,  61,  85),
+      FlatColorBase.White.name:       hsb(204,   5,  78),
+      FlatColorBase.Yellow.name:      hsb( 40, 100, 100)
     ]
 
     public var color: UIColor {
@@ -212,7 +212,7 @@ extension Chameleon {
       }
     }
 
-    public init(base: Base, shade: Chameleon.Shade = .Light) {
+    public init(base: FlatColorBase, shade: Chameleon.Shade = .Light) {
       switch shade {
         case .Dark: self = .Dark(base)
         default: self = .Light(base)
@@ -221,30 +221,30 @@ extension Chameleon {
 
     public init?(name: String, shade: Chameleon.Shade = .Light) {
       switch name.lowercaseString {
-        case Base.Black.name.lowercaseString:       self = shade == .Dark ? .Dark(.Black)       : .Light(.Black)
-        case Base.Blue.name.lowercaseString:        self = shade == .Dark ? .Dark(.Blue)        : .Light(.Blue)
-        case Base.Brown.name.lowercaseString:       self = shade == .Dark ? .Dark(.Brown)       : .Light(.Brown)
-        case Base.Coffee.name.lowercaseString:      self = shade == .Dark ? .Dark(.Coffee)      : .Light(.Coffee)
-        case Base.ForestGreen.name.lowercaseString: self = shade == .Dark ? .Dark(.ForestGreen) : .Light(.ForestGreen)
-        case Base.Gray.name.lowercaseString:        self = shade == .Dark ? .Dark(.Gray)        : .Light(.Gray)
-        case Base.Green.name.lowercaseString:       self = shade == .Dark ? .Dark(.Green)       : .Light(.Green)
-        case Base.Lime.name.lowercaseString:        self = shade == .Dark ? .Dark(.Lime)        : .Light(.Lime)
-        case Base.Magenta.name.lowercaseString:     self = shade == .Dark ? .Dark(.Magenta)     : .Light(.Magenta)
-        case Base.Maroon.name.lowercaseString:      self = shade == .Dark ? .Dark(.Maroon)      : .Light(.Maroon)
-        case Base.Mint.name.lowercaseString:        self = shade == .Dark ? .Dark(.Mint)        : .Light(.Mint)
-        case Base.NavyBlue.name.lowercaseString:    self = shade == .Dark ? .Dark(.NavyBlue)    : .Light(.NavyBlue)
-        case Base.Orange.name.lowercaseString:      self = shade == .Dark ? .Dark(.Orange)      : .Light(.Orange)
-        case Base.Pink.name.lowercaseString:        self = shade == .Dark ? .Dark(.Pink)        : .Light(.Pink)
-        case Base.Plum.name.lowercaseString:        self = shade == .Dark ? .Dark(.Plum)        : .Light(.Plum)
-        case Base.PowderBlue.name.lowercaseString:  self = shade == .Dark ? .Dark(.PowderBlue)  : .Light(.PowderBlue)
-        case Base.Purple.name.lowercaseString:      self = shade == .Dark ? .Dark(.Purple)      : .Light(.Purple)
-        case Base.Red.name.lowercaseString:         self = shade == .Dark ? .Dark(.Red)         : .Light(.Red)
-        case Base.Sand.name.lowercaseString:        self = shade == .Dark ? .Dark(.Sand)        : .Light(.Sand)
-        case Base.SkyBlue.name.lowercaseString:     self = shade == .Dark ? .Dark(.SkyBlue)     : .Light(.SkyBlue)
-        case Base.Teal.name.lowercaseString:        self = shade == .Dark ? .Dark(.Teal)        : .Light(.Teal)
-        case Base.Watermelon.name.lowercaseString:  self = shade == .Dark ? .Dark(.Watermelon)  : .Light(.Watermelon)
-        case Base.White.name.lowercaseString:       self = shade == .Dark ? .Dark(.White)       : .Light(.White)
-        case Base.Yellow.name.lowercaseString:      self = shade == .Dark ? .Dark(.Yellow)      : .Light(.Yellow)
+        case FlatColorBase.Black.name.lowercaseString:       self = shade == .Dark ? .Dark(.Black)       : .Light(.Black)
+        case FlatColorBase.Blue.name.lowercaseString:        self = shade == .Dark ? .Dark(.Blue)        : .Light(.Blue)
+        case FlatColorBase.Brown.name.lowercaseString:       self = shade == .Dark ? .Dark(.Brown)       : .Light(.Brown)
+        case FlatColorBase.Coffee.name.lowercaseString:      self = shade == .Dark ? .Dark(.Coffee)      : .Light(.Coffee)
+        case FlatColorBase.ForestGreen.name.lowercaseString: self = shade == .Dark ? .Dark(.ForestGreen) : .Light(.ForestGreen)
+        case FlatColorBase.Gray.name.lowercaseString:        self = shade == .Dark ? .Dark(.Gray)        : .Light(.Gray)
+        case FlatColorBase.Green.name.lowercaseString:       self = shade == .Dark ? .Dark(.Green)       : .Light(.Green)
+        case FlatColorBase.Lime.name.lowercaseString:        self = shade == .Dark ? .Dark(.Lime)        : .Light(.Lime)
+        case FlatColorBase.Magenta.name.lowercaseString:     self = shade == .Dark ? .Dark(.Magenta)     : .Light(.Magenta)
+        case FlatColorBase.Maroon.name.lowercaseString:      self = shade == .Dark ? .Dark(.Maroon)      : .Light(.Maroon)
+        case FlatColorBase.Mint.name.lowercaseString:        self = shade == .Dark ? .Dark(.Mint)        : .Light(.Mint)
+        case FlatColorBase.NavyBlue.name.lowercaseString:    self = shade == .Dark ? .Dark(.NavyBlue)    : .Light(.NavyBlue)
+        case FlatColorBase.Orange.name.lowercaseString:      self = shade == .Dark ? .Dark(.Orange)      : .Light(.Orange)
+        case FlatColorBase.Pink.name.lowercaseString:        self = shade == .Dark ? .Dark(.Pink)        : .Light(.Pink)
+        case FlatColorBase.Plum.name.lowercaseString:        self = shade == .Dark ? .Dark(.Plum)        : .Light(.Plum)
+        case FlatColorBase.PowderBlue.name.lowercaseString:  self = shade == .Dark ? .Dark(.PowderBlue)  : .Light(.PowderBlue)
+        case FlatColorBase.Purple.name.lowercaseString:      self = shade == .Dark ? .Dark(.Purple)      : .Light(.Purple)
+        case FlatColorBase.Red.name.lowercaseString:         self = shade == .Dark ? .Dark(.Red)         : .Light(.Red)
+        case FlatColorBase.Sand.name.lowercaseString:        self = shade == .Dark ? .Dark(.Sand)        : .Light(.Sand)
+        case FlatColorBase.SkyBlue.name.lowercaseString:     self = shade == .Dark ? .Dark(.SkyBlue)     : .Light(.SkyBlue)
+        case FlatColorBase.Teal.name.lowercaseString:        self = shade == .Dark ? .Dark(.Teal)        : .Light(.Teal)
+        case FlatColorBase.Watermelon.name.lowercaseString:  self = shade == .Dark ? .Dark(.Watermelon)  : .Light(.Watermelon)
+        case FlatColorBase.White.name.lowercaseString:       self = shade == .Dark ? .Dark(.White)       : .Light(.White)
+        case FlatColorBase.Yellow.name.lowercaseString:      self = shade == .Dark ? .Dark(.Yellow)      : .Light(.Yellow)
         default: return nil
       }
     }

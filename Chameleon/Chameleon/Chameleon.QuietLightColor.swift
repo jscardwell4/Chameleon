@@ -35,14 +35,14 @@ extension Chameleon {
   public static var quietLightDeepChestnutDark: UIColor { return QuietLightColor.Dark(.DeepChestnut).color }
 
 
-  public enum QuietLightColor {
-    case Light (Base)
-    case Dark (Base)
+  public enum QuietLightColor: ColorType {
+    case Light (QuietLighBase)
+    case Dark (QuietLighBase)
 
-    public enum Base {
+    public enum QuietLighBase: ColorBaseType {
       case LilyWhite, Charcoal, Gray, LobLolly, Apple, Copper, Danube, PaleCerulean, CrayonPurple, DeepChestnut
 
-      public static var all: [Base] {
+      public static var all: [QuietLighBase] {
         return [.LilyWhite, .Charcoal, .Gray, .LobLolly, .Apple, .Copper, .Danube, .PaleCerulean, .CrayonPurple,
                 .DeepChestnut]
       }
@@ -64,24 +64,24 @@ extension Chameleon {
     }
 
     static var all:      [QuietLightColor] { return allLight + allDark                 }
-    static var allLight: [QuietLightColor] { return Base.all.map {QuietLightColor.Light($0)} }
-    static var allDark:  [QuietLightColor] { return Base.all.map {QuietLightColor.Dark($0)}  }
+    static var allLight: [QuietLightColor] { return QuietLighBase.all.map {QuietLightColor.Light($0)} }
+    static var allDark:  [QuietLightColor] { return QuietLighBase.all.map {QuietLightColor.Dark($0)}  }
 
     public var name: String { switch self { case .Light(let b): return b.name; case .Dark(let b):  return b.name + "Dark"} }
-    public var base: Base { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
+    public var base: QuietLighBase { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
     public var shade: Chameleon.Shade { switch self { case .Light: return .Light; case .Dark:  return .Dark } }
 
     public static let lightColors = [
-      Base.LilyWhite.name:    UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1),
-      Base.Charcoal.name:     UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1),
-      Base.Gray.name:         UIColor(red: 0.56, green: 0.56, blue: 0.56, alpha: 1),
-      Base.LobLolly.name:     UIColor(red: 0.73, green: 0.73, blue: 0.73, alpha: 1),
-      Base.Apple.name:        UIColor(red: 0.33, green: 0.6, blue: 0.23, alpha: 1),
-      Base.Copper.name:       UIColor(red: 0.73, green: 0.47, blue: 0.22, alpha: 1),
-      Base.Danube.name:       UIColor(red: 0.37, green: 0.6, blue: 0.83, alpha: 1),
-      Base.PaleCerulean.name: UIColor(red: 0.64, green: 0.76, blue: 0.9, alpha: 1),
-      Base.CrayonPurple.name: UIColor(red: 0.55, green: 0.35, blue: 0.67, alpha: 1),
-      Base.DeepChestnut.name: UIColor(red: 0.72, green: 0.3, blue: 0.26, alpha: 1),
+      QuietLighBase.LilyWhite.name:    UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1),
+      QuietLighBase.Charcoal.name:     UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1),
+      QuietLighBase.Gray.name:         UIColor(red: 0.56, green: 0.56, blue: 0.56, alpha: 1),
+      QuietLighBase.LobLolly.name:     UIColor(red: 0.73, green: 0.73, blue: 0.73, alpha: 1),
+      QuietLighBase.Apple.name:        UIColor(red: 0.33, green: 0.6, blue: 0.23, alpha: 1),
+      QuietLighBase.Copper.name:       UIColor(red: 0.73, green: 0.47, blue: 0.22, alpha: 1),
+      QuietLighBase.Danube.name:       UIColor(red: 0.37, green: 0.6, blue: 0.83, alpha: 1),
+      QuietLighBase.PaleCerulean.name: UIColor(red: 0.64, green: 0.76, blue: 0.9, alpha: 1),
+      QuietLighBase.CrayonPurple.name: UIColor(red: 0.55, green: 0.35, blue: 0.67, alpha: 1),
+      QuietLighBase.DeepChestnut.name: UIColor(red: 0.72, green: 0.3, blue: 0.26, alpha: 1),
     ]
 
     public static let darkColors: [String:UIColor] = {
@@ -90,7 +90,7 @@ extension Chameleon {
         var (l, a, b) = color.LAB
         l -= 10
         let (red, green, blue) = labToRGB(l, a, b)
-        darkColors["\(name)Dark"] = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        darkColors[name] = UIColor(red: red, green: green, blue: blue, alpha: 1)
       }
       return darkColors
     } ()
@@ -102,7 +102,7 @@ extension Chameleon {
       }
     }
 
-    public init(base: Base, shade: Chameleon.Shade = .Light) {
+    public init(base: QuietLighBase, shade: Chameleon.Shade = .Light) {
       switch shade {
         case .Dark: self = .Dark(base)
         default: self = .Light(base)
@@ -111,16 +111,16 @@ extension Chameleon {
 
     public init?(name: String, shade: Chameleon.Shade = .Light) {
       switch name.lowercaseString {
-        case Base.LilyWhite.name.lowercaseString:    self = QuietLightColor(base: .LilyWhite,    shade: shade)
-        case Base.Charcoal.name.lowercaseString:     self = QuietLightColor(base: .Charcoal,     shade: shade)
-        case Base.Gray.name.lowercaseString:         self = QuietLightColor(base: .Gray,         shade: shade)
-        case Base.LobLolly.name.lowercaseString:     self = QuietLightColor(base: .LobLolly,     shade: shade)
-        case Base.Apple.name.lowercaseString:        self = QuietLightColor(base: .Apple,        shade: shade)
-        case Base.Copper.name.lowercaseString:       self = QuietLightColor(base: .Copper,       shade: shade)
-        case Base.Danube.name.lowercaseString:       self = QuietLightColor(base: .Danube,       shade: shade)
-        case Base.PaleCerulean.name.lowercaseString: self = QuietLightColor(base: .PaleCerulean, shade: shade)
-        case Base.CrayonPurple.name.lowercaseString: self = QuietLightColor(base: .CrayonPurple, shade: shade)
-        case Base.DeepChestnut.name.lowercaseString: self = QuietLightColor(base: .DeepChestnut, shade: shade)
+        case QuietLighBase.LilyWhite.name.lowercaseString:    self = QuietLightColor(base: .LilyWhite,    shade: shade)
+        case QuietLighBase.Charcoal.name.lowercaseString:     self = QuietLightColor(base: .Charcoal,     shade: shade)
+        case QuietLighBase.Gray.name.lowercaseString:         self = QuietLightColor(base: .Gray,         shade: shade)
+        case QuietLighBase.LobLolly.name.lowercaseString:     self = QuietLightColor(base: .LobLolly,     shade: shade)
+        case QuietLighBase.Apple.name.lowercaseString:        self = QuietLightColor(base: .Apple,        shade: shade)
+        case QuietLighBase.Copper.name.lowercaseString:       self = QuietLightColor(base: .Copper,       shade: shade)
+        case QuietLighBase.Danube.name.lowercaseString:       self = QuietLightColor(base: .Danube,       shade: shade)
+        case QuietLighBase.PaleCerulean.name.lowercaseString: self = QuietLightColor(base: .PaleCerulean, shade: shade)
+        case QuietLighBase.CrayonPurple.name.lowercaseString: self = QuietLightColor(base: .CrayonPurple, shade: shade)
+        case QuietLighBase.DeepChestnut.name.lowercaseString: self = QuietLightColor(base: .DeepChestnut, shade: shade)
         default: return nil
       }
     }

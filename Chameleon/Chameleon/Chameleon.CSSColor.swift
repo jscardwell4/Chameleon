@@ -296,10 +296,10 @@ extension Chameleon {
   public static var cssSeaGreenDark:             UIColor { return CSSColor.Dark(.SeaGreen).color             }
   public static var cssCornflowerBlueDark:       UIColor { return CSSColor.Dark(.CornflowerBlue).color       }
 
-  public enum CSSColor {
-    case Light (Base)
-    case Dark (Base)
-    public enum Base {
+  public enum CSSColor: ColorType {
+    case Light (CSSColorBase)
+    case Dark (CSSColorBase)
+    public enum CSSColorBase: ColorBaseType {
       case ForestGreen, SkyBlue, Sienna, DarkSlateBlue, Wheat, Beige, CadetBlue, LightPink, SeaShell, FireBrick,
            LightGreen, DarkMagenta, Salmon, Snow, Violet, White, BlanchedAlmond, LightGray, SteelBlue, Azure,
            Chocolate, Cornsilk, DarkOrange, Gray, Gold, DarkTurquoise, LightSkyBlue, PaleGreen, LavenderBlush,
@@ -317,7 +317,7 @@ extension Chameleon {
            Olive, Plum, LightSteelBlue, Orchid, Bisque, MediumTurquoise, Peru, Turquoise, AliceBlue, Yellow,
            DarkGreen, DeepPink, GreenYellow, SeaGreen, CornflowerBlue
 
-       public static var all: [Base] {
+       public static var all: [CSSColorBase] {
          return [.ForestGreen, .SkyBlue, .Sienna, .DarkSlateBlue, .Wheat, .Beige, .CadetBlue, .LightPink,
                  .SeaShell, .FireBrick, .LightGreen, .DarkMagenta, .Salmon, .Snow, .Violet, .White,
                  .BlanchedAlmond, .LightGray, .SteelBlue, .Azure, .Chocolate, .Cornsilk, .DarkOrange, .Gray,
@@ -488,156 +488,156 @@ extension Chameleon {
      }
 
      static var all:      [CSSColor] { return allLight + allDark                }
-     static var allLight: [CSSColor] { return Base.all.map {CSSColor.Light($0)} }
-     static var allDark:  [CSSColor] { return Base.all.map {CSSColor.Dark($0)}  }
+     static var allLight: [CSSColor] { return CSSColorBase.all.map {CSSColor.Light($0)} }
+     static var allDark:  [CSSColor] { return CSSColorBase.all.map {CSSColor.Dark($0)}  }
 
      public var name: String { switch self { case .Light(let b): return b.name; case .Dark(let b):  return b.name + "Dark"} }
-     public var base: Base { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
+     public var base: CSSColorBase { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
      public var shade: Chameleon.Shade { switch self { case .Light: return .Light; case .Dark:  return .Dark } }
 
      // MARK: CSS named colors
      public static let lightColors = [
-       Base.ForestGreen.name:          rgb( 34, 139,  34),
-       Base.SkyBlue.name:              rgb(135, 206, 235),
-       Base.Sienna.name:               rgb(160,  82,  45),
-       Base.DarkSlateBlue.name:        rgb(72,   61, 139),
-       Base.Wheat.name:                rgb(245, 222, 179),
-       Base.Beige.name:                rgb(245, 245, 220),
-       Base.CadetBlue.name:            rgb( 95, 158, 160),
-       Base.LightPink.name:            rgb(255, 182, 193),
-       Base.SeaShell.name:             rgb(255, 245, 238),
-       Base.FireBrick.name:            rgb(178,  34,  34),
-       Base.LightGreen.name:           rgb(144, 238, 144),
-       Base.DarkMagenta.name:          rgb(139,   0, 139),
-       Base.Salmon.name:               rgb(250, 128, 114),
-       Base.Snow.name:                 rgb(255, 250, 250),
-       Base.Violet.name:               rgb(238, 130, 238),
-       Base.White.name:                rgb(255, 255, 255),
-       Base.BlanchedAlmond.name:       rgb(255, 235, 205),
-       Base.LightGray.name:            rgb(211, 211, 211),
-       Base.SteelBlue.name:            rgb( 70, 130, 180),
-       Base.Azure.name:                rgb(240, 255, 255),
-       Base.Chocolate.name:            rgb(210, 105,  30),
-       Base.Cornsilk.name:             rgb(255, 248, 220),
-       Base.DarkOrange.name:           rgb(255, 140,   0),
-       Base.Gray.name:                 rgb(128, 128, 128),
-       Base.Gold.name:                 rgb(255, 215,   0),
-       Base.DarkTurquoise.name:        rgb(  0, 206, 209),
-       Base.LightSkyBlue.name:         rgb(135, 206, 250),
-       Base.PaleGreen.name:            rgb(152, 251, 152),
-       Base.LavenderBlush.name:        rgb(255, 240, 245),
-       Base.MediumPurple.name:         rgb(147, 112, 219),
-       Base.Aquamarine.name:           rgb(127, 255, 212),
-       Base.LightCoral.name:           rgb(240, 128, 128),
-       Base.MediumOrchid.name:         rgb(186,  85, 211),
-       Base.FloralWhite.name:          rgb(255, 250, 240),
-       Base.LawnGreen.name:            rgb(124, 252,   0),
-       Base.RebeccaPurple.name:        rgb(102,  51, 153),
-       Base.Coral.name:                rgb(255, 127,  80),
-       Base.LightSlateGray.name:       rgb(119, 136, 153),
-       Base.BlueViolet.name:           rgb(138,  43, 226),
-       Base.Orange.name:               rgb(255, 165,   0),
-       Base.MidnightBlue.name:         rgb( 25,  25, 112),
-       Base.Linen.name:                rgb(250, 240, 230),
-       Base.DarkSlateGray.name:        rgb( 47,  79,  79),
-       Base.DarkGray.name:             rgb(169, 169, 169),
-       Base.MediumVioletRed.name:      rgb(199,  21, 133),
-       Base.PapayaWhip.name:           rgb(255, 239, 213),
-       Base.SlateGray.name:            rgb(112, 128, 144),
-       Base.SpringGreen.name:          rgb(  0, 255, 127),
-       Base.DarkGoldenRod.name:        rgb(184, 134,  11),
-       Base.LimeGreen.name:            rgb( 50, 205,  50),
-       Base.DarkSalmon.name:           rgb(233, 150, 122),
-       Base.RoyalBlue.name:            rgb( 65, 105, 225),
-       Base.OrangeRed.name:            rgb(255,  69,   0),
-       Base.Thistle.name:              rgb(216, 191, 216),
-       Base.Pink.name:                 rgb(255, 192, 203),
-       Base.Chartreuse.name:           rgb(127, 255,   0),
-       Base.Blue.name:                 rgb(  0,   0, 255),
-       Base.LightCyan.name:            rgb(224, 255, 255),
-       Base.GhostWhite.name:           rgb(248, 248, 255),
-       Base.Tan.name:                  rgb(210, 180, 140),
-       Base.Tomato.name:               rgb(255,  99,  71),
-       Base.DarkOliveGreen.name:       rgb( 85, 107,  47),
-       Base.Ivory.name:                rgb(255, 255, 240),
-       Base.DarkCyan.name:             rgb(  0, 139, 139),
-       Base.DarkKhaki.name:            rgb(189, 183, 107),
-       Base.Navy.name:                 rgb(  0,   0, 128),
-       Base.Red.name:                  rgb(255,   0,   0),
-       Base.DarkViolet.name:           rgb(148,   0, 211),
-       Base.DarkSeaGreen.name:         rgb(143, 188, 143),
-       Base.GoldenRod.name:            rgb(218, 165,  32),
-       Base.RosyBrown.name:            rgb(188, 143, 143),
-       Base.OliveDrab.name:            rgb(107, 142,  35),
-       Base.Teal.name:                 rgb(  0, 128, 128),
-       Base.HotPink.name:              rgb(255, 105, 180),
-       Base.PaleGoldenRod.name:        rgb(238, 232, 170),
-       Base.DeepSkyBlue.name:          rgb(  0, 191, 255),
-       Base.DarkOrchid.name:           rgb(153,  50, 204),
-       Base.MediumSeaGreen.name:       rgb( 60, 179, 113),
-       Base.OldLace.name:              rgb(253, 245, 230),
-       Base.LemonChiffon.name:         rgb(255, 250, 205),
-       Base.MediumSpringGreen.name:    rgb(  0, 250, 154),
-       Base.Green.name:                rgb(  0, 128,   0),
-       Base.Indigo.name:               rgb( 75,   0, 130),
-       Base.Moccasin.name:             rgb(255, 228, 181),
-       Base.Fuchsia.name:              rgb(255,   0, 255),
-       Base.LightBlue.name:            rgb(173, 216, 230),
-       Base.Silver.name:               rgb(192, 192, 192),
-       Base.WhiteSmoke.name:           rgb(245, 245, 245),
-       Base.PowderBlue.name:           rgb(176, 224, 230),
-       Base.SaddleBrown.name:          rgb(139,  69,  19),
-       Base.LightGoldenRodYellow.name: rgb(250, 250, 210),
-       Base.LightSalmon.name:          rgb(255, 160, 122),
-       Base.SandyBrown.name:           rgb(244, 164,  96),
-       Base.AntiqueWhite.name:         rgb(250, 235, 215),
-       Base.Black.name:                rgb(  0,   0,   0),
-       Base.MintCream.name:            rgb(245, 255, 250),
-       Base.NavajoWhite.name:          rgb(255, 222, 173),
-       Base.BurlyWood.name:            rgb(222, 184, 135),
-       Base.MediumSlateBlue.name:      rgb(123, 104, 238),
-       Base.IndianRed.name:            rgb(205,  92,  92),
-       Base.DodgerBlue.name:           rgb( 30, 144, 255),
-       Base.Gainsboro.name:            rgb(220, 220, 220),
-       Base.YellowGreen.name:          rgb(154, 205,  50),
-       Base.SlateBlue.name:            rgb(106,  90, 205),
-       Base.PeachPuff.name:            rgb(255, 218, 185),
-       Base.Purple.name:               rgb(128,   0, 128),
-       Base.Brown.name:                rgb(165,  42,  42),
-       Base.Lime.name:                 rgb(  0, 255,   0),
-       Base.PaleVioletRed.name:        rgb(219, 112, 147),
-       Base.Khaki.name:                rgb(240, 230, 140),
-       Base.Crimson.name:              rgb(220, 20,   60),
-       Base.LightYellow.name:          rgb(255, 255, 224),
-       Base.MistyRose.name:            rgb(255, 228, 225),
-       Base.Cyan.name:                 rgb(  0, 255, 255),
-       Base.DarkBlue.name:             rgb(  0,   0, 139),
-       Base.MediumAquaMarine.name:     rgb(102, 205, 170),
-       Base.MediumBlue.name:           rgb(  0,   0, 205),
-       Base.PaleTurquoise.name:        rgb(175, 238, 238),
-       Base.HoneyDew.name:             rgb(240, 255, 240),
-       Base.DimGray.name:              rgb(105, 105, 105),
-       Base.Lavender.name:             rgb(230, 230, 250),
-       Base.Magenta.name:              rgb(255,   0, 255),
-       Base.DarkRed.name:              rgb(139,   0,   0),
-       Base.LightSeaGreen.name:        rgb( 32, 178, 170),
-       Base.Maroon.name:               rgb(128,   0,   0),
-       Base.Aqua.name:                 rgb(  0, 255, 255),
-       Base.Olive.name:                rgb(128, 128,   0),
-       Base.Plum.name:                 rgb(221, 160, 221),
-       Base.LightSteelBlue.name:       rgb(176, 196, 222),
-       Base.Orchid.name:               rgb(218, 112, 214),
-       Base.Bisque.name:               rgb(255, 228, 196),
-       Base.MediumTurquoise.name:      rgb( 72, 209, 204),
-       Base.Peru.name:                 rgb(205, 133,  63),
-       Base.Turquoise.name:            rgb (64, 224, 208),
-       Base.AliceBlue.name:            rgb(240, 248, 255),
-       Base.Yellow.name:               rgb(255, 255,   0),
-       Base.DarkGreen.name:            rgb( 0,  100,   0),
-       Base.DeepPink.name:             rgb(255,  20, 147),
-       Base.GreenYellow.name:          rgb(173, 255,  47),
-       Base.SeaGreen.name:             rgb( 46, 139,  87),
-       Base.CornflowerBlue.name:       rgb(100, 149, 237)
+       CSSColorBase.ForestGreen.name:          rgb( 34, 139,  34),
+       CSSColorBase.SkyBlue.name:              rgb(135, 206, 235),
+       CSSColorBase.Sienna.name:               rgb(160,  82,  45),
+       CSSColorBase.DarkSlateBlue.name:        rgb(72,   61, 139),
+       CSSColorBase.Wheat.name:                rgb(245, 222, 179),
+       CSSColorBase.Beige.name:                rgb(245, 245, 220),
+       CSSColorBase.CadetBlue.name:            rgb( 95, 158, 160),
+       CSSColorBase.LightPink.name:            rgb(255, 182, 193),
+       CSSColorBase.SeaShell.name:             rgb(255, 245, 238),
+       CSSColorBase.FireBrick.name:            rgb(178,  34,  34),
+       CSSColorBase.LightGreen.name:           rgb(144, 238, 144),
+       CSSColorBase.DarkMagenta.name:          rgb(139,   0, 139),
+       CSSColorBase.Salmon.name:               rgb(250, 128, 114),
+       CSSColorBase.Snow.name:                 rgb(255, 250, 250),
+       CSSColorBase.Violet.name:               rgb(238, 130, 238),
+       CSSColorBase.White.name:                rgb(255, 255, 255),
+       CSSColorBase.BlanchedAlmond.name:       rgb(255, 235, 205),
+       CSSColorBase.LightGray.name:            rgb(211, 211, 211),
+       CSSColorBase.SteelBlue.name:            rgb( 70, 130, 180),
+       CSSColorBase.Azure.name:                rgb(240, 255, 255),
+       CSSColorBase.Chocolate.name:            rgb(210, 105,  30),
+       CSSColorBase.Cornsilk.name:             rgb(255, 248, 220),
+       CSSColorBase.DarkOrange.name:           rgb(255, 140,   0),
+       CSSColorBase.Gray.name:                 rgb(128, 128, 128),
+       CSSColorBase.Gold.name:                 rgb(255, 215,   0),
+       CSSColorBase.DarkTurquoise.name:        rgb(  0, 206, 209),
+       CSSColorBase.LightSkyBlue.name:         rgb(135, 206, 250),
+       CSSColorBase.PaleGreen.name:            rgb(152, 251, 152),
+       CSSColorBase.LavenderBlush.name:        rgb(255, 240, 245),
+       CSSColorBase.MediumPurple.name:         rgb(147, 112, 219),
+       CSSColorBase.Aquamarine.name:           rgb(127, 255, 212),
+       CSSColorBase.LightCoral.name:           rgb(240, 128, 128),
+       CSSColorBase.MediumOrchid.name:         rgb(186,  85, 211),
+       CSSColorBase.FloralWhite.name:          rgb(255, 250, 240),
+       CSSColorBase.LawnGreen.name:            rgb(124, 252,   0),
+       CSSColorBase.RebeccaPurple.name:        rgb(102,  51, 153),
+       CSSColorBase.Coral.name:                rgb(255, 127,  80),
+       CSSColorBase.LightSlateGray.name:       rgb(119, 136, 153),
+       CSSColorBase.BlueViolet.name:           rgb(138,  43, 226),
+       CSSColorBase.Orange.name:               rgb(255, 165,   0),
+       CSSColorBase.MidnightBlue.name:         rgb( 25,  25, 112),
+       CSSColorBase.Linen.name:                rgb(250, 240, 230),
+       CSSColorBase.DarkSlateGray.name:        rgb( 47,  79,  79),
+       CSSColorBase.DarkGray.name:             rgb(169, 169, 169),
+       CSSColorBase.MediumVioletRed.name:      rgb(199,  21, 133),
+       CSSColorBase.PapayaWhip.name:           rgb(255, 239, 213),
+       CSSColorBase.SlateGray.name:            rgb(112, 128, 144),
+       CSSColorBase.SpringGreen.name:          rgb(  0, 255, 127),
+       CSSColorBase.DarkGoldenRod.name:        rgb(184, 134,  11),
+       CSSColorBase.LimeGreen.name:            rgb( 50, 205,  50),
+       CSSColorBase.DarkSalmon.name:           rgb(233, 150, 122),
+       CSSColorBase.RoyalBlue.name:            rgb( 65, 105, 225),
+       CSSColorBase.OrangeRed.name:            rgb(255,  69,   0),
+       CSSColorBase.Thistle.name:              rgb(216, 191, 216),
+       CSSColorBase.Pink.name:                 rgb(255, 192, 203),
+       CSSColorBase.Chartreuse.name:           rgb(127, 255,   0),
+       CSSColorBase.Blue.name:                 rgb(  0,   0, 255),
+       CSSColorBase.LightCyan.name:            rgb(224, 255, 255),
+       CSSColorBase.GhostWhite.name:           rgb(248, 248, 255),
+       CSSColorBase.Tan.name:                  rgb(210, 180, 140),
+       CSSColorBase.Tomato.name:               rgb(255,  99,  71),
+       CSSColorBase.DarkOliveGreen.name:       rgb( 85, 107,  47),
+       CSSColorBase.Ivory.name:                rgb(255, 255, 240),
+       CSSColorBase.DarkCyan.name:             rgb(  0, 139, 139),
+       CSSColorBase.DarkKhaki.name:            rgb(189, 183, 107),
+       CSSColorBase.Navy.name:                 rgb(  0,   0, 128),
+       CSSColorBase.Red.name:                  rgb(255,   0,   0),
+       CSSColorBase.DarkViolet.name:           rgb(148,   0, 211),
+       CSSColorBase.DarkSeaGreen.name:         rgb(143, 188, 143),
+       CSSColorBase.GoldenRod.name:            rgb(218, 165,  32),
+       CSSColorBase.RosyBrown.name:            rgb(188, 143, 143),
+       CSSColorBase.OliveDrab.name:            rgb(107, 142,  35),
+       CSSColorBase.Teal.name:                 rgb(  0, 128, 128),
+       CSSColorBase.HotPink.name:              rgb(255, 105, 180),
+       CSSColorBase.PaleGoldenRod.name:        rgb(238, 232, 170),
+       CSSColorBase.DeepSkyBlue.name:          rgb(  0, 191, 255),
+       CSSColorBase.DarkOrchid.name:           rgb(153,  50, 204),
+       CSSColorBase.MediumSeaGreen.name:       rgb( 60, 179, 113),
+       CSSColorBase.OldLace.name:              rgb(253, 245, 230),
+       CSSColorBase.LemonChiffon.name:         rgb(255, 250, 205),
+       CSSColorBase.MediumSpringGreen.name:    rgb(  0, 250, 154),
+       CSSColorBase.Green.name:                rgb(  0, 128,   0),
+       CSSColorBase.Indigo.name:               rgb( 75,   0, 130),
+       CSSColorBase.Moccasin.name:             rgb(255, 228, 181),
+       CSSColorBase.Fuchsia.name:              rgb(255,   0, 255),
+       CSSColorBase.LightBlue.name:            rgb(173, 216, 230),
+       CSSColorBase.Silver.name:               rgb(192, 192, 192),
+       CSSColorBase.WhiteSmoke.name:           rgb(245, 245, 245),
+       CSSColorBase.PowderBlue.name:           rgb(176, 224, 230),
+       CSSColorBase.SaddleBrown.name:          rgb(139,  69,  19),
+       CSSColorBase.LightGoldenRodYellow.name: rgb(250, 250, 210),
+       CSSColorBase.LightSalmon.name:          rgb(255, 160, 122),
+       CSSColorBase.SandyBrown.name:           rgb(244, 164,  96),
+       CSSColorBase.AntiqueWhite.name:         rgb(250, 235, 215),
+       CSSColorBase.Black.name:                rgb(  0,   0,   0),
+       CSSColorBase.MintCream.name:            rgb(245, 255, 250),
+       CSSColorBase.NavajoWhite.name:          rgb(255, 222, 173),
+       CSSColorBase.BurlyWood.name:            rgb(222, 184, 135),
+       CSSColorBase.MediumSlateBlue.name:      rgb(123, 104, 238),
+       CSSColorBase.IndianRed.name:            rgb(205,  92,  92),
+       CSSColorBase.DodgerBlue.name:           rgb( 30, 144, 255),
+       CSSColorBase.Gainsboro.name:            rgb(220, 220, 220),
+       CSSColorBase.YellowGreen.name:          rgb(154, 205,  50),
+       CSSColorBase.SlateBlue.name:            rgb(106,  90, 205),
+       CSSColorBase.PeachPuff.name:            rgb(255, 218, 185),
+       CSSColorBase.Purple.name:               rgb(128,   0, 128),
+       CSSColorBase.Brown.name:                rgb(165,  42,  42),
+       CSSColorBase.Lime.name:                 rgb(  0, 255,   0),
+       CSSColorBase.PaleVioletRed.name:        rgb(219, 112, 147),
+       CSSColorBase.Khaki.name:                rgb(240, 230, 140),
+       CSSColorBase.Crimson.name:              rgb(220, 20,   60),
+       CSSColorBase.LightYellow.name:          rgb(255, 255, 224),
+       CSSColorBase.MistyRose.name:            rgb(255, 228, 225),
+       CSSColorBase.Cyan.name:                 rgb(  0, 255, 255),
+       CSSColorBase.DarkBlue.name:             rgb(  0,   0, 139),
+       CSSColorBase.MediumAquaMarine.name:     rgb(102, 205, 170),
+       CSSColorBase.MediumBlue.name:           rgb(  0,   0, 205),
+       CSSColorBase.PaleTurquoise.name:        rgb(175, 238, 238),
+       CSSColorBase.HoneyDew.name:             rgb(240, 255, 240),
+       CSSColorBase.DimGray.name:              rgb(105, 105, 105),
+       CSSColorBase.Lavender.name:             rgb(230, 230, 250),
+       CSSColorBase.Magenta.name:              rgb(255,   0, 255),
+       CSSColorBase.DarkRed.name:              rgb(139,   0,   0),
+       CSSColorBase.LightSeaGreen.name:        rgb( 32, 178, 170),
+       CSSColorBase.Maroon.name:               rgb(128,   0,   0),
+       CSSColorBase.Aqua.name:                 rgb(  0, 255, 255),
+       CSSColorBase.Olive.name:                rgb(128, 128,   0),
+       CSSColorBase.Plum.name:                 rgb(221, 160, 221),
+       CSSColorBase.LightSteelBlue.name:       rgb(176, 196, 222),
+       CSSColorBase.Orchid.name:               rgb(218, 112, 214),
+       CSSColorBase.Bisque.name:               rgb(255, 228, 196),
+       CSSColorBase.MediumTurquoise.name:      rgb( 72, 209, 204),
+       CSSColorBase.Peru.name:                 rgb(205, 133,  63),
+       CSSColorBase.Turquoise.name:            rgb (64, 224, 208),
+       CSSColorBase.AliceBlue.name:            rgb(240, 248, 255),
+       CSSColorBase.Yellow.name:               rgb(255, 255,   0),
+       CSSColorBase.DarkGreen.name:            rgb( 0,  100,   0),
+       CSSColorBase.DeepPink.name:             rgb(255,  20, 147),
+       CSSColorBase.GreenYellow.name:          rgb(173, 255,  47),
+       CSSColorBase.SeaGreen.name:             rgb( 46, 139,  87),
+       CSSColorBase.CornflowerBlue.name:       rgb(100, 149, 237)
      ]
 
      public static let darkColors: [String:UIColor] = {
@@ -646,7 +646,7 @@ extension Chameleon {
          var (l, a, b) = color.LAB
          l -= 10
          let (red, green, blue) = labToRGB(l, a, b)
-         darkColors["\(name)Dark"] = UIColor(red: red, green: green, blue: blue, alpha: 1)
+         darkColors[name] = UIColor(red: red, green: green, blue: blue, alpha: 1)
        }
        return darkColors
      } ()
@@ -658,7 +658,7 @@ extension Chameleon {
        }
      }
 
-     public init(base: Base, shade: Chameleon.Shade = .Light) {
+     public init(base: CSSColorBase, shade: Chameleon.Shade = .Light) {
        switch shade {
          case .Dark: self = .Dark(base)
          default: self = .Light(base)
@@ -667,147 +667,147 @@ extension Chameleon {
 
      public init?(name: String, shade: Chameleon.Shade = .Light) {
        switch name.lowercaseString {
-         case Base.ForestGreen.name.lowercaseString:          self = CSSColor(base: .ForestGreen,          shade: shade)
-         case Base.SkyBlue.name.lowercaseString:              self = CSSColor(base: .SkyBlue,              shade: shade)
-         case Base.Sienna.name.lowercaseString:               self = CSSColor(base: .Sienna,               shade: shade)
-         case Base.DarkSlateBlue.name.lowercaseString:        self = CSSColor(base: .DarkSlateBlue,        shade: shade)
-         case Base.Wheat.name.lowercaseString:                self = CSSColor(base: .Wheat,                shade: shade)
-         case Base.Beige.name.lowercaseString:                self = CSSColor(base: .Beige,                shade: shade)
-         case Base.CadetBlue.name.lowercaseString:            self = CSSColor(base: .CadetBlue,            shade: shade)
-         case Base.LightPink.name.lowercaseString:            self = CSSColor(base: .LightPink,            shade: shade)
-         case Base.SeaShell.name.lowercaseString:             self = CSSColor(base: .SeaShell,             shade: shade)
-         case Base.FireBrick.name.lowercaseString:            self = CSSColor(base: .FireBrick,            shade: shade)
-         case Base.LightGreen.name.lowercaseString:           self = CSSColor(base: .LightGreen,           shade: shade)
-         case Base.DarkMagenta.name.lowercaseString:          self = CSSColor(base: .DarkMagenta,          shade: shade)
-         case Base.Salmon.name.lowercaseString:               self = CSSColor(base: .Salmon,               shade: shade)
-         case Base.Snow.name.lowercaseString:                 self = CSSColor(base: .Snow,                 shade: shade)
-         case Base.Violet.name.lowercaseString:               self = CSSColor(base: .Violet,               shade: shade)
-         case Base.White.name.lowercaseString:                self = CSSColor(base: .White,                shade: shade)
-         case Base.BlanchedAlmond.name.lowercaseString:       self = CSSColor(base: .BlanchedAlmond,       shade: shade)
-         case Base.LightGray.name.lowercaseString:            self = CSSColor(base: .LightGray,            shade: shade)
-         case Base.SteelBlue.name.lowercaseString:            self = CSSColor(base: .SteelBlue,            shade: shade)
-         case Base.Azure.name.lowercaseString:                self = CSSColor(base: .Azure,                shade: shade)
-         case Base.Chocolate.name.lowercaseString:            self = CSSColor(base: .Chocolate,            shade: shade)
-         case Base.Cornsilk.name.lowercaseString:             self = CSSColor(base: .Cornsilk,             shade: shade)
-         case Base.DarkOrange.name.lowercaseString:           self = CSSColor(base: .DarkOrange,           shade: shade)
-         case Base.Gray.name.lowercaseString:                 self = CSSColor(base: .Gray,                 shade: shade)
-         case Base.Gold.name.lowercaseString:                 self = CSSColor(base: .Gold,                 shade: shade)
-         case Base.DarkTurquoise.name.lowercaseString:        self = CSSColor(base: .DarkTurquoise,        shade: shade)
-         case Base.LightSkyBlue.name.lowercaseString:         self = CSSColor(base: .LightSkyBlue,         shade: shade)
-         case Base.PaleGreen.name.lowercaseString:            self = CSSColor(base: .PaleGreen,            shade: shade)
-         case Base.LavenderBlush.name.lowercaseString:        self = CSSColor(base: .LavenderBlush,        shade: shade)
-         case Base.MediumPurple.name.lowercaseString:         self = CSSColor(base: .MediumPurple,         shade: shade)
-         case Base.Aquamarine.name.lowercaseString:           self = CSSColor(base: .Aquamarine,           shade: shade)
-         case Base.LightCoral.name.lowercaseString:           self = CSSColor(base: .LightCoral,           shade: shade)
-         case Base.MediumOrchid.name.lowercaseString:         self = CSSColor(base: .MediumOrchid,         shade: shade)
-         case Base.FloralWhite.name.lowercaseString:          self = CSSColor(base: .FloralWhite,          shade: shade)
-         case Base.LawnGreen.name.lowercaseString:            self = CSSColor(base: .LawnGreen,            shade: shade)
-         case Base.RebeccaPurple.name.lowercaseString:        self = CSSColor(base: .RebeccaPurple,        shade: shade)
-         case Base.Coral.name.lowercaseString:                self = CSSColor(base: .Coral,                shade: shade)
-         case Base.LightSlateGray.name.lowercaseString:       self = CSSColor(base: .LightSlateGray,       shade: shade)
-         case Base.BlueViolet.name.lowercaseString:           self = CSSColor(base: .BlueViolet,           shade: shade)
-         case Base.Orange.name.lowercaseString:               self = CSSColor(base: .Orange,               shade: shade)
-         case Base.MidnightBlue.name.lowercaseString:         self = CSSColor(base: .MidnightBlue,         shade: shade)
-         case Base.Linen.name.lowercaseString:                self = CSSColor(base: .Linen,                shade: shade)
-         case Base.DarkSlateGray.name.lowercaseString:        self = CSSColor(base: .DarkSlateGray,        shade: shade)
-         case Base.DarkGray.name.lowercaseString:             self = CSSColor(base: .DarkGray,             shade: shade)
-         case Base.MediumVioletRed.name.lowercaseString:      self = CSSColor(base: .MediumVioletRed,      shade: shade)
-         case Base.PapayaWhip.name.lowercaseString:           self = CSSColor(base: .PapayaWhip,           shade: shade)
-         case Base.SlateGray.name.lowercaseString:            self = CSSColor(base: .SlateGray,            shade: shade)
-         case Base.SpringGreen.name.lowercaseString:          self = CSSColor(base: .SpringGreen,          shade: shade)
-         case Base.DarkGoldenRod.name.lowercaseString:        self = CSSColor(base: .DarkGoldenRod,        shade: shade)
-         case Base.LimeGreen.name.lowercaseString:            self = CSSColor(base: .LimeGreen,            shade: shade)
-         case Base.DarkSalmon.name.lowercaseString:           self = CSSColor(base: .DarkSalmon,           shade: shade)
-         case Base.RoyalBlue.name.lowercaseString:            self = CSSColor(base: .RoyalBlue,            shade: shade)
-         case Base.OrangeRed.name.lowercaseString:            self = CSSColor(base: .OrangeRed,            shade: shade)
-         case Base.Thistle.name.lowercaseString:              self = CSSColor(base: .Thistle,              shade: shade)
-         case Base.Pink.name.lowercaseString:                 self = CSSColor(base: .Pink,                 shade: shade)
-         case Base.Chartreuse.name.lowercaseString:           self = CSSColor(base: .Chartreuse,           shade: shade)
-         case Base.Blue.name.lowercaseString:                 self = CSSColor(base: .Blue,                 shade: shade)
-         case Base.LightCyan.name.lowercaseString:            self = CSSColor(base: .LightCyan,            shade: shade)
-         case Base.GhostWhite.name.lowercaseString:           self = CSSColor(base: .GhostWhite,           shade: shade)
-         case Base.Tan.name.lowercaseString:                  self = CSSColor(base: .Tan,                  shade: shade)
-         case Base.Tomato.name.lowercaseString:               self = CSSColor(base: .Tomato,               shade: shade)
-         case Base.DarkOliveGreen.name.lowercaseString:       self = CSSColor(base: .DarkOliveGreen,       shade: shade)
-         case Base.Ivory.name.lowercaseString:                self = CSSColor(base: .Ivory,                shade: shade)
-         case Base.DarkCyan.name.lowercaseString:             self = CSSColor(base: .DarkCyan,             shade: shade)
-         case Base.DarkKhaki.name.lowercaseString:            self = CSSColor(base: .DarkKhaki,            shade: shade)
-         case Base.Navy.name.lowercaseString:                 self = CSSColor(base: .Navy,                 shade: shade)
-         case Base.Red.name.lowercaseString:                  self = CSSColor(base: .Red,                  shade: shade)
-         case Base.DarkViolet.name.lowercaseString:           self = CSSColor(base: .DarkViolet,           shade: shade)
-         case Base.DarkSeaGreen.name.lowercaseString:         self = CSSColor(base: .DarkSeaGreen,         shade: shade)
-         case Base.GoldenRod.name.lowercaseString:            self = CSSColor(base: .GoldenRod,            shade: shade)
-         case Base.RosyBrown.name.lowercaseString:            self = CSSColor(base: .RosyBrown,            shade: shade)
-         case Base.OliveDrab.name.lowercaseString:            self = CSSColor(base: .OliveDrab,            shade: shade)
-         case Base.Teal.name.lowercaseString:                 self = CSSColor(base: .Teal,                 shade: shade)
-         case Base.HotPink.name.lowercaseString:              self = CSSColor(base: .HotPink,              shade: shade)
-         case Base.PaleGoldenRod.name.lowercaseString:        self = CSSColor(base: .PaleGoldenRod,        shade: shade)
-         case Base.DeepSkyBlue.name.lowercaseString:          self = CSSColor(base: .DeepSkyBlue,          shade: shade)
-         case Base.DarkOrchid.name.lowercaseString:           self = CSSColor(base: .DarkOrchid,           shade: shade)
-         case Base.MediumSeaGreen.name.lowercaseString:       self = CSSColor(base: .MediumSeaGreen,       shade: shade)
-         case Base.OldLace.name.lowercaseString:              self = CSSColor(base: .OldLace,              shade: shade)
-         case Base.LemonChiffon.name.lowercaseString:         self = CSSColor(base: .LemonChiffon,         shade: shade)
-         case Base.MediumSpringGreen.name.lowercaseString:    self = CSSColor(base: .MediumSpringGreen,    shade: shade)
-         case Base.Green.name.lowercaseString:                self = CSSColor(base: .Green,                shade: shade)
-         case Base.Indigo.name.lowercaseString:               self = CSSColor(base: .Indigo,               shade: shade)
-         case Base.Moccasin.name.lowercaseString:             self = CSSColor(base: .Moccasin,             shade: shade)
-         case Base.Fuchsia.name.lowercaseString:              self = CSSColor(base: .Fuchsia,              shade: shade)
-         case Base.LightBlue.name.lowercaseString:            self = CSSColor(base: .LightBlue,            shade: shade)
-         case Base.Silver.name.lowercaseString:               self = CSSColor(base: .Silver,               shade: shade)
-         case Base.WhiteSmoke.name.lowercaseString:           self = CSSColor(base: .WhiteSmoke,           shade: shade)
-         case Base.PowderBlue.name.lowercaseString:           self = CSSColor(base: .PowderBlue,           shade: shade)
-         case Base.SaddleBrown.name.lowercaseString:          self = CSSColor(base: .SaddleBrown,          shade: shade)
-         case Base.LightGoldenRodYellow.name.lowercaseString: self = CSSColor(base: .LightGoldenRodYellow, shade: shade)
-         case Base.LightSalmon.name.lowercaseString:          self = CSSColor(base: .LightSalmon,          shade: shade)
-         case Base.SandyBrown.name.lowercaseString:           self = CSSColor(base: .SandyBrown,           shade: shade)
-         case Base.AntiqueWhite.name.lowercaseString:         self = CSSColor(base: .AntiqueWhite,         shade: shade)
-         case Base.Black.name.lowercaseString:                self = CSSColor(base: .Black,                shade: shade)
-         case Base.MintCream.name.lowercaseString:            self = CSSColor(base: .MintCream,            shade: shade)
-         case Base.NavajoWhite.name.lowercaseString:          self = CSSColor(base: .NavajoWhite,          shade: shade)
-         case Base.BurlyWood.name.lowercaseString:            self = CSSColor(base: .BurlyWood,            shade: shade)
-         case Base.MediumSlateBlue.name.lowercaseString:      self = CSSColor(base: .MediumSlateBlue,      shade: shade)
-         case Base.IndianRed.name.lowercaseString:            self = CSSColor(base: .IndianRed,            shade: shade)
-         case Base.DodgerBlue.name.lowercaseString:           self = CSSColor(base: .DodgerBlue,           shade: shade)
-         case Base.Gainsboro.name.lowercaseString:            self = CSSColor(base: .Gainsboro,            shade: shade)
-         case Base.YellowGreen.name.lowercaseString:          self = CSSColor(base: .YellowGreen,          shade: shade)
-         case Base.SlateBlue.name.lowercaseString:            self = CSSColor(base: .SlateBlue,            shade: shade)
-         case Base.PeachPuff.name.lowercaseString:            self = CSSColor(base: .PeachPuff,            shade: shade)
-         case Base.Purple.name.lowercaseString:               self = CSSColor(base: .Purple,               shade: shade)
-         case Base.Brown.name.lowercaseString:                self = CSSColor(base: .Brown,                shade: shade)
-         case Base.Lime.name.lowercaseString:                 self = CSSColor(base: .Lime,                 shade: shade)
-         case Base.PaleVioletRed.name.lowercaseString:        self = CSSColor(base: .PaleVioletRed,        shade: shade)
-         case Base.Khaki.name.lowercaseString:                self = CSSColor(base: .Khaki,                shade: shade)
-         case Base.Crimson.name.lowercaseString:              self = CSSColor(base: .Crimson,              shade: shade)
-         case Base.LightYellow.name.lowercaseString:          self = CSSColor(base: .LightYellow,          shade: shade)
-         case Base.MistyRose.name.lowercaseString:            self = CSSColor(base: .MistyRose,            shade: shade)
-         case Base.Cyan.name.lowercaseString:                 self = CSSColor(base: .Cyan,                 shade: shade)
-         case Base.DarkBlue.name.lowercaseString:             self = CSSColor(base: .DarkBlue,             shade: shade)
-         case Base.MediumAquaMarine.name.lowercaseString:     self = CSSColor(base: .MediumAquaMarine,     shade: shade)
-         case Base.MediumBlue.name.lowercaseString:           self = CSSColor(base: .MediumBlue,           shade: shade)
-         case Base.PaleTurquoise.name.lowercaseString:        self = CSSColor(base: .PaleTurquoise,        shade: shade)
-         case Base.HoneyDew.name.lowercaseString:             self = CSSColor(base: .HoneyDew,             shade: shade)
-         case Base.DimGray.name.lowercaseString:              self = CSSColor(base: .DimGray,              shade: shade)
-         case Base.Lavender.name.lowercaseString:             self = CSSColor(base: .Lavender,             shade: shade)
-         case Base.Magenta.name.lowercaseString:              self = CSSColor(base: .Magenta,              shade: shade)
-         case Base.DarkRed.name.lowercaseString:              self = CSSColor(base: .DarkRed,              shade: shade)
-         case Base.LightSeaGreen.name.lowercaseString:        self = CSSColor(base: .LightSeaGreen,        shade: shade)
-         case Base.Maroon.name.lowercaseString:               self = CSSColor(base: .Maroon,               shade: shade)
-         case Base.Aqua.name.lowercaseString:                 self = CSSColor(base: .Aqua,                 shade: shade)
-         case Base.Olive.name.lowercaseString:                self = CSSColor(base: .Olive,                shade: shade)
-         case Base.Plum.name.lowercaseString:                 self = CSSColor(base: .Plum,                 shade: shade)
-         case Base.LightSteelBlue.name.lowercaseString:       self = CSSColor(base: .LightSteelBlue,       shade: shade)
-         case Base.Orchid.name.lowercaseString:               self = CSSColor(base: .Orchid,               shade: shade)
-         case Base.Bisque.name.lowercaseString:               self = CSSColor(base: .Bisque,               shade: shade)
-         case Base.MediumTurquoise.name.lowercaseString:      self = CSSColor(base: .MediumTurquoise,      shade: shade)
-         case Base.Peru.name.lowercaseString:                 self = CSSColor(base: .Peru,                 shade: shade)
-         case Base.Turquoise.name.lowercaseString:            self = CSSColor(base: .Turquoise,            shade: shade)
-         case Base.AliceBlue.name.lowercaseString:            self = CSSColor(base: .AliceBlue,            shade: shade)
-         case Base.Yellow.name.lowercaseString:               self = CSSColor(base: .Yellow,               shade: shade)
-         case Base.DarkGreen.name.lowercaseString:            self = CSSColor(base: .DarkGreen,            shade: shade)
-         case Base.DeepPink.name.lowercaseString:             self = CSSColor(base: .DeepPink,             shade: shade)
-         case Base.GreenYellow.name.lowercaseString:          self = CSSColor(base: .GreenYellow,          shade: shade)
-         case Base.SeaGreen.name.lowercaseString:             self = CSSColor(base: .SeaGreen,             shade: shade)
-         case Base.CornflowerBlue.name.lowercaseString:       self = CSSColor(base: .CornflowerBlue,       shade: shade)
+         case CSSColorBase.ForestGreen.name.lowercaseString:          self = CSSColor(base: .ForestGreen,          shade: shade)
+         case CSSColorBase.SkyBlue.name.lowercaseString:              self = CSSColor(base: .SkyBlue,              shade: shade)
+         case CSSColorBase.Sienna.name.lowercaseString:               self = CSSColor(base: .Sienna,               shade: shade)
+         case CSSColorBase.DarkSlateBlue.name.lowercaseString:        self = CSSColor(base: .DarkSlateBlue,        shade: shade)
+         case CSSColorBase.Wheat.name.lowercaseString:                self = CSSColor(base: .Wheat,                shade: shade)
+         case CSSColorBase.Beige.name.lowercaseString:                self = CSSColor(base: .Beige,                shade: shade)
+         case CSSColorBase.CadetBlue.name.lowercaseString:            self = CSSColor(base: .CadetBlue,            shade: shade)
+         case CSSColorBase.LightPink.name.lowercaseString:            self = CSSColor(base: .LightPink,            shade: shade)
+         case CSSColorBase.SeaShell.name.lowercaseString:             self = CSSColor(base: .SeaShell,             shade: shade)
+         case CSSColorBase.FireBrick.name.lowercaseString:            self = CSSColor(base: .FireBrick,            shade: shade)
+         case CSSColorBase.LightGreen.name.lowercaseString:           self = CSSColor(base: .LightGreen,           shade: shade)
+         case CSSColorBase.DarkMagenta.name.lowercaseString:          self = CSSColor(base: .DarkMagenta,          shade: shade)
+         case CSSColorBase.Salmon.name.lowercaseString:               self = CSSColor(base: .Salmon,               shade: shade)
+         case CSSColorBase.Snow.name.lowercaseString:                 self = CSSColor(base: .Snow,                 shade: shade)
+         case CSSColorBase.Violet.name.lowercaseString:               self = CSSColor(base: .Violet,               shade: shade)
+         case CSSColorBase.White.name.lowercaseString:                self = CSSColor(base: .White,                shade: shade)
+         case CSSColorBase.BlanchedAlmond.name.lowercaseString:       self = CSSColor(base: .BlanchedAlmond,       shade: shade)
+         case CSSColorBase.LightGray.name.lowercaseString:            self = CSSColor(base: .LightGray,            shade: shade)
+         case CSSColorBase.SteelBlue.name.lowercaseString:            self = CSSColor(base: .SteelBlue,            shade: shade)
+         case CSSColorBase.Azure.name.lowercaseString:                self = CSSColor(base: .Azure,                shade: shade)
+         case CSSColorBase.Chocolate.name.lowercaseString:            self = CSSColor(base: .Chocolate,            shade: shade)
+         case CSSColorBase.Cornsilk.name.lowercaseString:             self = CSSColor(base: .Cornsilk,             shade: shade)
+         case CSSColorBase.DarkOrange.name.lowercaseString:           self = CSSColor(base: .DarkOrange,           shade: shade)
+         case CSSColorBase.Gray.name.lowercaseString:                 self = CSSColor(base: .Gray,                 shade: shade)
+         case CSSColorBase.Gold.name.lowercaseString:                 self = CSSColor(base: .Gold,                 shade: shade)
+         case CSSColorBase.DarkTurquoise.name.lowercaseString:        self = CSSColor(base: .DarkTurquoise,        shade: shade)
+         case CSSColorBase.LightSkyBlue.name.lowercaseString:         self = CSSColor(base: .LightSkyBlue,         shade: shade)
+         case CSSColorBase.PaleGreen.name.lowercaseString:            self = CSSColor(base: .PaleGreen,            shade: shade)
+         case CSSColorBase.LavenderBlush.name.lowercaseString:        self = CSSColor(base: .LavenderBlush,        shade: shade)
+         case CSSColorBase.MediumPurple.name.lowercaseString:         self = CSSColor(base: .MediumPurple,         shade: shade)
+         case CSSColorBase.Aquamarine.name.lowercaseString:           self = CSSColor(base: .Aquamarine,           shade: shade)
+         case CSSColorBase.LightCoral.name.lowercaseString:           self = CSSColor(base: .LightCoral,           shade: shade)
+         case CSSColorBase.MediumOrchid.name.lowercaseString:         self = CSSColor(base: .MediumOrchid,         shade: shade)
+         case CSSColorBase.FloralWhite.name.lowercaseString:          self = CSSColor(base: .FloralWhite,          shade: shade)
+         case CSSColorBase.LawnGreen.name.lowercaseString:            self = CSSColor(base: .LawnGreen,            shade: shade)
+         case CSSColorBase.RebeccaPurple.name.lowercaseString:        self = CSSColor(base: .RebeccaPurple,        shade: shade)
+         case CSSColorBase.Coral.name.lowercaseString:                self = CSSColor(base: .Coral,                shade: shade)
+         case CSSColorBase.LightSlateGray.name.lowercaseString:       self = CSSColor(base: .LightSlateGray,       shade: shade)
+         case CSSColorBase.BlueViolet.name.lowercaseString:           self = CSSColor(base: .BlueViolet,           shade: shade)
+         case CSSColorBase.Orange.name.lowercaseString:               self = CSSColor(base: .Orange,               shade: shade)
+         case CSSColorBase.MidnightBlue.name.lowercaseString:         self = CSSColor(base: .MidnightBlue,         shade: shade)
+         case CSSColorBase.Linen.name.lowercaseString:                self = CSSColor(base: .Linen,                shade: shade)
+         case CSSColorBase.DarkSlateGray.name.lowercaseString:        self = CSSColor(base: .DarkSlateGray,        shade: shade)
+         case CSSColorBase.DarkGray.name.lowercaseString:             self = CSSColor(base: .DarkGray,             shade: shade)
+         case CSSColorBase.MediumVioletRed.name.lowercaseString:      self = CSSColor(base: .MediumVioletRed,      shade: shade)
+         case CSSColorBase.PapayaWhip.name.lowercaseString:           self = CSSColor(base: .PapayaWhip,           shade: shade)
+         case CSSColorBase.SlateGray.name.lowercaseString:            self = CSSColor(base: .SlateGray,            shade: shade)
+         case CSSColorBase.SpringGreen.name.lowercaseString:          self = CSSColor(base: .SpringGreen,          shade: shade)
+         case CSSColorBase.DarkGoldenRod.name.lowercaseString:        self = CSSColor(base: .DarkGoldenRod,        shade: shade)
+         case CSSColorBase.LimeGreen.name.lowercaseString:            self = CSSColor(base: .LimeGreen,            shade: shade)
+         case CSSColorBase.DarkSalmon.name.lowercaseString:           self = CSSColor(base: .DarkSalmon,           shade: shade)
+         case CSSColorBase.RoyalBlue.name.lowercaseString:            self = CSSColor(base: .RoyalBlue,            shade: shade)
+         case CSSColorBase.OrangeRed.name.lowercaseString:            self = CSSColor(base: .OrangeRed,            shade: shade)
+         case CSSColorBase.Thistle.name.lowercaseString:              self = CSSColor(base: .Thistle,              shade: shade)
+         case CSSColorBase.Pink.name.lowercaseString:                 self = CSSColor(base: .Pink,                 shade: shade)
+         case CSSColorBase.Chartreuse.name.lowercaseString:           self = CSSColor(base: .Chartreuse,           shade: shade)
+         case CSSColorBase.Blue.name.lowercaseString:                 self = CSSColor(base: .Blue,                 shade: shade)
+         case CSSColorBase.LightCyan.name.lowercaseString:            self = CSSColor(base: .LightCyan,            shade: shade)
+         case CSSColorBase.GhostWhite.name.lowercaseString:           self = CSSColor(base: .GhostWhite,           shade: shade)
+         case CSSColorBase.Tan.name.lowercaseString:                  self = CSSColor(base: .Tan,                  shade: shade)
+         case CSSColorBase.Tomato.name.lowercaseString:               self = CSSColor(base: .Tomato,               shade: shade)
+         case CSSColorBase.DarkOliveGreen.name.lowercaseString:       self = CSSColor(base: .DarkOliveGreen,       shade: shade)
+         case CSSColorBase.Ivory.name.lowercaseString:                self = CSSColor(base: .Ivory,                shade: shade)
+         case CSSColorBase.DarkCyan.name.lowercaseString:             self = CSSColor(base: .DarkCyan,             shade: shade)
+         case CSSColorBase.DarkKhaki.name.lowercaseString:            self = CSSColor(base: .DarkKhaki,            shade: shade)
+         case CSSColorBase.Navy.name.lowercaseString:                 self = CSSColor(base: .Navy,                 shade: shade)
+         case CSSColorBase.Red.name.lowercaseString:                  self = CSSColor(base: .Red,                  shade: shade)
+         case CSSColorBase.DarkViolet.name.lowercaseString:           self = CSSColor(base: .DarkViolet,           shade: shade)
+         case CSSColorBase.DarkSeaGreen.name.lowercaseString:         self = CSSColor(base: .DarkSeaGreen,         shade: shade)
+         case CSSColorBase.GoldenRod.name.lowercaseString:            self = CSSColor(base: .GoldenRod,            shade: shade)
+         case CSSColorBase.RosyBrown.name.lowercaseString:            self = CSSColor(base: .RosyBrown,            shade: shade)
+         case CSSColorBase.OliveDrab.name.lowercaseString:            self = CSSColor(base: .OliveDrab,            shade: shade)
+         case CSSColorBase.Teal.name.lowercaseString:                 self = CSSColor(base: .Teal,                 shade: shade)
+         case CSSColorBase.HotPink.name.lowercaseString:              self = CSSColor(base: .HotPink,              shade: shade)
+         case CSSColorBase.PaleGoldenRod.name.lowercaseString:        self = CSSColor(base: .PaleGoldenRod,        shade: shade)
+         case CSSColorBase.DeepSkyBlue.name.lowercaseString:          self = CSSColor(base: .DeepSkyBlue,          shade: shade)
+         case CSSColorBase.DarkOrchid.name.lowercaseString:           self = CSSColor(base: .DarkOrchid,           shade: shade)
+         case CSSColorBase.MediumSeaGreen.name.lowercaseString:       self = CSSColor(base: .MediumSeaGreen,       shade: shade)
+         case CSSColorBase.OldLace.name.lowercaseString:              self = CSSColor(base: .OldLace,              shade: shade)
+         case CSSColorBase.LemonChiffon.name.lowercaseString:         self = CSSColor(base: .LemonChiffon,         shade: shade)
+         case CSSColorBase.MediumSpringGreen.name.lowercaseString:    self = CSSColor(base: .MediumSpringGreen,    shade: shade)
+         case CSSColorBase.Green.name.lowercaseString:                self = CSSColor(base: .Green,                shade: shade)
+         case CSSColorBase.Indigo.name.lowercaseString:               self = CSSColor(base: .Indigo,               shade: shade)
+         case CSSColorBase.Moccasin.name.lowercaseString:             self = CSSColor(base: .Moccasin,             shade: shade)
+         case CSSColorBase.Fuchsia.name.lowercaseString:              self = CSSColor(base: .Fuchsia,              shade: shade)
+         case CSSColorBase.LightBlue.name.lowercaseString:            self = CSSColor(base: .LightBlue,            shade: shade)
+         case CSSColorBase.Silver.name.lowercaseString:               self = CSSColor(base: .Silver,               shade: shade)
+         case CSSColorBase.WhiteSmoke.name.lowercaseString:           self = CSSColor(base: .WhiteSmoke,           shade: shade)
+         case CSSColorBase.PowderBlue.name.lowercaseString:           self = CSSColor(base: .PowderBlue,           shade: shade)
+         case CSSColorBase.SaddleBrown.name.lowercaseString:          self = CSSColor(base: .SaddleBrown,          shade: shade)
+         case CSSColorBase.LightGoldenRodYellow.name.lowercaseString: self = CSSColor(base: .LightGoldenRodYellow, shade: shade)
+         case CSSColorBase.LightSalmon.name.lowercaseString:          self = CSSColor(base: .LightSalmon,          shade: shade)
+         case CSSColorBase.SandyBrown.name.lowercaseString:           self = CSSColor(base: .SandyBrown,           shade: shade)
+         case CSSColorBase.AntiqueWhite.name.lowercaseString:         self = CSSColor(base: .AntiqueWhite,         shade: shade)
+         case CSSColorBase.Black.name.lowercaseString:                self = CSSColor(base: .Black,                shade: shade)
+         case CSSColorBase.MintCream.name.lowercaseString:            self = CSSColor(base: .MintCream,            shade: shade)
+         case CSSColorBase.NavajoWhite.name.lowercaseString:          self = CSSColor(base: .NavajoWhite,          shade: shade)
+         case CSSColorBase.BurlyWood.name.lowercaseString:            self = CSSColor(base: .BurlyWood,            shade: shade)
+         case CSSColorBase.MediumSlateBlue.name.lowercaseString:      self = CSSColor(base: .MediumSlateBlue,      shade: shade)
+         case CSSColorBase.IndianRed.name.lowercaseString:            self = CSSColor(base: .IndianRed,            shade: shade)
+         case CSSColorBase.DodgerBlue.name.lowercaseString:           self = CSSColor(base: .DodgerBlue,           shade: shade)
+         case CSSColorBase.Gainsboro.name.lowercaseString:            self = CSSColor(base: .Gainsboro,            shade: shade)
+         case CSSColorBase.YellowGreen.name.lowercaseString:          self = CSSColor(base: .YellowGreen,          shade: shade)
+         case CSSColorBase.SlateBlue.name.lowercaseString:            self = CSSColor(base: .SlateBlue,            shade: shade)
+         case CSSColorBase.PeachPuff.name.lowercaseString:            self = CSSColor(base: .PeachPuff,            shade: shade)
+         case CSSColorBase.Purple.name.lowercaseString:               self = CSSColor(base: .Purple,               shade: shade)
+         case CSSColorBase.Brown.name.lowercaseString:                self = CSSColor(base: .Brown,                shade: shade)
+         case CSSColorBase.Lime.name.lowercaseString:                 self = CSSColor(base: .Lime,                 shade: shade)
+         case CSSColorBase.PaleVioletRed.name.lowercaseString:        self = CSSColor(base: .PaleVioletRed,        shade: shade)
+         case CSSColorBase.Khaki.name.lowercaseString:                self = CSSColor(base: .Khaki,                shade: shade)
+         case CSSColorBase.Crimson.name.lowercaseString:              self = CSSColor(base: .Crimson,              shade: shade)
+         case CSSColorBase.LightYellow.name.lowercaseString:          self = CSSColor(base: .LightYellow,          shade: shade)
+         case CSSColorBase.MistyRose.name.lowercaseString:            self = CSSColor(base: .MistyRose,            shade: shade)
+         case CSSColorBase.Cyan.name.lowercaseString:                 self = CSSColor(base: .Cyan,                 shade: shade)
+         case CSSColorBase.DarkBlue.name.lowercaseString:             self = CSSColor(base: .DarkBlue,             shade: shade)
+         case CSSColorBase.MediumAquaMarine.name.lowercaseString:     self = CSSColor(base: .MediumAquaMarine,     shade: shade)
+         case CSSColorBase.MediumBlue.name.lowercaseString:           self = CSSColor(base: .MediumBlue,           shade: shade)
+         case CSSColorBase.PaleTurquoise.name.lowercaseString:        self = CSSColor(base: .PaleTurquoise,        shade: shade)
+         case CSSColorBase.HoneyDew.name.lowercaseString:             self = CSSColor(base: .HoneyDew,             shade: shade)
+         case CSSColorBase.DimGray.name.lowercaseString:              self = CSSColor(base: .DimGray,              shade: shade)
+         case CSSColorBase.Lavender.name.lowercaseString:             self = CSSColor(base: .Lavender,             shade: shade)
+         case CSSColorBase.Magenta.name.lowercaseString:              self = CSSColor(base: .Magenta,              shade: shade)
+         case CSSColorBase.DarkRed.name.lowercaseString:              self = CSSColor(base: .DarkRed,              shade: shade)
+         case CSSColorBase.LightSeaGreen.name.lowercaseString:        self = CSSColor(base: .LightSeaGreen,        shade: shade)
+         case CSSColorBase.Maroon.name.lowercaseString:               self = CSSColor(base: .Maroon,               shade: shade)
+         case CSSColorBase.Aqua.name.lowercaseString:                 self = CSSColor(base: .Aqua,                 shade: shade)
+         case CSSColorBase.Olive.name.lowercaseString:                self = CSSColor(base: .Olive,                shade: shade)
+         case CSSColorBase.Plum.name.lowercaseString:                 self = CSSColor(base: .Plum,                 shade: shade)
+         case CSSColorBase.LightSteelBlue.name.lowercaseString:       self = CSSColor(base: .LightSteelBlue,       shade: shade)
+         case CSSColorBase.Orchid.name.lowercaseString:               self = CSSColor(base: .Orchid,               shade: shade)
+         case CSSColorBase.Bisque.name.lowercaseString:               self = CSSColor(base: .Bisque,               shade: shade)
+         case CSSColorBase.MediumTurquoise.name.lowercaseString:      self = CSSColor(base: .MediumTurquoise,      shade: shade)
+         case CSSColorBase.Peru.name.lowercaseString:                 self = CSSColor(base: .Peru,                 shade: shade)
+         case CSSColorBase.Turquoise.name.lowercaseString:            self = CSSColor(base: .Turquoise,            shade: shade)
+         case CSSColorBase.AliceBlue.name.lowercaseString:            self = CSSColor(base: .AliceBlue,            shade: shade)
+         case CSSColorBase.Yellow.name.lowercaseString:               self = CSSColor(base: .Yellow,               shade: shade)
+         case CSSColorBase.DarkGreen.name.lowercaseString:            self = CSSColor(base: .DarkGreen,            shade: shade)
+         case CSSColorBase.DeepPink.name.lowercaseString:             self = CSSColor(base: .DeepPink,             shade: shade)
+         case CSSColorBase.GreenYellow.name.lowercaseString:          self = CSSColor(base: .GreenYellow,          shade: shade)
+         case CSSColorBase.SeaGreen.name.lowercaseString:             self = CSSColor(base: .SeaGreen,             shade: shade)
+         case CSSColorBase.CornflowerBlue.name.lowercaseString:       self = CSSColor(base: .CornflowerBlue,       shade: shade)
          default: return nil
        }
      }

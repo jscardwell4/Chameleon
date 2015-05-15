@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C202DA171B03919C007ADD80 /* Chameleon.FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202DA161B03919C007ADD80 /* Chameleon.FlatColor.swift */; };
 		C202DA1B1B03922E007ADD80 /* Chameleon.CSSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202DA1A1B03922E007ADD80 /* Chameleon.CSSColor.swift */; };
+		C27814011B05BCBE0075E848 /* Chameleon.KelleyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27814001B05BCBE0075E848 /* Chameleon.KelleyColor.swift */; };
 		C2878DEF1B0252EB004ECFF2 /* SchemeEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2878DEE1B0252EB004ECFF2 /* SchemeEditor.xib */; };
 		C2878DF11B02533A004ECFF2 /* SchemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2878DF01B02533A004ECFF2 /* SchemeEditor.swift */; };
 		C2878DF21B02D56B004ECFF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D994301B01A72D00745137 /* Images.xcassets */; };
@@ -67,6 +68,7 @@
 		C202DA161B03919C007ADD80 /* Chameleon.FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.FlatColor.swift; sourceTree = "<group>"; };
 		C202DA1A1B03922E007ADD80 /* Chameleon.CSSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.CSSColor.swift; sourceTree = "<group>"; };
 		C22FE8DC1B0428EC0052749C /* Conversions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Conversions.playground; sourceTree = "<group>"; };
+		C27814001B05BCBE0075E848 /* Chameleon.KelleyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.KelleyColor.swift; sourceTree = "<group>"; };
 		C2878DEE1B0252EB004ECFF2 /* SchemeEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchemeEditor.xib; sourceTree = "<group>"; };
 		C2878DF01B02533A004ECFF2 /* SchemeEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemeEditor.swift; sourceTree = "<group>"; };
 		C2878DF71B02E834004ECFF2 /* ColorSchemeTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ColorSchemeTests.playground; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		C296499D1B010E39000C2D4A /* Chameleon */ = {
 			isa = PBXGroup;
 			children = (
+				C27814001B05BCBE0075E848 /* Chameleon.KelleyColor.swift */,
 				C297BA401B0534E10087E8BD /* Chameleon.DarculaColor.swift */,
 				C297BA411B0534E10087E8BD /* Chameleon.QuietLightColor.swift */,
 				C2878DF71B02E834004ECFF2 /* ColorSchemeTests.playground */,
@@ -322,6 +325,7 @@
 				C29649DD1B018A53000C2D4A /* UIViewController+Chameleon.swift in Sources */,
 				C297BA431B0534E10087E8BD /* Chameleon.QuietLightColor.swift in Sources */,
 				C2878DF11B02533A004ECFF2 /* SchemeEditor.swift in Sources */,
+				C27814011B05BCBE0075E848 /* Chameleon.KelleyColor.swift in Sources */,
 				C29649DF1B018A8F000C2D4A /* UIColor+Chameleon.swift in Sources */,
 				C297BA421B0534E10087E8BD /* Chameleon.DarculaColor.swift in Sources */,
 				C29649DB1B01111E000C2D4A /* Chameleon.swift in Sources */,

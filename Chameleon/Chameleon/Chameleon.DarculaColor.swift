@@ -50,15 +50,15 @@ extension Chameleon {
   public static var darculaSolitudeDark:      UIColor { return DarculaColor.Dark(.Solitude).color      }
   public static var darculaSilverChaliceDark: UIColor { return DarculaColor.Dark(.SilverChalice).color }
 
-  public enum DarculaColor {
-    case Light (Base)
-    case Dark (Base)
+  public enum DarculaColor: ColorType {
+    case Light (DarculaColorBase)
+    case Dark (DarculaColorBase)
 
-    public enum Base {
+    public enum DarculaColorBase: ColorBaseType {
       case Mauve, AthensGray, MountainMist, HippieGreen, Axolotl, Celery, MoonstoneBlue, Flamenco, Limerick,
            MayaBlue, EastSide, SeaNymph, ReefGold, IndianYellow, MoonRaker, Montana, Solitude, SilverChalice
 
-      public static var all: [Base] {
+      public static var all: [DarculaColorBase] {
         return [.Mauve, .AthensGray, .MountainMist, .HippieGreen, .Axolotl, .Celery, .MoonstoneBlue, .Flamenco, .Limerick,
                 .MayaBlue, .EastSide, .SeaNymph, .ReefGold, .IndianYellow, .MoonRaker, .Montana, .Solitude, .SilverChalice]
       }
@@ -88,32 +88,32 @@ extension Chameleon {
     }
 
     static var all:      [DarculaColor] { return allLight + allDark                 }
-    static var allLight: [DarculaColor] { return Base.all.map {DarculaColor.Light($0)} }
-    static var allDark:  [DarculaColor] { return Base.all.map {DarculaColor.Dark($0)}  }
+    static var allLight: [DarculaColor] { return DarculaColorBase.all.map {DarculaColor.Light($0)} }
+    static var allDark:  [DarculaColor] { return DarculaColorBase.all.map {DarculaColor.Dark($0)}  }
 
     public var name: String { switch self { case .Light(let b): return b.name; case .Dark(let b):  return b.name + "Dark"} }
-    public var base: Base { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
+    public var base: DarculaColorBase { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
     public var shade: Chameleon.Shade { switch self { case .Light: return .Light; case .Dark:  return .Dark } }
 
     public static let lightColors = [
-      Base.Mauve.name:         UIColor(red: 0.88, green: 0.65, blue: 0.99, alpha: 1),
-      Base.AthensGray.name:    UIColor(red: 0.88, green: 0.87, blue: 0.88, alpha: 1),
-      Base.MountainMist.name:  UIColor(red: 0.57, green: 0.57, blue: 0.57, alpha: 1),
-      Base.HippieGreen.name:   UIColor(red: 0.39, green: 0.59, blue: 0.35, alpha: 1),
-      Base.Axolotl.name:       UIColor(red: 0.33, green: 0.42, blue: 0.29, alpha: 1),
-      Base.Celery.name:        UIColor(red: 0.65, green: 0.76, blue: 0.38, alpha: 1),
-      Base.MoonstoneBlue.name: UIColor(red: 0.49, green: 0.66, blue: 0.78, alpha: 1),
-      Base.Flamenco.name:      UIColor(red: 0.89, green: 0.53, blue: 0.26, alpha: 1),
-      Base.Limerick.name:      UIColor(red: 0.56, green: 0.73, blue: 0.13, alpha: 1),
-      Base.MayaBlue.name:      UIColor(red: 0.42, green: 0.69, blue: 0.96, alpha: 1),
-      Base.EastSide.name:      UIColor(red: 0.64, green: 0.54, blue: 0.7, alpha: 1),
-      Base.SeaNymph.name:      UIColor(red: 0.53, green: 0.71, blue: 0.64, alpha: 1),
-      Base.ReefGold.name:      UIColor(red: 0.64, green: 0.53, blue: 0.23, alpha: 1),
-      Base.IndianYellow.name:  UIColor(red: 0.88, green: 0.65, blue: 0.35, alpha: 1),
-      Base.MoonRaker.name:     UIColor(red: 0.82, green: 0.83, blue: 0.96, alpha: 1),
-      Base.Montana.name:       UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1),
-      Base.Solitude.name:      UIColor(red: 0.91, green: 0.95, blue: 1, alpha: 1),
-      Base.SilverChalice.name: UIColor(red: 0.66, green: 0.71, blue: 0.65, alpha: 1)
+      DarculaColorBase.Mauve.name:         UIColor(red: 0.88, green: 0.65, blue: 0.99, alpha: 1),
+      DarculaColorBase.AthensGray.name:    UIColor(red: 0.88, green: 0.87, blue: 0.88, alpha: 1),
+      DarculaColorBase.MountainMist.name:  UIColor(red: 0.57, green: 0.57, blue: 0.57, alpha: 1),
+      DarculaColorBase.HippieGreen.name:   UIColor(red: 0.39, green: 0.59, blue: 0.35, alpha: 1),
+      DarculaColorBase.Axolotl.name:       UIColor(red: 0.33, green: 0.42, blue: 0.29, alpha: 1),
+      DarculaColorBase.Celery.name:        UIColor(red: 0.65, green: 0.76, blue: 0.38, alpha: 1),
+      DarculaColorBase.MoonstoneBlue.name: UIColor(red: 0.49, green: 0.66, blue: 0.78, alpha: 1),
+      DarculaColorBase.Flamenco.name:      UIColor(red: 0.89, green: 0.53, blue: 0.26, alpha: 1),
+      DarculaColorBase.Limerick.name:      UIColor(red: 0.56, green: 0.73, blue: 0.13, alpha: 1),
+      DarculaColorBase.MayaBlue.name:      UIColor(red: 0.42, green: 0.69, blue: 0.96, alpha: 1),
+      DarculaColorBase.EastSide.name:      UIColor(red: 0.64, green: 0.54, blue: 0.7, alpha: 1),
+      DarculaColorBase.SeaNymph.name:      UIColor(red: 0.53, green: 0.71, blue: 0.64, alpha: 1),
+      DarculaColorBase.ReefGold.name:      UIColor(red: 0.64, green: 0.53, blue: 0.23, alpha: 1),
+      DarculaColorBase.IndianYellow.name:  UIColor(red: 0.88, green: 0.65, blue: 0.35, alpha: 1),
+      DarculaColorBase.MoonRaker.name:     UIColor(red: 0.82, green: 0.83, blue: 0.96, alpha: 1),
+      DarculaColorBase.Montana.name:       UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1),
+      DarculaColorBase.Solitude.name:      UIColor(red: 0.91, green: 0.95, blue: 1, alpha: 1),
+      DarculaColorBase.SilverChalice.name: UIColor(red: 0.66, green: 0.71, blue: 0.65, alpha: 1)
     ]
 
     public static let darkColors: [String:UIColor] = {
@@ -122,7 +122,7 @@ extension Chameleon {
         var (l, a, b) = color.LAB
         l -= 10
         let(red, green, blue) = labToRGB(l, a, b)
-        darkColors["\(name)Dark"] = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        darkColors[name] = UIColor(red: red, green: green, blue: blue, alpha: 1)
       }
       return darkColors
     } ()
@@ -134,7 +134,7 @@ extension Chameleon {
       }
     }
 
-    public init(base: Base, shade: Chameleon.Shade = .Light) {
+    public init(base: DarculaColorBase, shade: Chameleon.Shade = .Light) {
       switch shade {
         case .Dark: self = .Dark(base)
         default: self = .Light(base)
@@ -143,24 +143,24 @@ extension Chameleon {
 
     public init?(name: String, shade: Chameleon.Shade = .Light) {
       switch name.lowercaseString {
-        case Base.Mauve.name.lowercaseString:         self = DarculaColor(base: .Mauve,         shade: shade)
-        case Base.AthensGray.name.lowercaseString:    self = DarculaColor(base: .AthensGray,    shade: shade)
-        case Base.MountainMist.name.lowercaseString:  self = DarculaColor(base: .MountainMist,  shade: shade)
-        case Base.HippieGreen.name.lowercaseString:   self = DarculaColor(base: .HippieGreen,   shade: shade)
-        case Base.Axolotl.name.lowercaseString:       self = DarculaColor(base: .Axolotl,       shade: shade)
-        case Base.Celery.name.lowercaseString:        self = DarculaColor(base: .Celery,        shade: shade)
-        case Base.MoonstoneBlue.name.lowercaseString: self = DarculaColor(base: .MoonstoneBlue, shade: shade)
-        case Base.Flamenco.name.lowercaseString:      self = DarculaColor(base: .Flamenco,      shade: shade)
-        case Base.Limerick.name.lowercaseString:      self = DarculaColor(base: .Limerick,      shade: shade)
-        case Base.MayaBlue.name.lowercaseString:      self = DarculaColor(base: .MayaBlue,      shade: shade)
-        case Base.EastSide.name.lowercaseString:      self = DarculaColor(base: .EastSide,      shade: shade)
-        case Base.SeaNymph.name.lowercaseString:      self = DarculaColor(base: .SeaNymph,      shade: shade)
-        case Base.ReefGold.name.lowercaseString:      self = DarculaColor(base: .ReefGold,      shade: shade)
-        case Base.IndianYellow.name.lowercaseString:  self = DarculaColor(base: .IndianYellow,  shade: shade)
-        case Base.MoonRaker.name.lowercaseString:     self = DarculaColor(base: .MoonRaker,     shade: shade)
-        case Base.Montana.name.lowercaseString:       self = DarculaColor(base: .Montana,       shade: shade)
-        case Base.Solitude.name.lowercaseString:      self = DarculaColor(base: .Solitude,      shade: shade)
-        case Base.SilverChalice.name.lowercaseString: self = DarculaColor(base: .SilverChalice, shade: shade)
+        case DarculaColorBase.Mauve.name.lowercaseString:         self = DarculaColor(base: .Mauve,         shade: shade)
+        case DarculaColorBase.AthensGray.name.lowercaseString:    self = DarculaColor(base: .AthensGray,    shade: shade)
+        case DarculaColorBase.MountainMist.name.lowercaseString:  self = DarculaColor(base: .MountainMist,  shade: shade)
+        case DarculaColorBase.HippieGreen.name.lowercaseString:   self = DarculaColor(base: .HippieGreen,   shade: shade)
+        case DarculaColorBase.Axolotl.name.lowercaseString:       self = DarculaColor(base: .Axolotl,       shade: shade)
+        case DarculaColorBase.Celery.name.lowercaseString:        self = DarculaColor(base: .Celery,        shade: shade)
+        case DarculaColorBase.MoonstoneBlue.name.lowercaseString: self = DarculaColor(base: .MoonstoneBlue, shade: shade)
+        case DarculaColorBase.Flamenco.name.lowercaseString:      self = DarculaColor(base: .Flamenco,      shade: shade)
+        case DarculaColorBase.Limerick.name.lowercaseString:      self = DarculaColor(base: .Limerick,      shade: shade)
+        case DarculaColorBase.MayaBlue.name.lowercaseString:      self = DarculaColor(base: .MayaBlue,      shade: shade)
+        case DarculaColorBase.EastSide.name.lowercaseString:      self = DarculaColor(base: .EastSide,      shade: shade)
+        case DarculaColorBase.SeaNymph.name.lowercaseString:      self = DarculaColor(base: .SeaNymph,      shade: shade)
+        case DarculaColorBase.ReefGold.name.lowercaseString:      self = DarculaColor(base: .ReefGold,      shade: shade)
+        case DarculaColorBase.IndianYellow.name.lowercaseString:  self = DarculaColor(base: .IndianYellow,  shade: shade)
+        case DarculaColorBase.MoonRaker.name.lowercaseString:     self = DarculaColor(base: .MoonRaker,     shade: shade)
+        case DarculaColorBase.Montana.name.lowercaseString:       self = DarculaColor(base: .Montana,       shade: shade)
+        case DarculaColorBase.Solitude.name.lowercaseString:      self = DarculaColor(base: .Solitude,      shade: shade)
+        case DarculaColorBase.SilverChalice.name.lowercaseString: self = DarculaColor(base: .SilverChalice, shade: shade)
         default: return nil
       }
   }

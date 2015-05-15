@@ -35,6 +35,26 @@ SOFTWARE.
 import Foundation
 import UIKit
 
+protocol ColorBaseType {
+  var name: String { get }
+  static var all: [Self] { get }
+}
+
+protocol ColorType {
+  typealias BaseType: ColorBaseType
+  var shade: Chameleon.Shade { get }
+  var base: BaseType { get }
+  var name: String { get }
+  static var all: [Self] { get }
+  static var allLight: [Self] { get }
+  static var allDark: [Self] { get }
+  static var lightColors: [String:UIColor] { get }
+  static var darkColors: [String:UIColor] { get }
+  var color: UIColor { get }
+  init(base: BaseType, shade: Chameleon.Shade)
+  init?(name: String, shade: Chameleon.Shade)
+}
+
 
 public final class Chameleon {
 
@@ -91,7 +111,6 @@ public final class Chameleon {
     }
   }
 
-
   // MARK: - GradientStyle type
 
   /** Defines the gradient style and direction of the gradient color. */
@@ -129,16 +148,17 @@ public final class Chameleon {
 
   /** Represents the collection of colors to use when inputting colors */
   public enum ColorPalette: Int, Printable {
-    case Flat, CSS, Darcula, QuietLight
+    case Flat, CSS, Darcula, QuietLight, Kelley
     public var description: String {
       switch self {
-        case .Flat: return "Flat"
-        case .CSS: return  "CSS"
-        case .Darcula: return "Darcula"
+        case .Flat:       return "Flat"
+        case .CSS:        return  "CSS"
+        case .Darcula:    return "Darcula"
         case .QuietLight: return "QuietLight"
+        case .Kelley:     return "Kelley"
       }
     }
-    public static var all: [ColorPalette] { return [.Flat, .CSS, .Darcula, .QuietLight] }
+    public static var all: [ColorPalette] { return [.Flat, .CSS, .Darcula, .QuietLight, Kelley] }
   }
 
   // MARK: - UIStatusBar Methods
