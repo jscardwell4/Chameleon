@@ -75,21 +75,21 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   /**
   Select or deselect the color represented by the tapped view for inclusion in the generated gradient color
 
-  :param: gesture UITapGestureRecognizer
+  - parameter gesture: UITapGestureRecognizer
   */
   @IBAction func toggleViewSelection(gesture: UITapGestureRecognizer) {
     let tag = gesture.view!.tag
-    if let idx = find(gradientColors, tag) { indicators[tag].tintColor = view.backgroundColor; gradientColors.removeAtIndex(idx) }
+    if let idx = gradientColors.indexOf(tag) { indicators[tag].tintColor = view.backgroundColor; gradientColors.removeAtIndex(idx) }
     else { indicators[tag].tintColor = indicatorColor; gradientColors += [tag] }
   }
 
   /**
   Invoked by buttons to toggle display of, or change data set for, the picker view
 
-  :param: sender UIButton
+  - parameter sender: UIButton
   */
   @IBAction func togglePickerView(sender: UIButton) {
-    assert(contains(0...3, sender.tag))
+    assert((0...3).contains(sender.tag))
     let selectedPicker = CurrentPicker(rawValue: sender.tag)!
     if !pickerView.hidden && currentPicker == selectedPicker { pickerView.hidden = true }
     else { currentPicker = selectedPicker; pickerView.hidden = false }
@@ -98,14 +98,14 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   /**
   Toggle flat color filtering when generating schemes
 
-  :param: sender UISwitch
+  - parameter sender: UISwitch
   */
   @IBAction func updateFlat(sender: UISwitch) { flat = sender.on }
 
   /**
   Invoked by segmented control to handle selection of `Light` or `Dark` shade style
 
-  :param: sender UISegmentedControl
+  - parameter sender: UISegmentedControl
   */
   @IBAction func selectShade(sender: UISegmentedControl) {
     let shade = Chameleon.Shade(rawValue: sender.selectedSegmentIndex)!
@@ -131,7 +131,7 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
     baseColorButton.setTitle(baseColorName, forState: .Normal)
     shadeSegmentedControl.selectedSegmentIndex = baseColorShade.rawValue
     let colors = Chameleon.colorsForScheme(colorScheme, with: baseColor, flat: flat)
-    reduce(zip(colors, colorViews), Void()) {$1.1.backgroundColor = $1.0}
+    zip(colors, colorViews).reduce(Void()) {$1.1.backgroundColor = $1.0}
     gradientView.backgroundColor = Chameleon.gradientWithStyle(gradientStyle,
                                                      withFrame: gradientView.bounds,
                                                      andColors: gradientColors.map { colors[$0] })
@@ -148,11 +148,11 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
         case .GradientStyle: row = gradientStyle.rawValue
         case .BaseColor:
           switch colorPalette {
-          case .Flat:       row = find(flatColorPaletteSource.bases,       flatColorPaletteSource.base)!
-          case .CSS:        row = find(cssColorPaletteSource.bases,        cssColorPaletteSource.base)!
-          case .Darcula:    row = find(darculaColorPaletteSource.bases,    darculaColorPaletteSource.base)!
-          case .QuietLight: row = find(quietLightColorPaletteSource.bases, quietLightColorPaletteSource.base)!
-          case .Kelley:     row = find(kelleyColorPaletteSource.bases,     kelleyColorPaletteSource.base)!
+          case .Flat:       row = flatColorPaletteSource.bases.indexOf(flatColorPaletteSource.base)!
+          case .CSS:        row = cssColorPaletteSource.bases.indexOf(cssColorPaletteSource.base)!
+          case .Darcula:    row = darculaColorPaletteSource.bases.indexOf(darculaColorPaletteSource.base)!
+          case .QuietLight: row = quietLightColorPaletteSource.bases.indexOf(quietLightColorPaletteSource.base)!
+          case .Kelley:     row = kelleyColorPaletteSource.bases.indexOf(kelleyColorPaletteSource.base)!
           }
         case .Palette:       row = colorPalette.rawValue
       }
@@ -261,10 +261,10 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   /**
   pickerView:numberOfRowsInComponent:
 
-  :param: pickerView UIPickerView
-  :param: component Int
+  - parameter pickerView: UIPickerView
+  - parameter component: Int
 
-  :returns: Int
+  - returns: Int
   */
   public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     switch currentPicker {
@@ -278,13 +278,13 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   /**
   pickerView:titleForRow:forComponent:
 
-  :param: pickerView UIPickerView
-  :param: row Int
-  :param: component Int
+  - parameter pickerView: UIPickerView
+  - parameter row: Int
+  - parameter component: Int
 
-  :returns: String!
+  - returns: String!
   */
-  public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+  public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     switch currentPicker {
       case .Scheme:        return colorSchemes[row].description
       case .GradientStyle: return gradientStyles[row].description
@@ -296,18 +296,18 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   /**
   numberOfComponentsInPickerView:
 
-  :param: pickerView UIPickerView
+  - parameter pickerView: UIPickerView
 
-  :returns: Int
+  - returns: Int
   */
   public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int { return 1 }
 
   /**
   pickerView:didSelectRow:inComponent:
 
-  :param: pickerView UIPickerView
-  :param: row Int
-  :param: component Int
+  - parameter pickerView: UIPickerView
+  - parameter row: Int
+  - parameter component: Int
   */
   public func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     switch currentPicker {

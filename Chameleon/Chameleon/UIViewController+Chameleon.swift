@@ -41,7 +41,7 @@ extension UIViewController {
 
   public func flatify(contrast: Bool = false) {
     flatifyNavigationBarItems()
-    for v in view.subviews as! [UIView] { UIViewController.flatifyView(v, contrast: contrast) }
+    for v in view.subviews as [UIView] { UIViewController.flatifyView(v, contrast: contrast) }
   }
 
 
@@ -57,12 +57,12 @@ extension UIViewController {
 
   private static func flatifyView(view: UIActivityIndicatorView, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
-    view.color = view.color.flatColor
+    view.color = view.color?.flatColor
     view.tintColor = view.tintColor.flatColor
   }
 
   private static func flatifyView(view: UIBarButtonItem, contrast: Bool = false) {
-    view.tintColor = view.tintColor.flatColor
+    view.tintColor = view.tintColor?.flatColor
   }
 
   private static func flatifyView(view: UIButton, contrast: Bool = false) {
@@ -134,7 +134,7 @@ extension UIViewController {
 
   private static func flatifyView(view: UISwitch, contrast: Bool = false) {
     view.thumbTintColor = view.thumbTintColor?.flatColor
-    view.onTintColor = view.onTintColor.flatColor
+    view.onTintColor = view.onTintColor?.flatColor
     view.backgroundColor = view.backgroundColor?.flatColor
     view.tintColor = view.tintColor?.flatColor
   }
@@ -145,13 +145,13 @@ extension UIViewController {
       view.tintColor = view.tintColor.flatColor
 
       if view.backgroundColor == nil {
-        view.textColor = view.textColor.flatColor
+        view.textColor = view.textColor?.flatColor
       } else {
         view.textColor = view.backgroundColor?.contrastingFlatColor
       }
     } else {
       view.backgroundColor = view.backgroundColor?.flatColor
-      view.textColor = view.textColor.flatColor
+      view.textColor = view.textColor?.flatColor
       view.tintColor = view.tintColor.flatColor
     }
   }
@@ -217,16 +217,16 @@ extension UIViewController {
         view.titleView?.backgroundColor = view.titleView?.backgroundColor?.flatColor
         view.titleView?.tintColor = view.titleView?.backgroundColor?.contrastingFlatColor
       } else {
-        view.backBarButtonItem?.tintColor = view.backBarButtonItem?.tintColor.flatColor
-        view.leftBarButtonItem?.tintColor = view.leftBarButtonItem?.tintColor.flatColor
-        view.rightBarButtonItem?.tintColor = view.rightBarButtonItem?.tintColor.flatColor
+        view.backBarButtonItem?.tintColor = view.backBarButtonItem?.tintColor?.flatColor
+        view.leftBarButtonItem?.tintColor = view.leftBarButtonItem?.tintColor?.flatColor
+        view.rightBarButtonItem?.tintColor = view.rightBarButtonItem?.tintColor?.flatColor
         view.titleView?.backgroundColor = view.titleView?.backgroundColor?.flatColor
         view.titleView?.tintColor = view.titleView?.tintColor.flatColor
       }
     } else {
-      view.backBarButtonItem?.tintColor = view.backBarButtonItem?.tintColor.flatColor
-      view.leftBarButtonItem?.tintColor = view.leftBarButtonItem?.tintColor.flatColor
-      view.rightBarButtonItem?.tintColor = view.rightBarButtonItem?.tintColor.flatColor
+      view.backBarButtonItem?.tintColor = view.backBarButtonItem?.tintColor?.flatColor
+      view.leftBarButtonItem?.tintColor = view.leftBarButtonItem?.tintColor?.flatColor
+      view.rightBarButtonItem?.tintColor = view.rightBarButtonItem?.tintColor?.flatColor
       view.titleView?.backgroundColor = view.titleView?.backgroundColor?.flatColor
       view.titleView?.tintColor = view.titleView?.tintColor.flatColor
     }
@@ -256,7 +256,7 @@ extension UIViewController {
     view.sectionIndexBackgroundColor = view.sectionIndexBackgroundColor?.flatColor
     view.sectionIndexColor = view.sectionIndexColor?.flatColor
     view.sectionIndexTrackingBackgroundColor = view.sectionIndexTrackingBackgroundColor?.flatColor
-    view.separatorColor = view.separatorColor.flatColor
+    view.separatorColor = view.separatorColor?.flatColor
     view.tintColor = view.tintColor.flatColor
     view.backgroundView?.backgroundColor = view.backgroundView?.backgroundColor?.flatColor
     view.backgroundView?.tintColor = view.backgroundView?.tintColor.flatColor
@@ -268,8 +268,8 @@ extension UIViewController {
     view.tableFooterView?.tintColor = view.tableFooterView?.tintColor.flatColor
     view.tableHeaderView?.backgroundColor = view.tableHeaderView?.backgroundColor?.flatColor
     view.tableHeaderView?.tintColor = view.tableHeaderView?.tintColor.flatColor
-    view.viewForBaselineLayout()?.backgroundColor = view.viewForBaselineLayout()?.backgroundColor?.flatColor
-    view.viewForBaselineLayout()?.tintColor = view.viewForBaselineLayout()?.backgroundColor?.flatColor
+    view.viewForBaselineLayout().backgroundColor = view.viewForBaselineLayout().backgroundColor?.flatColor
+    view.viewForBaselineLayout().tintColor = view.viewForBaselineLayout().backgroundColor?.flatColor
   }
 
   private static func flatifyView(view: UITextView, contrast: Bool = false) {
@@ -280,11 +280,11 @@ extension UIViewController {
       if view.backgroundColor != nil {
         view.textColor = view.backgroundColor?.contrastingFlatColor
       } else {
-        view.textColor = view.textColor.flatColor
+        view.textColor = view.textColor?.flatColor
       }
     } else {
       view.backgroundColor = view.backgroundColor?.flatColor
-      view.textColor = view.textColor.flatColor
+      view.textColor = view.textColor?.flatColor
       view.tintColor = view.tintColor.flatColor
     }
   }

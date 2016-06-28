@@ -63,20 +63,20 @@ extension Chameleon {
   public static var flatWhiteDark:       UIColor { return FlatColor.Dark(.White).color       }
   public static var flatYellowDark:      UIColor { return FlatColor.Dark(.Yellow).color      }
 
-  public static var lightColors: LazyForwardCollection<MapCollectionView<[String : UIColor], UIColor>> {
+  public static var lightColors: LazyForwardCollection<MapCollection<[String : UIColor], UIColor>> {
     return FlatColor.lightColors.values
   }
 
-  public static var darkColors: LazyForwardCollection<MapCollectionView<[String : UIColor], UIColor>> {
+  public static var darkColors: LazyForwardCollection<MapCollection<[String : UIColor], UIColor>> {
     return FlatColor.darkColors.values
   }
 
-  public static var flatColors: SequenceOf<UIColor> {
-    return SequenceOf({
-      () -> GeneratorOf<UIColor> in
+  public static var flatColors: AnySequence<UIColor> {
+    return AnySequence({
+      () -> AnyGenerator<UIColor> in
         var lightGenerator = Chameleon.lightColors.generate()
         var darkGenerator = Chameleon.darkColors.generate()
-        return GeneratorOf({lightGenerator.next() ?? darkGenerator.next()})
+        return anyGenerator({lightGenerator.next() ?? darkGenerator.next()})
     })
   }
 
@@ -91,10 +91,10 @@ extension Chameleon {
       case Dark  /** Returns the dark shade version of a flat color. */
       case Any  /** Returns either a light or dark version of a flat color */
 
-      public var colors: SequenceOf<UIColor> {
+      public var colors: AnySequence<UIColor> {
         switch self {
-        case .Light: return SequenceOf(Chameleon.lightColors)
-        case .Dark:  return SequenceOf(Chameleon.darkColors)
+        case .Light: return AnySequence(Chameleon.lightColors)
+        case .Dark:  return AnySequence(Chameleon.darkColors)
         case .Any:   return Chameleon.flatColors
         }
       }

@@ -34,6 +34,7 @@ SOFTWARE.
 
 import Foundation
 import UIKit
+import CoreGraphics
 
 protocol ColorBaseType {
   var name: String { get }
@@ -61,7 +62,7 @@ public final class Chameleon {
   // MARK: - ColorScheme type
 
   /** Color schemes with which to select colors using a specified color. */
-  public enum ColorScheme: Int, Printable {
+  public enum ColorScheme: Int, CustomStringConvertible {
     /**
     Analogous color schemes use colors that are next to each other on the color wheel. They usually match well and create serene
     and comfortable designs. Analogous color schemes are often found in nature and are harmonious and pleasing to the eye. Make
@@ -102,10 +103,10 @@ public final class Chameleon {
     case Dark  /** Returns the dark shade version of a flat color. */
     case Any  /** Returns either a light or dark version of a flat color */
 
-    public var colors: SequenceOf<UIColor> {
+    public var colors: AnySequence<UIColor> {
       switch self {
-        case .Light: return SequenceOf(Chameleon.lightColors)
-        case .Dark:  return SequenceOf(Chameleon.darkColors)
+        case .Light: return AnySequence(Chameleon.lightColors)
+        case .Dark:  return AnySequence(Chameleon.darkColors)
         case .Any:   return Chameleon.flatColors
       }
     }
@@ -114,7 +115,7 @@ public final class Chameleon {
   // MARK: - GradientStyle type
 
   /** Defines the gradient style and direction of the gradient color. */
-  public enum GradientStyle: Int, Printable {
+  public enum GradientStyle: Int, CustomStringConvertible {
     /**
     Returns a gradual blend between colors originating at the leftmost point of an object's frame, and ending at the rightmost
     point of the object's frame.
@@ -147,7 +148,7 @@ public final class Chameleon {
   // MARK: - ColorPalette type
 
   /** Represents the collection of colors to use when inputting colors */
-  public enum ColorPalette: Int, Printable {
+  public enum ColorPalette: Int, CustomStringConvertible {
     case Flat, CSS, Darcula, QuietLight, Kelley
     public var description: String {
       switch self {
@@ -165,9 +166,9 @@ public final class Chameleon {
   /**
   statusBarStyleForColor:
 
-  :param: backgroundColor UIColor
+  - parameter backgroundColor: UIColor
 
-  :returns: UIStatusBarStyle
+  - returns: UIStatusBarStyle
   */
   public static func statusBarStyleForColor(backgroundColor: UIColor) -> UIStatusBarStyle {
     var luminance = CGFloat(), red = CGFloat(), green = CGFloat(), blue = CGFloat()
@@ -188,13 +189,13 @@ public final class Chameleon {
   /**
   colorsForScheme:with:flat:
 
-  :param: scheme ColorScheme
-  :param: color UIColor
-  :param: flat Bool
+  - parameter scheme: ColorScheme
+  - parameter color: UIColor
+  - parameter flat: Bool
 
-  :returns: [UIColor]
+  - returns: [UIColor]
   */
-  public static func colorsForScheme(scheme: ColorScheme, with color: UIColor, flat: Bool) -> [UIColor] {
+  public static func colorsForScheme(scheme: ColorScheme, with color: UIColor, flat: Bool, unique: Bool = false) -> [UIColor] {
 
     // Helper for modifying hue value
     func add(newValue: CGFloat, currentValue: CGFloat) -> CGFloat {
@@ -212,48 +213,52 @@ public final class Chameleon {
     //Multiply our values by the max value to convert
     h *= 360; s *= 100; b *= 100
 
-    let colors: [UIColor]
+    var colors: [UIColor]
 
     //Choose Between Schemes
     switch scheme {
       case .Analogous:
         colors = [
-          UIColor(hue: add(-32, h)/360, saturation: (s + 5)/100, brightness: (b + 5)/100, alpha: 1),
-          UIColor(hue: add(-16, h)/360, saturation: (s + 5)/100, brightness: (b + 9)/100, alpha: 1),
+          UIColor(hue: add(-32, currentValue: h)/360, saturation: (s + 5)/100, brightness: (b + 5)/100, alpha: 1),
+          UIColor(hue: add(-16, currentValue: h)/360, saturation: (s + 5)/100, brightness: (b + 9)/100, alpha: 1),
           UIColor(hue: h/360, saturation: s/100, brightness: b/100, alpha: 1),
-          UIColor(hue: add(16, h)/360, saturation: (s + 5)/100, brightness: (b + 9)/100, alpha: 1),
-          UIColor(hue: add(32, h)/360, saturation: (s + 5)/100, brightness: (b + 5)/100, alpha: 1)
+          UIColor(hue: add(16, currentValue: h)/360, saturation: (s + 5)/100, brightness: (b + 9)/100, alpha: 1),
+          UIColor(hue: add(32, currentValue: h)/360, saturation: (s + 5)/100, brightness: (b + 5)/100, alpha: 1)
         ]
       case .Complementary:
         colors = [
           UIColor(hue: h/360, saturation: (s + 5)/100, brightness: (b - 30)/100, alpha: 1),
           UIColor(hue: h/360, saturation: (s - 10)/100, brightness: (b + 9)/100, alpha: 1),
           UIColor(hue: h/360, saturation: s/100, brightness: b/100, alpha: 1),
-          UIColor(hue: add(180, h)/360, saturation: s/100, brightness: b/100, alpha: 1),
-          UIColor(hue: add(180, h)/360, saturation: (s + 20)/100, brightness: (b - 30)/100, alpha: 1)
+          UIColor(hue: add(180, currentValue: h)/360, saturation: s/100, brightness: b/100, alpha: 1),
+          UIColor(hue: add(180, currentValue: h)/360, saturation: (s + 20)/100, brightness: (b - 30)/100, alpha: 1)
         ]
       case .Triadic:
         colors = [
-          UIColor(hue: add(120, h)/360, saturation: (7 * s/6)/100, brightness: (b - 5)/100, alpha: 1),
-          UIColor(hue: add(120, h)/360, saturation: s/100, brightness: (b + 9)/100, alpha: 1),
+          UIColor(hue: add(120, currentValue: h)/360, saturation: (7 * s/6)/100, brightness: (b - 5)/100, alpha: 1),
+          UIColor(hue: add(120, currentValue: h)/360, saturation: s/100, brightness: (b + 9)/100, alpha: 1),
           UIColor(hue: h/360, saturation: s/100, brightness: b/100, alpha: 1),
-          UIColor(hue: add(240, h)/360, saturation: (7 * s/6)/100, brightness: (b - 5)/100, alpha: 1),
-          UIColor(hue: add(240, h)/360, saturation: s/100, brightness: (b - 30)/100, alpha: 1)
+          UIColor(hue: add(240, currentValue: h)/360, saturation: (7 * s/6)/100, brightness: (b - 5)/100, alpha: 1),
+          UIColor(hue: add(240, currentValue: h)/360, saturation: s/100, brightness: (b - 30)/100, alpha: 1)
         ]
     }
 
-    return flat ? colors.map {$0.flatColor} : colors
+    if flat { colors = colors.map {$0.flatColor} }
+
+    if unique { colors = Array(Set(colors)) }
+
+    return colors
   }
 
 
   /**
   gradientWithStyle:withFrame:andColors:
 
-  :param: style GradientStyle
-  :param: frame CGRect
-  :param: colors [UIColor]
+  - parameter style: GradientStyle
+  - parameter frame: CGRect
+  - parameter colors: [UIColor]
 
-  :returns: UIColor
+  - returns: UIColor
   */
   public static func gradientWithStyle(style: GradientStyle, withFrame frame:CGRect, andColors colors: [UIColor]) -> UIColor {
 
@@ -281,7 +286,7 @@ public final class Chameleon {
 
         //Convert our CALayer to a UIImage object
         UIGraphicsBeginImageContextWithOptions(backgroundGradientLayer.bounds.size, false, UIScreen.mainScreen().scale)
-        backgroundGradientLayer.renderInContext(UIGraphicsGetCurrentContext())
+        backgroundGradientLayer.renderInContext(UIGraphicsGetCurrentContext()!)
         backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
       case .Radial:
@@ -295,7 +300,7 @@ public final class Chameleon {
         let radius = min(frame.width, frame.height)
         let context = UIGraphicsGetCurrentContext()
         // Draw our Gradient
-        CGContextDrawRadialGradient (context, gradient, point, 0, point, radius, UInt32(kCGGradientDrawsAfterEndLocation))
+        CGContextDrawRadialGradient(context, gradient, point, 0, point, radius, .DrawsAfterEndLocation)
         // Grab it as an Image
          backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext()
         // Clean up

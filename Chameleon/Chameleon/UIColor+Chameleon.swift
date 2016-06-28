@@ -34,26 +34,29 @@ SOFTWARE.
 
 import Foundation
 import UIKit
+import ObjectiveC
+import CoreGraphics
+import QuartzCore
 
 private(set) var gradientImageKey = "gradientImage"
 
-public func rgba(r: Int, g: Int, b: Int, a: Int) -> UIColor {
+public func rgba(r: Int, _ g: Int, _ b: Int, _ a: Int) -> UIColor {
   return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: CGFloat(a)/255)
 }
 
-public func rgb(r: Int, g: Int, b: Int) -> UIColor {
+public func rgb(r: Int, _ g: Int, _ b: Int) -> UIColor {
   return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
 }
 
-public func hsba(h: Int, s: Int, b: Int, a: Int) -> UIColor {
+public func hsba(h: Int, _ s: Int, _ b: Int, _ a: Int) -> UIColor {
   return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: CGFloat(a)/100)
 }
 
-public func hsb(h: Int, s: Int, b: Int) -> UIColor {
+public func hsb(h: Int, _ s: Int, _ b: Int) -> UIColor {
   return UIColor(hue: CGFloat(h)/360, saturation: CGFloat(s)/100, brightness: CGFloat(b)/100, alpha: 1)
 }
 
-public func hsbToRGB(h: Int, var s: Int, var b: Int) -> (r: Int, g: Int, b: Int) {
+public func hsbToRGB(h: Int, _ s: Int, _ b: Int) -> (r: Int, g: Int, b: Int) {
 
   let s = CGFloat(s) / 100
   let b = CGFloat(b) / 100
@@ -76,7 +79,7 @@ public func hsbToRGB(h: Int, var s: Int, var b: Int) -> (r: Int, g: Int, b: Int)
   return (r: Int((r1 + m) * 255), g: Int((g1 + m) * 255), b: Int((b1 + m) * 255))
 }
 
-public func rgbToHSB(r: Int, g: Int, b: Int) -> (h: Int, s: Int, b: Int) {
+public func rgbToHSB(r: Int, _ g: Int, _ b: Int) -> (h: Int, s: Int, b: Int) {
   let r = CGFloat(r) / 255, g = CGFloat(g) / 255, b = CGFloat(b) / 255
   let M = max(r, g, b)
   let m = min(r, g, b)
@@ -95,29 +98,29 @@ public func rgbToHSB(r: Int, g: Int, b: Int) -> (h: Int, s: Int, b: Int) {
   return (h: h, s: s, b: v)
 }
 
-public func rgbTosRGB(r: CGFloat, g: CGFloat, b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+public func rgbTosRGB(r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
   func convert(c: CGFloat) -> CGFloat { return c > 0.04045 ? pow((c + 0.055) / 1.055, 2.4) : c / 12.92 }
   return (r: convert(r), g: convert(g), b: convert(b))
 }
 
-public func sRGBToXYZ(r: CGFloat, g: CGFloat, b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
+public func sRGBToXYZ(r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
   let x = (r * 0.4124 + g * 0.3576 + b * 0.1805) * 100.0
   let y = (r * 0.2126 + g * 0.7152 + b * 0.0722) * 100.0
   let z = (r * 0.0193 + g * 0.1192 + b * 0.9505) * 100.0
   return (x: x, y: y, z: z)
 }
 
-public func rgbToXYZ(var r: CGFloat, var g: CGFloat, var b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
+public func rgbToXYZ(var r: CGFloat, var _ g: CGFloat, var _ b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
   (r, g, b) = rgbTosRGB(r, g, b)
   return sRGBToXYZ(r, g, b)
 }
 
-public func rgbToLAB(r: CGFloat, g: CGFloat, b: CGFloat) -> (l: CGFloat, a: CGFloat, b: CGFloat) {
+public func rgbToLAB(r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> (l: CGFloat, a: CGFloat, b: CGFloat) {
   let (x, y, z) = rgbToXYZ(r, g, b)
   return xyzToLAB(x, y, z)
 }
 
-public func xyzToLAB(var x: CGFloat, var y: CGFloat, var z: CGFloat) -> (l: CGFloat, a: CGFloat, b: CGFloat) {
+public func xyzToLAB(var x: CGFloat, var _ y: CGFloat, var _ z: CGFloat) -> (l: CGFloat, a: CGFloat, b: CGFloat) {
   // The corresponding original XYZ values are such that white is D65 with unit luminance (X,Y,Z = 0.9505, 1.0000, 1.0890).
   // Calculations are also to assume the 2° standard colorimetric observer.
   // D65: http://en.wikipedia.org/wiki/CIE_Standard_Illuminant_D65
@@ -136,7 +139,7 @@ public func xyzToLAB(var x: CGFloat, var y: CGFloat, var z: CGFloat) -> (l: CGFl
   return (l: 116.0 * y - 16.0, a: 500.0 * (x - y), b: 200.0 * (y - z))
 }
 
-public func labToXYZ(l: CGFloat, a: CGFloat, b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
+public func labToXYZ(l: CGFloat, _ a: CGFloat, _ b: CGFloat) -> (x: CGFloat, y: CGFloat, z: CGFloat) {
   var y1 = (l + 16)/116
   var x1 = a/500 + y1
   var z1 = -b/200 + y1
@@ -145,38 +148,38 @@ public func labToXYZ(l: CGFloat, a: CGFloat, b: CGFloat) -> (x: CGFloat, y: CGFl
   return (x: x1 * 95.05, y: y1 * 100, z: z1 * 108.9)
 }
 
-public func xyzTosRGB(x: CGFloat, y: CGFloat, z: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+public func xyzTosRGB(x: CGFloat, _ y: CGFloat, _ z: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
   let r = (3.2406 * x - 1.5372 * y - 0.4986 * z)/100
   let g = (-0.9689 * x + 1.8758 * y + 0.0415 * z)/100
   let b = (0.0557 * x - 0.204 * y + 1.057 * z) / 100
   return (r: r, g: g, b: b)
 }
 
-public func sRGBToRGB(r: CGFloat, g: CGFloat, b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+public func sRGBToRGB(r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
   func convert(f: CGFloat) -> CGFloat { return f > 0.0031308 ? 1.055 * pow(f, 1/2.4) - 0.055 : 12.92 * f }
   return (r: convert(r), g: convert(g), b: convert(b))
 }
 
-public func xyzToRGB(x: CGFloat, y: CGFloat, z: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+public func xyzToRGB(x: CGFloat, _ y: CGFloat, _ z: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
   let (r, g, b) = xyzTosRGB(x, y, z)
   return sRGBToRGB(r, g, b)
 }
 
-public func labToRGB(l: CGFloat, a: CGFloat, b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+public func labToRGB(l: CGFloat, _ a: CGFloat, _ b: CGFloat) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
   let (x, y, z) = labToXYZ(l, a, b)
   return xyzToRGB(x, y, z)
 }
 
-public func hexStringFromRGB(r: Int, g: Int, b: Int) -> String {
-  assert(contains(0...255, r) && contains(0...255, g) && contains(0...255, b), "rgb values expected to be in the range 0...255")
+public func hexStringFromRGB(r: Int, _ g: Int, _ b: Int) -> String {
+  assert((0...255).contains(r) && (0...255).contains(g) && (0...255).contains(b), "rgb values expected to be in the range 0...255")
   let hex = (r << 16) | (g << 8) | b
   var string = String(hex, radix: 16, uppercase: false)
-  while count(string) < 6 { string.insert(Character("0"), atIndex: string.startIndex) }
+  while string.characters.count < 6 { string.insert(Character("0"), atIndex: string.startIndex) }
   string.insert(Character("#"), atIndex: string.startIndex)
   return string
 }
 
-public func hexStringFromHSB(h: Int, s: Int, b: Int) -> String {
+public func hexStringFromHSB(h: Int, _ s: Int, _ b: Int) -> String {
   let (r, g, b) = hsbToRGB(h, s, b)
   return hexStringFromRGB(r, g, b)
 }
@@ -185,7 +188,7 @@ extension UIColor {
 
   public var gradientImage: UIImage! {
     get { return objc_getAssociatedObject(self, &gradientImageKey) as? UIImage }
-    set { objc_setAssociatedObject(self, &gradientImageKey, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC)) }
+    set { objc_setAssociatedObject(self, &gradientImageKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
   }
 
   public var RGB: (r: CGFloat, g: CGFloat, b: CGFloat) {
@@ -248,14 +251,14 @@ extension UIColor {
   Chameleon is now using the CIEDE2000 formula to calculate distances between 2 colors.
   More info: http://en.wikipedia.org/wiki/Color_difference
 
-  :param: l1 CGFloat
-  :param: l2 CGFloat
-  :param: a1 CGFloat
-  :param: a2 CGFloat
-  :param: b1 CGFloat
-  :param: b2 CGFloat
+  - parameter l1: CGFloat
+  - parameter l2: CGFloat
+  - parameter a1: CGFloat
+  - parameter a2: CGFloat
+  - parameter b1: CGFloat
+  - parameter b2: CGFloat
 
-  :returns: CGFloat
+  - returns: CGFloat
   */
   public static func totalSumOfDifferencesFromL1(l1: CGFloat,
                                               L2 l2: CGFloat,
@@ -270,9 +273,9 @@ extension UIColor {
     let c2 = CGFloat(sqrt(pow(a2, 2) + pow(b2, 2)))
 
     //CIE Weights
-    var kL = CGFloat(1)
-    var kC = CGFloat(1)
-    var kH = CGFloat(1)
+    let kL = CGFloat(1)
+    let kC = CGFloat(1)
+    let kH = CGFloat(1)
 
     //Variables specifically set for CIE:2000
     let deltaPrimeL = CGFloat(l2 - l1)
@@ -331,7 +334,7 @@ extension UIColor {
 
   /** The color's relative luminance */
   public var luminance: CGFloat {
-    var (red, green, blue, alpha) = rgbColor.RGBA
+    var (red, green, blue, _) = rgbColor.RGBA
 
     // Relative luminance in colorimetric spaces - http://en.wikipedia.org/wiki/Luminance_(relative)
     red *= 0.2126; green *= 0.7152; blue *= 0.0722
@@ -343,17 +346,17 @@ extension UIColor {
     if CGColorGetPattern(self.CGColor) == nil { return self }
 
     //Let's find the average color of the image and contrast against that.
-    var size = CGSize(width: 1, height: 1)
+    let size = CGSize(width: 1, height: 1)
 
     //Create a 1x1 bitmap context
     UIGraphicsBeginImageContext(size)
     let ctx = UIGraphicsGetCurrentContext()
 
     //Set the interpolation quality to medium
-    CGContextSetInterpolationQuality(ctx, kCGInterpolationMedium)
+    CGContextSetInterpolationQuality(ctx, .Medium)
 
     //Draw image scaled down to this 1x1 pixel
-    gradientImage.drawInRect(CGRect(origin: CGPoint.zeroPoint, size: size), blendMode: kCGBlendModeCopy, alpha:1)
+    gradientImage.drawInRect(CGRect(origin: CGPoint.zeroPoint, size: size), blendMode: .Copy, alpha:1)
 
     //Read the RGB values from the context's buffer
     let data = UnsafePointer<UInt8>(CGBitmapContextGetData(ctx))
@@ -371,7 +374,7 @@ extension UIColor {
       let (l2, a2, b2) = color.LAB
       return UIColor.totalSumOfDifferencesFromL1(l1, L2: l2, A1: a1, A2: a2, B1: b1, B2: b2)
     }
-    let color = reduce(zip(flatColors, totalDifferences), (UIColor.clearColor(), CGFloat.max), {$0.1 < $1.1 ? $0 : $1}).0
+    let color = zip(flatColors, totalDifferences).reduce((UIColor.clearColor(), CGFloat.max), combine: {$0.1 < $1.1 ? $0 : $1}).0
     return color
   }
 
@@ -416,9 +419,9 @@ extension UIColor {
   /**
   Returns a randomly generated flat color object with an alpha value of 1.0 in either a light or dark shade.
 
-  :param: shadeStyle Shade = .Any
+  - parameter shadeStyle: Shade = .Any
 
-  :returns: UIColor
+  - returns: UIColor
   */
   public static func randomFlatColor(shadeStyle: Shade = .Any) -> UIColor {
 
@@ -438,7 +441,7 @@ extension UIColor {
     let previous = defaults.integerForKey(key)
 
     //Keep generating a random number until it is different than the one generated last time
-    do { index = randomColorIndex() } while previous == index
+    repeat { index = randomColorIndex() } while previous == index
 
     defaults.setInteger(randomColorIndex(), forKey: key)
     defaults.synchronize()
