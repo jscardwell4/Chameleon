@@ -39,7 +39,7 @@ extension UIViewController {
 
   // MARK:  - Public Methods
 
-  public func flatify(contrast: Bool = false) {
+  public func flatify(_ contrast: Bool = false) {
     flatifyNavigationBarItems()
     for v in view.subviews as [UIView] { UIViewController.flatifyView(v, contrast: contrast) }
   }
@@ -55,50 +55,50 @@ extension UIViewController {
     }
   }
 
-  private static func flatifyView(view: UIActivityIndicatorView, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIActivityIndicatorView, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.color = view.color?.flatColor
     view.tintColor = view.tintColor.flatColor
   }
 
-  private static func flatifyView(view: UIBarButtonItem, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIBarButtonItem, contrast: Bool = false) {
     view.tintColor = view.tintColor?.flatColor
   }
 
-  private static func flatifyView(view: UIButton, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIButton, contrast: Bool = false) {
     if contrast {
       view.backgroundColor = view.backgroundColor?.flatColor
-      view.setTitleShadowColor(view.titleLabel?.shadowColor?.flatColor, forState: .Normal)
+      view.setTitleShadowColor(view.titleLabel?.shadowColor?.flatColor, for: UIControlState())
 
       //Check if backgroundColor exists
       if view.backgroundColor == nil {
           view.tintColor = view.tintColor?.flatColor
-          view.setTitleColor(view.titleLabel?.textColor?.flatColor, forState: .Normal)
+          view.setTitleColor(view.titleLabel?.textColor?.flatColor, for: UIControlState())
       } else {
         view.tintColor = view.backgroundColor?.contrastingFlatColor
-        view.setTitleColor(view.backgroundColor?.contrastingFlatColor, forState: .Normal)
+        view.setTitleColor(view.backgroundColor?.contrastingFlatColor, for: UIControlState())
       }
     } else {
       view.backgroundColor = view.backgroundColor?.flatColor
       view.tintColor = view.tintColor?.flatColor
-      view.setTitleColor(view.titleLabel?.textColor?.flatColor, forState: .Normal)
-      view.setTitleShadowColor(view.titleLabel?.shadowColor?.flatColor, forState: .Normal)
+      view.setTitleColor(view.titleLabel?.textColor?.flatColor, for: UIControlState())
+      view.setTitleShadowColor(view.titleLabel?.shadowColor?.flatColor, for: UIControlState())
     }
   }
 
-  private static func flatifyView(view: UIDatePicker, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIDatePicker, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.tintColor = view.tintColor.flatColor
   }
 
-  private static func flatifyView(view: UIPageControl, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIPageControl, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.currentPageIndicatorTintColor = view.currentPageIndicatorTintColor?.flatColor
     view.pageIndicatorTintColor = view.pageIndicatorTintColor?.flatColor
     view.tintColor = view.tintColor.flatColor
   }
 
-  private static func flatifyView(view: UISegmentedControl, contrast: Bool = false) {
+  private static func flatifyView(_ view: UISegmentedControl, contrast: Bool = false) {
     if contrast {
       if let bg = view.backgroundColor {
         view.backgroundColor = bg.flatColor
@@ -112,13 +112,13 @@ extension UIViewController {
     }
   }
 
-  private static func flatifyView(view: UISlider, contrast: Bool = false) {
+  private static func flatifyView(_ view: UISlider, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.minimumTrackTintColor = view.minimumTrackTintColor?.flatColor
     view.maximumTrackTintColor = view.maximumTrackTintColor?.flatColor
   }
 
-  private static func flatifyView(view: UIStepper, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIStepper, contrast: Bool = false) {
     if contrast {
       view.backgroundColor = view.backgroundColor?.flatColor
       if view.backgroundColor == nil {
@@ -132,14 +132,14 @@ extension UIViewController {
     }
   }
 
-  private static func flatifyView(view: UISwitch, contrast: Bool = false) {
+  private static func flatifyView(_ view: UISwitch, contrast: Bool = false) {
     view.thumbTintColor = view.thumbTintColor?.flatColor
     view.onTintColor = view.onTintColor?.flatColor
     view.backgroundColor = view.backgroundColor?.flatColor
     view.tintColor = view.tintColor?.flatColor
   }
 
-  private static func flatifyView(view: UITextField, contrast: Bool = false) {
+  private static func flatifyView(_ view: UITextField, contrast: Bool = false) {
     if contrast {
       view.backgroundColor = view.backgroundColor?.flatColor
       view.tintColor = view.tintColor.flatColor
@@ -156,12 +156,12 @@ extension UIViewController {
     }
   }
 
-  private static func flatifyView(view: UIImageView, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIImageView, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.tintColor = view.tintColor.flatColor
   }
 
-  private static func flatifyView(view: UILabel, contrast: Bool = false) {
+  private static func flatifyView(_ view: UILabel, contrast: Bool = false) {
     if contrast {
       view.backgroundColor = view.backgroundColor?.flatColor
 
@@ -183,7 +183,7 @@ extension UIViewController {
     }
   }
 
-  private static func flatifyView(view: UINavigationBar, contrast: Bool = false) {
+  private static func flatifyView(_ view: UINavigationBar, contrast: Bool = false) {
     if contrast {
       view.backgroundColor = view.backgroundColor?.flatColor
       view.barTintColor = view.barTintColor?.flatColor
@@ -208,7 +208,7 @@ extension UIViewController {
     }
   }
 
-  private static func flatifyView(view: UINavigationItem, contrast: Bool = false) {
+  private static func flatifyView(_ view: UINavigationItem, contrast: Bool = false) {
     if contrast {
       if view.titleView?.backgroundColor != nil {
         view.backBarButtonItem?.tintColor = view.titleView?.backgroundColor?.contrastingFlatColor
@@ -232,26 +232,26 @@ extension UIViewController {
     }
  }
 
-  private static func flatifyView(view: UIProgressView, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIProgressView, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.progressTintColor = view.progressTintColor?.flatColor
     view.tintColor = view.tintColor.flatColor
     view.trackTintColor = view.trackTintColor?.flatColor
   }
 
-  private static func flatifyView(view: UISearchBar, contrast: Bool = false) {
+  private static func flatifyView(_ view: UISearchBar, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.barTintColor = view.barTintColor?.flatColor
     view.tintColor = view.tintColor?.flatColor
   }
 
-  private static func flatifyView(view: UITabBar, contrast: Bool = false) {
+  private static func flatifyView(_ view: UITabBar, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.barTintColor = view.barTintColor?.flatColor
     view.tintColor = view.tintColor.flatColor
   }
 
-  private static func flatifyView(view: UITableView, contrast: Bool = false) {
+  private static func flatifyView(_ view: UITableView, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.sectionIndexBackgroundColor = view.sectionIndexBackgroundColor?.flatColor
     view.sectionIndexColor = view.sectionIndexColor?.flatColor
@@ -268,11 +268,11 @@ extension UIViewController {
     view.tableFooterView?.tintColor = view.tableFooterView?.tintColor.flatColor
     view.tableHeaderView?.backgroundColor = view.tableHeaderView?.backgroundColor?.flatColor
     view.tableHeaderView?.tintColor = view.tableHeaderView?.tintColor.flatColor
-    view.viewForBaselineLayout().backgroundColor = view.viewForBaselineLayout().backgroundColor?.flatColor
-    view.viewForBaselineLayout().tintColor = view.viewForBaselineLayout().backgroundColor?.flatColor
+    view.forBaselineLayout().backgroundColor = view.forBaselineLayout().backgroundColor?.flatColor
+    view.forBaselineLayout().tintColor = view.forBaselineLayout().backgroundColor?.flatColor
   }
 
-  private static func flatifyView(view: UITextView, contrast: Bool = false) {
+  private static func flatifyView(_ view: UITextView, contrast: Bool = false) {
     if contrast {
       view.backgroundColor = view.backgroundColor?.flatColor
       view.tintColor = view.tintColor.flatColor
@@ -289,13 +289,13 @@ extension UIViewController {
     }
   }
 
-  private static func flatifyView(view: UIToolbar, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIToolbar, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.barTintColor = view.barTintColor?.flatColor
     view.tintColor = view.tintColor.flatColor
   }
 
-  private static func flatifyView(view: UIView, contrast: Bool = false) {
+  private static func flatifyView(_ view: UIView, contrast: Bool = false) {
     view.backgroundColor = view.backgroundColor?.flatColor
     view.tintColor = view.tintColor.flatColor
   }

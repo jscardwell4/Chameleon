@@ -58,7 +58,7 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   typealias KelleyColor     = Chameleon.KelleyColor
 
   /** Initializer for creating a `SchemeEditor` with the nib file included in the framework bundle */
-  convenience init() { self.init(nibName: "SchemeEditor", bundle: NSBundle(forClass: SchemeEditor.self)) }
+  convenience init() { self.init(nibName: "SchemeEditor", bundle: Bundle(for: SchemeEditor.self)) }
 
   // MARK: - Interface builder outlets and collections
 
@@ -102,9 +102,9 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
 
   - parameter gesture: UITapGestureRecognizer
   */
-  @IBAction func toggleViewSelection(gesture: UITapGestureRecognizer) {
+  @IBAction func toggleViewSelection(_ gesture: UITapGestureRecognizer) {
     let tag = gesture.view!.tag
-    if let idx = gradientColors.indexOf(tag) { indicators[tag].tintColor = view.backgroundColor; gradientColors.removeAtIndex(idx) }
+    if let idx = gradientColors.index(of: tag) { indicators[tag].tintColor = view.backgroundColor; gradientColors.remove(at: idx) }
     else { indicators[tag].tintColor = indicatorColor; gradientColors += [tag] }
   }
 
@@ -113,11 +113,11 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
 
   - parameter sender: UIButton
   */
-  @IBAction func togglePickerView(sender: UIButton) {
+  @IBAction func togglePickerView(_ sender: UIButton) {
     assert((0...3).contains(sender.tag))
     let selectedPicker = CurrentPicker(rawValue: sender.tag)!
-    if !pickerView.hidden && currentPicker == selectedPicker { pickerView.hidden = true }
-    else { currentPicker = selectedPicker; pickerView.hidden = false }
+    if !pickerView.isHidden && currentPicker == selectedPicker { pickerView.isHidden = true }
+    else { currentPicker = selectedPicker; pickerView.isHidden = false }
   }
 
   /**
@@ -125,21 +125,21 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
 
   - parameter sender: UISwitch
   */
-  @IBAction func updateFlat(sender: UISwitch) { flat = sender.on }
+  @IBAction func updateFlat(_ sender: UISwitch) { flat = sender.isOn }
 
   /**
   Invoked by segmented control to handle selection of `Light` or `Dark` shade style
 
   - parameter sender: UISegmentedControl
   */
-  @IBAction func selectShade(sender: UISegmentedControl) {
+  @IBAction func selectShade(_ sender: UISegmentedControl) {
     let shade = Chameleon.Shade(rawValue: sender.selectedSegmentIndex)!
     switch colorPalette {
-      case .Flat: flatColorPaletteSource.shade = shade
-      case .CSS: cssColorPaletteSource.shade = shade
-      case .QuietLight: quietLightColorPaletteSource.shade = shade
-      case .Darcula: darculaColorPaletteSource.shade = shade
-      case .Kelley: kelleyColorPaletteSource.shade = shade
+      case .flat: flatColorPaletteSource.shade = shade
+      case .css: cssColorPaletteSource.shade = shade
+      case .quietLight: quietLightColorPaletteSource.shade = shade
+      case .darcula: darculaColorPaletteSource.shade = shade
+      case .kelley: kelleyColorPaletteSource.shade = shade
     }
     refresh()
   }
@@ -147,13 +147,13 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   /** Regenerate color scheme and gradient using current values */
   private func refresh() {
     switch colorPalette {
-      case .Flat:       baseColor = flatColorPaletteSource.color.color
-      case .CSS:        baseColor = cssColorPaletteSource.color.color
-      case .QuietLight: baseColor = quietLightColorPaletteSource.color.color
-      case .Darcula:    baseColor = darculaColorPaletteSource.color.color
-      case .Kelley:     baseColor = kelleyColorPaletteSource.color.color
+      case .flat:       baseColor = flatColorPaletteSource.color.color
+      case .css:        baseColor = cssColorPaletteSource.color.color
+      case .quietLight: baseColor = quietLightColorPaletteSource.color.color
+      case .darcula:    baseColor = darculaColorPaletteSource.color.color
+      case .kelley:     baseColor = kelleyColorPaletteSource.color.color
     }
-    baseColorButton.setTitle(baseColorName, forState: .Normal)
+    baseColorButton.setTitle(baseColorName, for: UIControlState())
     shadeSegmentedControl.selectedSegmentIndex = baseColorShade.rawValue
     let colors = Chameleon.colorsForScheme(colorScheme, with: baseColor, flat: flat)
     zip(colors, colorViews).forEach {$1.backgroundColor = $0}
@@ -163,30 +163,30 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   }
 
   /** Emumeration used internally to track current set of data to use for the picker view */
-  private enum CurrentPicker: Int { case Scheme, GradientStyle, BaseColor, Palette }
-  private var currentPicker = CurrentPicker.Scheme {
+  private enum CurrentPicker: Int { case scheme, gradientStyle, baseColor, palette }
+  private var currentPicker = CurrentPicker.scheme {
     didSet {
       pickerView.reloadAllComponents()
       let row: Int
       switch currentPicker {
-        case .Scheme:        row = colorScheme.rawValue
-        case .GradientStyle: row = gradientStyle.rawValue
-        case .BaseColor:
+        case .scheme:        row = colorScheme.rawValue
+        case .gradientStyle: row = gradientStyle.rawValue
+        case .baseColor:
           switch colorPalette {
-          case .Flat:       row = flatColorPaletteSource.bases.indexOf(flatColorPaletteSource.base)!
-          case .CSS:        row = cssColorPaletteSource.bases.indexOf(cssColorPaletteSource.base)!
-          case .Darcula:    row = darculaColorPaletteSource.bases.indexOf(darculaColorPaletteSource.base)!
-          case .QuietLight: row = quietLightColorPaletteSource.bases.indexOf(quietLightColorPaletteSource.base)!
-          case .Kelley:     row = kelleyColorPaletteSource.bases.indexOf(kelleyColorPaletteSource.base)!
+          case .flat:       row = flatColorPaletteSource.bases.index(of: flatColorPaletteSource.base)!
+          case .css:        row = cssColorPaletteSource.bases.index(of: cssColorPaletteSource.base)!
+          case .darcula:    row = darculaColorPaletteSource.bases.index(of: darculaColorPaletteSource.base)!
+          case .quietLight: row = quietLightColorPaletteSource.bases.index(of: quietLightColorPaletteSource.base)!
+          case .kelley:     row = kelleyColorPaletteSource.bases.index(of: kelleyColorPaletteSource.base)!
           }
-        case .Palette:       row = colorPalette.rawValue
+        case .palette:       row = colorPalette.rawValue
       }
-      pickerView.selectRow(row, inComponent: 0, animated: !pickerView.hidden)
+      pickerView.selectRow(row, inComponent: 0, animated: !pickerView.isHidden)
     }
   }
 
   var gradientColors = [2, 3] { didSet { refresh() } }
-  var flat = true { didSet { if flatSwitch.on != flat { flatSwitch.on = flat }; refresh() } }
+  var flat = true { didSet { if flatSwitch.isOn != flat { flatSwitch.isOn = flat }; refresh() } }
 
   // MARK: - Public state properties
 
@@ -194,30 +194,30 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   public private(set) var baseColor = Chameleon.flatWatermelon
 
   /** Holds the color scheme value to use when generating colors */
-  public var colorScheme = Chameleon.ColorScheme.Analogous {
-    didSet { colorSchemeButton.setTitle(colorScheme.description, forState: .Normal); refresh() }
+  public var colorScheme = Chameleon.ColorScheme.analogous {
+    didSet { colorSchemeButton.setTitle(colorScheme.description, for: UIControlState()); refresh() }
   }
 
   /** Holds the gradient style value to use when generating the gradient from the color scheme */
-  public var gradientStyle = Chameleon.GradientStyle.Radial {
-    didSet { gradientStyleButton.setTitle(gradientStyle.description, forState: .Normal); refresh() }
+  public var gradientStyle = Chameleon.GradientStyle.radial {
+    didSet { gradientStyleButton.setTitle(gradientStyle.description, for: UIControlState()); refresh() }
   }
 
   /** Holds the color palette value to use when choosing prospective base colors */
-  public var colorPalette = Chameleon.ColorPalette.Flat {
+  public var colorPalette = Chameleon.ColorPalette.flat {
     didSet {
-      colorPaletteButton.setTitle(colorPalette.description, forState: .Normal)
+      colorPaletteButton.setTitle(colorPalette.description, for: UIControlState())
       refresh()
     }
   }
 
   // MARK: - Internal state properties
 
-  private var kelleyColorPaletteSource     = SourcePalette(color: KelleyColor.Light(.Cork))
-  private var darculaColorPaletteSource    = SourcePalette(color: DarculaColor.Light(.Axolotl))
-  private var quietLightColorPaletteSource = SourcePalette(color: QuietLightColor.Light(.LobLolly))
-  private var cssColorPaletteSource        = SourcePalette(color: CSSColor.Light(.AliceBlue))
-  private var flatColorPaletteSource       = SourcePalette(color: FlatColor.Light(.Watermelon))
+  private var kelleyColorPaletteSource     = SourcePalette(color: KelleyColor.light(.cork))
+  private var darculaColorPaletteSource    = SourcePalette(color: DarculaColor.light(.axolotl))
+  private var quietLightColorPaletteSource = SourcePalette(color: QuietLightColor.light(.lobLolly))
+  private var cssColorPaletteSource        = SourcePalette(color: CSSColor.light(.aliceBlue))
+  private var flatColorPaletteSource       = SourcePalette(color: FlatColor.light(.watermelon))
 
   // MARK: - Picker data related properties
 
@@ -226,41 +226,41 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   private let gradientStyles = GradientStyle.all
   private var colorBaseCount: Int {
     switch colorPalette {
-      case .Flat:       return flatColorPaletteSource.bases.count
-      case .CSS:        return cssColorPaletteSource.bases.count
-      case .QuietLight: return quietLightColorPaletteSource.bases.count
-      case .Darcula:    return darculaColorPaletteSource.bases.count
-      case .Kelley:     return kelleyColorPaletteSource.bases.count
+      case .flat:       return flatColorPaletteSource.bases.count
+      case .css:        return cssColorPaletteSource.bases.count
+      case .quietLight: return quietLightColorPaletteSource.bases.count
+      case .darcula:    return darculaColorPaletteSource.bases.count
+      case .kelley:     return kelleyColorPaletteSource.bases.count
     }
   }
 
-  private func colorBaseNameAtIndex(idx: Int) -> String {
+  private func colorBaseNameAtIndex(_ idx: Int) -> String {
     switch colorPalette {
-      case .Flat:       return flatColorPaletteSource.bases[idx].name
-      case .CSS:        return cssColorPaletteSource.bases[idx].name
-      case .QuietLight: return quietLightColorPaletteSource.bases[idx].name
-      case .Darcula:    return darculaColorPaletteSource.bases[idx].name
-      case .Kelley:     return kelleyColorPaletteSource.bases[idx].name
+      case .flat:       return flatColorPaletteSource.bases[idx].name
+      case .css:        return cssColorPaletteSource.bases[idx].name
+      case .quietLight: return quietLightColorPaletteSource.bases[idx].name
+      case .darcula:    return darculaColorPaletteSource.bases[idx].name
+      case .kelley:     return kelleyColorPaletteSource.bases[idx].name
     }
   }
 
   private var baseColorName: String {
     switch colorPalette {
-      case .Flat:       return flatColorPaletteSource.base.name
-      case .CSS:        return cssColorPaletteSource.base.name
-      case .QuietLight: return quietLightColorPaletteSource.base.name
-      case .Darcula:    return darculaColorPaletteSource.base.name
-      case .Kelley:     return kelleyColorPaletteSource.base.name
+      case .flat:       return flatColorPaletteSource.base.name
+      case .css:        return cssColorPaletteSource.base.name
+      case .quietLight: return quietLightColorPaletteSource.base.name
+      case .darcula:    return darculaColorPaletteSource.base.name
+      case .kelley:     return kelleyColorPaletteSource.base.name
     }
   }
 
   private var baseColorShade: Chameleon.Shade {
     switch colorPalette {
-      case .Flat:       return flatColorPaletteSource.shade
-      case .CSS:        return cssColorPaletteSource.shade
-      case .QuietLight: return quietLightColorPaletteSource.shade
-      case .Darcula:    return darculaColorPaletteSource.shade
-      case .Kelley:     return kelleyColorPaletteSource.shade
+      case .flat:       return flatColorPaletteSource.shade
+      case .css:        return cssColorPaletteSource.shade
+      case .quietLight: return quietLightColorPaletteSource.shade
+      case .darcula:    return darculaColorPaletteSource.shade
+      case .kelley:     return kelleyColorPaletteSource.shade
     }
   }
 
@@ -291,12 +291,12 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
 
   - returns: Int
   */
-  public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+  public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     switch currentPicker {
-      case .Scheme:         return colorSchemes.count
-      case .GradientStyle:  return gradientStyles.count
-      case .BaseColor:      return colorBaseCount
-      case .Palette:        return colorPalettes.count
+      case .scheme:         return colorSchemes.count
+      case .gradientStyle:  return gradientStyles.count
+      case .baseColor:      return colorBaseCount
+      case .palette:        return colorPalettes.count
     }
   }
 
@@ -309,12 +309,12 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
 
   - returns: String!
   */
-  public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+  public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     switch currentPicker {
-      case .Scheme:        return colorSchemes[row].description
-      case .GradientStyle: return gradientStyles[row].description
-      case .BaseColor:     return colorBaseNameAtIndex(row)
-      case .Palette:       return colorPalettes[row].description
+      case .scheme:        return colorSchemes[row].description
+      case .gradientStyle: return gradientStyles[row].description
+      case .baseColor:     return colorBaseNameAtIndex(row)
+      case .palette:       return colorPalettes[row].description
     }
   }
 
@@ -325,7 +325,7 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
 
   - returns: Int
   */
-  public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int { return 1 }
+  public func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
 
   /**
   pickerView:didSelectRow:inComponent:
@@ -334,20 +334,20 @@ public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPic
   - parameter row: Int
   - parameter component: Int
   */
-  public func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+  public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     switch currentPicker {
-      case .Scheme:         colorScheme = colorSchemes[row]
-      case .GradientStyle:  gradientStyle = gradientStyles[row]
-      case .BaseColor:
+      case .scheme:         colorScheme = colorSchemes[row]
+      case .gradientStyle:  gradientStyle = gradientStyles[row]
+      case .baseColor:
         switch colorPalette {
-          case .Flat:       flatColorPaletteSource.base       = flatColorPaletteSource.bases[row]
-          case .CSS:        cssColorPaletteSource.base        = cssColorPaletteSource.bases[row]
-          case .Darcula:    darculaColorPaletteSource.base    = darculaColorPaletteSource.bases[row]
-          case .QuietLight: quietLightColorPaletteSource.base = quietLightColorPaletteSource.bases[row]
-          case .Kelley:     kelleyColorPaletteSource.base     = kelleyColorPaletteSource.bases[row]
+          case .flat:       flatColorPaletteSource.base       = flatColorPaletteSource.bases[row]
+          case .css:        cssColorPaletteSource.base        = cssColorPaletteSource.bases[row]
+          case .darcula:    darculaColorPaletteSource.base    = darculaColorPaletteSource.bases[row]
+          case .quietLight: quietLightColorPaletteSource.base = quietLightColorPaletteSource.bases[row]
+          case .kelley:     kelleyColorPaletteSource.base     = kelleyColorPaletteSource.bases[row]
         }
         refresh()
-      case .Palette:        colorPalette = colorPalettes[row]
+      case .palette:        colorPalette = colorPalettes[row]
     }
   }
 }

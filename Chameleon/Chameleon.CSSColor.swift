@@ -10,634 +10,634 @@ extension Chameleon {
 
   // MARK: Light Shades
 
-  public static var cssForestGreen:          UIColor { return CSSColor.Light(.ForestGreen).color          }
-  public static var cssSkyBlue:              UIColor { return CSSColor.Light(.SkyBlue).color              }
-  public static var cssSienna:               UIColor { return CSSColor.Light(.Sienna).color               }
-  public static var cssDarkSlateBlue:        UIColor { return CSSColor.Light(.DarkSlateBlue).color        }
-  public static var cssWheat:                UIColor { return CSSColor.Light(.Wheat).color                }
-  public static var cssBeige:                UIColor { return CSSColor.Light(.Beige).color                }
-  public static var cssCadetBlue:            UIColor { return CSSColor.Light(.CadetBlue).color            }
-  public static var cssLightPink:            UIColor { return CSSColor.Light(.LightPink).color            }
-  public static var cssSeaShell:             UIColor { return CSSColor.Light(.SeaShell).color             }
-  public static var cssFireBrick:            UIColor { return CSSColor.Light(.FireBrick).color            }
-  public static var cssLightGreen:           UIColor { return CSSColor.Light(.LightGreen).color           }
-  public static var cssDarkMagenta:          UIColor { return CSSColor.Light(.DarkMagenta).color          }
-  public static var cssSalmon:               UIColor { return CSSColor.Light(.Salmon).color               }
-  public static var cssSnow:                 UIColor { return CSSColor.Light(.Snow).color                 }
-  public static var cssViolet:               UIColor { return CSSColor.Light(.Violet).color               }
-  public static var cssWhite:                UIColor { return CSSColor.Light(.White).color                }
-  public static var cssBlanchedAlmond:       UIColor { return CSSColor.Light(.BlanchedAlmond).color       }
-  public static var cssLightGray:            UIColor { return CSSColor.Light(.LightGray).color            }
-  public static var cssSteelBlue:            UIColor { return CSSColor.Light(.SteelBlue).color            }
-  public static var cssAzure:                UIColor { return CSSColor.Light(.Azure).color                }
-  public static var cssChocolate:            UIColor { return CSSColor.Light(.Chocolate).color            }
-  public static var cssCornsilk:             UIColor { return CSSColor.Light(.Cornsilk).color             }
-  public static var cssDarkOrange:           UIColor { return CSSColor.Light(.DarkOrange).color           }
-  public static var cssGray:                 UIColor { return CSSColor.Light(.Gray).color                 }
-  public static var cssGold:                 UIColor { return CSSColor.Light(.Gold).color                 }
-  public static var cssDarkTurquoise:        UIColor { return CSSColor.Light(.DarkTurquoise).color        }
-  public static var cssLightSkyBlue:         UIColor { return CSSColor.Light(.LightSkyBlue).color         }
-  public static var cssPaleGreen:            UIColor { return CSSColor.Light(.PaleGreen).color            }
-  public static var cssLavenderBlush:        UIColor { return CSSColor.Light(.LavenderBlush).color        }
-  public static var cssMediumPurple:         UIColor { return CSSColor.Light(.MediumPurple).color         }
-  public static var cssAquamarine:           UIColor { return CSSColor.Light(.Aquamarine).color           }
-  public static var cssLightCoral:           UIColor { return CSSColor.Light(.LightCoral).color           }
-  public static var cssMediumOrchid:         UIColor { return CSSColor.Light(.MediumOrchid).color         }
-  public static var cssFloralWhite:          UIColor { return CSSColor.Light(.FloralWhite).color          }
-  public static var cssLawnGreen:            UIColor { return CSSColor.Light(.LawnGreen).color            }
-  public static var cssRebeccaPurple:        UIColor { return CSSColor.Light(.RebeccaPurple).color        }
-  public static var cssCoral:                UIColor { return CSSColor.Light(.Coral).color                }
-  public static var cssLightSlateGray:       UIColor { return CSSColor.Light(.LightSlateGray).color       }
-  public static var cssBlueViolet:           UIColor { return CSSColor.Light(.BlueViolet).color           }
-  public static var cssOrange:               UIColor { return CSSColor.Light(.Orange).color               }
-  public static var cssMidnightBlue:         UIColor { return CSSColor.Light(.MidnightBlue).color         }
-  public static var cssLinen:                UIColor { return CSSColor.Light(.Linen).color                }
-  public static var cssDarkSlateGray:        UIColor { return CSSColor.Light(.DarkSlateGray).color        }
-  public static var cssDarkGray:             UIColor { return CSSColor.Light(.DarkGray).color             }
-  public static var cssMediumVioletRed:      UIColor { return CSSColor.Light(.MediumVioletRed).color      }
-  public static var cssPapayaWhip:           UIColor { return CSSColor.Light(.PapayaWhip).color           }
-  public static var cssSlateGray:            UIColor { return CSSColor.Light(.SlateGray).color            }
-  public static var cssSpringGreen:          UIColor { return CSSColor.Light(.SpringGreen).color          }
-  public static var cssDarkGoldenRod:        UIColor { return CSSColor.Light(.DarkGoldenRod).color        }
-  public static var cssLimeGreen:            UIColor { return CSSColor.Light(.LimeGreen).color            }
-  public static var cssDarkSalmon:           UIColor { return CSSColor.Light(.DarkSalmon).color           }
-  public static var cssRoyalBlue:            UIColor { return CSSColor.Light(.RoyalBlue).color            }
-  public static var cssOrangeRed:            UIColor { return CSSColor.Light(.OrangeRed).color            }
-  public static var cssThistle:              UIColor { return CSSColor.Light(.Thistle).color              }
-  public static var cssPink:                 UIColor { return CSSColor.Light(.Pink).color                 }
-  public static var cssChartreuse:           UIColor { return CSSColor.Light(.Chartreuse).color           }
-  public static var cssBlue:                 UIColor { return CSSColor.Light(.Blue).color                 }
-  public static var cssLightCyan:            UIColor { return CSSColor.Light(.LightCyan).color            }
-  public static var cssGhostWhite:           UIColor { return CSSColor.Light(.GhostWhite).color           }
-  public static var cssTan:                  UIColor { return CSSColor.Light(.Tan).color                  }
-  public static var cssTomato:               UIColor { return CSSColor.Light(.Tomato).color               }
-  public static var cssDarkOliveGreen:       UIColor { return CSSColor.Light(.DarkOliveGreen).color       }
-  public static var cssIvory:                UIColor { return CSSColor.Light(.Ivory).color                }
-  public static var cssDarkCyan:             UIColor { return CSSColor.Light(.DarkCyan).color             }
-  public static var cssDarkKhaki:            UIColor { return CSSColor.Light(.DarkKhaki).color            }
-  public static var cssNavy:                 UIColor { return CSSColor.Light(.Navy).color                 }
-  public static var cssRed:                  UIColor { return CSSColor.Light(.Red).color                  }
-  public static var cssDarkViolet:           UIColor { return CSSColor.Light(.DarkViolet).color           }
-  public static var cssDarkSeaGreen:         UIColor { return CSSColor.Light(.DarkSeaGreen).color         }
-  public static var cssGoldenRod:            UIColor { return CSSColor.Light(.GoldenRod).color            }
-  public static var cssRosyBrown:            UIColor { return CSSColor.Light(.RosyBrown).color            }
-  public static var cssOliveDrab:            UIColor { return CSSColor.Light(.OliveDrab).color            }
-  public static var cssTeal:                 UIColor { return CSSColor.Light(.Teal).color                 }
-  public static var cssHotPink:              UIColor { return CSSColor.Light(.HotPink).color              }
-  public static var cssPaleGoldenRod:        UIColor { return CSSColor.Light(.PaleGoldenRod).color        }
-  public static var cssDeepSkyBlue:          UIColor { return CSSColor.Light(.DeepSkyBlue).color          }
-  public static var cssDarkOrchid:           UIColor { return CSSColor.Light(.DarkOrchid).color           }
-  public static var cssMediumSeaGreen:       UIColor { return CSSColor.Light(.MediumSeaGreen).color       }
-  public static var cssOldLace:              UIColor { return CSSColor.Light(.OldLace).color              }
-  public static var cssLemonChiffon:         UIColor { return CSSColor.Light(.LemonChiffon).color         }
-  public static var cssMediumSpringGreen:    UIColor { return CSSColor.Light(.MediumSpringGreen).color    }
-  public static var cssGreen:                UIColor { return CSSColor.Light(.Green).color                }
-  public static var cssIndigo:               UIColor { return CSSColor.Light(.Indigo).color               }
-  public static var cssMoccasin:             UIColor { return CSSColor.Light(.Moccasin).color             }
-  public static var cssFuchsia:              UIColor { return CSSColor.Light(.Fuchsia).color              }
-  public static var cssLightBlue:            UIColor { return CSSColor.Light(.LightBlue).color            }
-  public static var cssSilver:               UIColor { return CSSColor.Light(.Silver).color               }
-  public static var cssWhiteSmoke:           UIColor { return CSSColor.Light(.WhiteSmoke).color           }
-  public static var cssPowderBlue:           UIColor { return CSSColor.Light(.PowderBlue).color           }
-  public static var cssSaddleBrown:          UIColor { return CSSColor.Light(.SaddleBrown).color          }
-  public static var cssLightGoldenRodYellow: UIColor { return CSSColor.Light(.LightGoldenRodYellow).color }
-  public static var cssLightSalmon:          UIColor { return CSSColor.Light(.LightSalmon).color          }
-  public static var cssSandyBrown:           UIColor { return CSSColor.Light(.SandyBrown).color           }
-  public static var cssAntiqueWhite:         UIColor { return CSSColor.Light(.AntiqueWhite).color         }
-  public static var cssBlack:                UIColor { return CSSColor.Light(.Black).color                }
-  public static var cssMintCream:            UIColor { return CSSColor.Light(.MintCream).color            }
-  public static var cssNavajoWhite:          UIColor { return CSSColor.Light(.NavajoWhite).color          }
-  public static var cssBurlyWood:            UIColor { return CSSColor.Light(.BurlyWood).color            }
-  public static var cssMediumSlateBlue:      UIColor { return CSSColor.Light(.MediumSlateBlue).color      }
-  public static var cssIndianRed:            UIColor { return CSSColor.Light(.IndianRed).color            }
-  public static var cssDodgerBlue:           UIColor { return CSSColor.Light(.DodgerBlue).color           }
-  public static var cssGainsboro:            UIColor { return CSSColor.Light(.Gainsboro).color            }
-  public static var cssYellowGreen:          UIColor { return CSSColor.Light(.YellowGreen).color          }
-  public static var cssSlateBlue:            UIColor { return CSSColor.Light(.SlateBlue).color            }
-  public static var cssPeachPuff:            UIColor { return CSSColor.Light(.PeachPuff).color            }
-  public static var cssPurple:               UIColor { return CSSColor.Light(.Purple).color               }
-  public static var cssBrown:                UIColor { return CSSColor.Light(.Brown).color                }
-  public static var cssLime:                 UIColor { return CSSColor.Light(.Lime).color                 }
-  public static var cssPaleVioletRed:        UIColor { return CSSColor.Light(.PaleVioletRed).color        }
-  public static var cssKhaki:                UIColor { return CSSColor.Light(.Khaki).color                }
-  public static var cssCrimson:              UIColor { return CSSColor.Light(.Crimson).color              }
-  public static var cssLightYellow:          UIColor { return CSSColor.Light(.LightYellow).color          }
-  public static var cssMistyRose:            UIColor { return CSSColor.Light(.MistyRose).color            }
-  public static var cssCyan:                 UIColor { return CSSColor.Light(.Cyan).color                 }
-  public static var cssDarkBlue:             UIColor { return CSSColor.Light(.DarkBlue).color             }
-  public static var cssMediumAquaMarine:     UIColor { return CSSColor.Light(.MediumAquaMarine).color     }
-  public static var cssMediumBlue:           UIColor { return CSSColor.Light(.MediumBlue).color           }
-  public static var cssPaleTurquoise:        UIColor { return CSSColor.Light(.PaleTurquoise).color        }
-  public static var cssHoneyDew:             UIColor { return CSSColor.Light(.HoneyDew).color             }
-  public static var cssDimGray:              UIColor { return CSSColor.Light(.DimGray).color              }
-  public static var cssLavender:             UIColor { return CSSColor.Light(.Lavender).color             }
-  public static var cssMagenta:              UIColor { return CSSColor.Light(.Magenta).color              }
-  public static var cssDarkRed:              UIColor { return CSSColor.Light(.DarkRed).color              }
-  public static var cssLightSeaGreen:        UIColor { return CSSColor.Light(.LightSeaGreen).color        }
-  public static var cssMaroon:               UIColor { return CSSColor.Light(.Maroon).color               }
-  public static var cssAqua:                 UIColor { return CSSColor.Light(.Aqua).color                 }
-  public static var cssOlive:                UIColor { return CSSColor.Light(.Olive).color                }
-  public static var cssPlum:                 UIColor { return CSSColor.Light(.Plum).color                 }
-  public static var cssLightSteelBlue:       UIColor { return CSSColor.Light(.LightSteelBlue).color       }
-  public static var cssOrchid:               UIColor { return CSSColor.Light(.Orchid).color               }
-  public static var cssBisque:               UIColor { return CSSColor.Light(.Bisque).color               }
-  public static var cssMediumTurquoise:      UIColor { return CSSColor.Light(.MediumTurquoise).color      }
-  public static var cssPeru:                 UIColor { return CSSColor.Light(.Peru).color                 }
-  public static var cssTurquoise:            UIColor { return CSSColor.Light(.Turquoise).color            }
-  public static var cssAliceBlue:            UIColor { return CSSColor.Light(.AliceBlue).color            }
-  public static var cssYellow:               UIColor { return CSSColor.Light(.Yellow).color               }
-  public static var cssDarkGreen:            UIColor { return CSSColor.Light(.DarkGreen).color            }
-  public static var cssDeepPink:             UIColor { return CSSColor.Light(.DeepPink).color             }
-  public static var cssGreenYellow:          UIColor { return CSSColor.Light(.GreenYellow).color          }
-  public static var cssSeaGreen:             UIColor { return CSSColor.Light(.SeaGreen).color             }
-  public static var cssCornflowerBlue:       UIColor { return CSSColor.Light(.CornflowerBlue).color       }
+  public static var cssForestGreen:          UIColor { return CSSColor.light(.forestGreen).color          }
+  public static var cssSkyBlue:              UIColor { return CSSColor.light(.skyBlue).color              }
+  public static var cssSienna:               UIColor { return CSSColor.light(.sienna).color               }
+  public static var cssDarkSlateBlue:        UIColor { return CSSColor.light(.darkSlateBlue).color        }
+  public static var cssWheat:                UIColor { return CSSColor.light(.wheat).color                }
+  public static var cssBeige:                UIColor { return CSSColor.light(.beige).color                }
+  public static var cssCadetBlue:            UIColor { return CSSColor.light(.cadetBlue).color            }
+  public static var cssLightPink:            UIColor { return CSSColor.light(.lightPink).color            }
+  public static var cssSeaShell:             UIColor { return CSSColor.light(.seaShell).color             }
+  public static var cssFireBrick:            UIColor { return CSSColor.light(.fireBrick).color            }
+  public static var cssLightGreen:           UIColor { return CSSColor.light(.lightGreen).color           }
+  public static var cssDarkMagenta:          UIColor { return CSSColor.light(.darkMagenta).color          }
+  public static var cssSalmon:               UIColor { return CSSColor.light(.salmon).color               }
+  public static var cssSnow:                 UIColor { return CSSColor.light(.snow).color                 }
+  public static var cssViolet:               UIColor { return CSSColor.light(.violet).color               }
+  public static var cssWhite:                UIColor { return CSSColor.light(.white).color                }
+  public static var cssBlanchedAlmond:       UIColor { return CSSColor.light(.blanchedAlmond).color       }
+  public static var cssLightGray:            UIColor { return CSSColor.light(.lightGray).color            }
+  public static var cssSteelBlue:            UIColor { return CSSColor.light(.steelBlue).color            }
+  public static var cssAzure:                UIColor { return CSSColor.light(.azure).color                }
+  public static var cssChocolate:            UIColor { return CSSColor.light(.chocolate).color            }
+  public static var cssCornsilk:             UIColor { return CSSColor.light(.cornsilk).color             }
+  public static var cssDarkOrange:           UIColor { return CSSColor.light(.darkOrange).color           }
+  public static var cssGray:                 UIColor { return CSSColor.light(.gray).color                 }
+  public static var cssGold:                 UIColor { return CSSColor.light(.gold).color                 }
+  public static var cssDarkTurquoise:        UIColor { return CSSColor.light(.darkTurquoise).color        }
+  public static var cssLightSkyBlue:         UIColor { return CSSColor.light(.lightSkyBlue).color         }
+  public static var cssPaleGreen:            UIColor { return CSSColor.light(.paleGreen).color            }
+  public static var cssLavenderBlush:        UIColor { return CSSColor.light(.lavenderBlush).color        }
+  public static var cssMediumPurple:         UIColor { return CSSColor.light(.mediumPurple).color         }
+  public static var cssAquamarine:           UIColor { return CSSColor.light(.aquamarine).color           }
+  public static var cssLightCoral:           UIColor { return CSSColor.light(.lightCoral).color           }
+  public static var cssMediumOrchid:         UIColor { return CSSColor.light(.mediumOrchid).color         }
+  public static var cssFloralWhite:          UIColor { return CSSColor.light(.floralWhite).color          }
+  public static var cssLawnGreen:            UIColor { return CSSColor.light(.lawnGreen).color            }
+  public static var cssRebeccaPurple:        UIColor { return CSSColor.light(.rebeccaPurple).color        }
+  public static var cssCoral:                UIColor { return CSSColor.light(.coral).color                }
+  public static var cssLightSlateGray:       UIColor { return CSSColor.light(.lightSlateGray).color       }
+  public static var cssBlueViolet:           UIColor { return CSSColor.light(.blueViolet).color           }
+  public static var cssOrange:               UIColor { return CSSColor.light(.orange).color               }
+  public static var cssMidnightBlue:         UIColor { return CSSColor.light(.midnightBlue).color         }
+  public static var cssLinen:                UIColor { return CSSColor.light(.linen).color                }
+  public static var cssDarkSlateGray:        UIColor { return CSSColor.light(.darkSlateGray).color        }
+  public static var cssDarkGray:             UIColor { return CSSColor.light(.darkGray).color             }
+  public static var cssMediumVioletRed:      UIColor { return CSSColor.light(.mediumVioletRed).color      }
+  public static var cssPapayaWhip:           UIColor { return CSSColor.light(.papayaWhip).color           }
+  public static var cssSlateGray:            UIColor { return CSSColor.light(.slateGray).color            }
+  public static var cssSpringGreen:          UIColor { return CSSColor.light(.springGreen).color          }
+  public static var cssDarkGoldenRod:        UIColor { return CSSColor.light(.darkGoldenRod).color        }
+  public static var cssLimeGreen:            UIColor { return CSSColor.light(.limeGreen).color            }
+  public static var cssDarkSalmon:           UIColor { return CSSColor.light(.darkSalmon).color           }
+  public static var cssRoyalBlue:            UIColor { return CSSColor.light(.royalBlue).color            }
+  public static var cssOrangeRed:            UIColor { return CSSColor.light(.orangeRed).color            }
+  public static var cssThistle:              UIColor { return CSSColor.light(.thistle).color              }
+  public static var cssPink:                 UIColor { return CSSColor.light(.pink).color                 }
+  public static var cssChartreuse:           UIColor { return CSSColor.light(.chartreuse).color           }
+  public static var cssBlue:                 UIColor { return CSSColor.light(.blue).color                 }
+  public static var cssLightCyan:            UIColor { return CSSColor.light(.lightCyan).color            }
+  public static var cssGhostWhite:           UIColor { return CSSColor.light(.ghostWhite).color           }
+  public static var cssTan:                  UIColor { return CSSColor.light(.tan).color                  }
+  public static var cssTomato:               UIColor { return CSSColor.light(.tomato).color               }
+  public static var cssDarkOliveGreen:       UIColor { return CSSColor.light(.darkOliveGreen).color       }
+  public static var cssIvory:                UIColor { return CSSColor.light(.ivory).color                }
+  public static var cssDarkCyan:             UIColor { return CSSColor.light(.darkCyan).color             }
+  public static var cssDarkKhaki:            UIColor { return CSSColor.light(.darkKhaki).color            }
+  public static var cssNavy:                 UIColor { return CSSColor.light(.navy).color                 }
+  public static var cssRed:                  UIColor { return CSSColor.light(.red).color                  }
+  public static var cssDarkViolet:           UIColor { return CSSColor.light(.darkViolet).color           }
+  public static var cssDarkSeaGreen:         UIColor { return CSSColor.light(.darkSeaGreen).color         }
+  public static var cssGoldenRod:            UIColor { return CSSColor.light(.goldenRod).color            }
+  public static var cssRosyBrown:            UIColor { return CSSColor.light(.rosyBrown).color            }
+  public static var cssOliveDrab:            UIColor { return CSSColor.light(.oliveDrab).color            }
+  public static var cssTeal:                 UIColor { return CSSColor.light(.teal).color                 }
+  public static var cssHotPink:              UIColor { return CSSColor.light(.hotPink).color              }
+  public static var cssPaleGoldenRod:        UIColor { return CSSColor.light(.paleGoldenRod).color        }
+  public static var cssDeepSkyBlue:          UIColor { return CSSColor.light(.deepSkyBlue).color          }
+  public static var cssDarkOrchid:           UIColor { return CSSColor.light(.darkOrchid).color           }
+  public static var cssMediumSeaGreen:       UIColor { return CSSColor.light(.mediumSeaGreen).color       }
+  public static var cssOldLace:              UIColor { return CSSColor.light(.oldLace).color              }
+  public static var cssLemonChiffon:         UIColor { return CSSColor.light(.lemonChiffon).color         }
+  public static var cssMediumSpringGreen:    UIColor { return CSSColor.light(.mediumSpringGreen).color    }
+  public static var cssGreen:                UIColor { return CSSColor.light(.green).color                }
+  public static var cssIndigo:               UIColor { return CSSColor.light(.indigo).color               }
+  public static var cssMoccasin:             UIColor { return CSSColor.light(.moccasin).color             }
+  public static var cssFuchsia:              UIColor { return CSSColor.light(.fuchsia).color              }
+  public static var cssLightBlue:            UIColor { return CSSColor.light(.lightBlue).color            }
+  public static var cssSilver:               UIColor { return CSSColor.light(.silver).color               }
+  public static var cssWhiteSmoke:           UIColor { return CSSColor.light(.whiteSmoke).color           }
+  public static var cssPowderBlue:           UIColor { return CSSColor.light(.powderBlue).color           }
+  public static var cssSaddleBrown:          UIColor { return CSSColor.light(.saddleBrown).color          }
+  public static var cssLightGoldenRodYellow: UIColor { return CSSColor.light(.lightGoldenRodYellow).color }
+  public static var cssLightSalmon:          UIColor { return CSSColor.light(.lightSalmon).color          }
+  public static var cssSandyBrown:           UIColor { return CSSColor.light(.sandyBrown).color           }
+  public static var cssAntiqueWhite:         UIColor { return CSSColor.light(.antiqueWhite).color         }
+  public static var cssBlack:                UIColor { return CSSColor.light(.black).color                }
+  public static var cssMintCream:            UIColor { return CSSColor.light(.mintCream).color            }
+  public static var cssNavajoWhite:          UIColor { return CSSColor.light(.navajoWhite).color          }
+  public static var cssBurlyWood:            UIColor { return CSSColor.light(.burlyWood).color            }
+  public static var cssMediumSlateBlue:      UIColor { return CSSColor.light(.mediumSlateBlue).color      }
+  public static var cssIndianRed:            UIColor { return CSSColor.light(.indianRed).color            }
+  public static var cssDodgerBlue:           UIColor { return CSSColor.light(.dodgerBlue).color           }
+  public static var cssGainsboro:            UIColor { return CSSColor.light(.gainsboro).color            }
+  public static var cssYellowGreen:          UIColor { return CSSColor.light(.yellowGreen).color          }
+  public static var cssSlateBlue:            UIColor { return CSSColor.light(.slateBlue).color            }
+  public static var cssPeachPuff:            UIColor { return CSSColor.light(.peachPuff).color            }
+  public static var cssPurple:               UIColor { return CSSColor.light(.purple).color               }
+  public static var cssBrown:                UIColor { return CSSColor.light(.brown).color                }
+  public static var cssLime:                 UIColor { return CSSColor.light(.lime).color                 }
+  public static var cssPaleVioletRed:        UIColor { return CSSColor.light(.paleVioletRed).color        }
+  public static var cssKhaki:                UIColor { return CSSColor.light(.khaki).color                }
+  public static var cssCrimson:              UIColor { return CSSColor.light(.crimson).color              }
+  public static var cssLightYellow:          UIColor { return CSSColor.light(.lightYellow).color          }
+  public static var cssMistyRose:            UIColor { return CSSColor.light(.mistyRose).color            }
+  public static var cssCyan:                 UIColor { return CSSColor.light(.cyan).color                 }
+  public static var cssDarkBlue:             UIColor { return CSSColor.light(.darkBlue).color             }
+  public static var cssMediumAquaMarine:     UIColor { return CSSColor.light(.mediumAquaMarine).color     }
+  public static var cssMediumBlue:           UIColor { return CSSColor.light(.mediumBlue).color           }
+  public static var cssPaleTurquoise:        UIColor { return CSSColor.light(.paleTurquoise).color        }
+  public static var cssHoneyDew:             UIColor { return CSSColor.light(.honeyDew).color             }
+  public static var cssDimGray:              UIColor { return CSSColor.light(.dimGray).color              }
+  public static var cssLavender:             UIColor { return CSSColor.light(.lavender).color             }
+  public static var cssMagenta:              UIColor { return CSSColor.light(.magenta).color              }
+  public static var cssDarkRed:              UIColor { return CSSColor.light(.darkRed).color              }
+  public static var cssLightSeaGreen:        UIColor { return CSSColor.light(.lightSeaGreen).color        }
+  public static var cssMaroon:               UIColor { return CSSColor.light(.maroon).color               }
+  public static var cssAqua:                 UIColor { return CSSColor.light(.aqua).color                 }
+  public static var cssOlive:                UIColor { return CSSColor.light(.olive).color                }
+  public static var cssPlum:                 UIColor { return CSSColor.light(.plum).color                 }
+  public static var cssLightSteelBlue:       UIColor { return CSSColor.light(.lightSteelBlue).color       }
+  public static var cssOrchid:               UIColor { return CSSColor.light(.orchid).color               }
+  public static var cssBisque:               UIColor { return CSSColor.light(.bisque).color               }
+  public static var cssMediumTurquoise:      UIColor { return CSSColor.light(.mediumTurquoise).color      }
+  public static var cssPeru:                 UIColor { return CSSColor.light(.peru).color                 }
+  public static var cssTurquoise:            UIColor { return CSSColor.light(.turquoise).color            }
+  public static var cssAliceBlue:            UIColor { return CSSColor.light(.aliceBlue).color            }
+  public static var cssYellow:               UIColor { return CSSColor.light(.yellow).color               }
+  public static var cssDarkGreen:            UIColor { return CSSColor.light(.darkGreen).color            }
+  public static var cssDeepPink:             UIColor { return CSSColor.light(.deepPink).color             }
+  public static var cssGreenYellow:          UIColor { return CSSColor.light(.greenYellow).color          }
+  public static var cssSeaGreen:             UIColor { return CSSColor.light(.seaGreen).color             }
+  public static var cssCornflowerBlue:       UIColor { return CSSColor.light(.cornflowerBlue).color       }
 
   // MARK: Dark Shades
 
-  public static var cssForestGreenDark:          UIColor { return CSSColor.Dark(.ForestGreen).color          }
-  public static var cssSkyBlueDark:              UIColor { return CSSColor.Dark(.SkyBlue).color              }
-  public static var cssSiennaDark:               UIColor { return CSSColor.Dark(.Sienna).color               }
-  public static var cssDarkSlateBlueDark:        UIColor { return CSSColor.Dark(.DarkSlateBlue).color        }
-  public static var cssWheatDark:                UIColor { return CSSColor.Dark(.Wheat).color                }
-  public static var cssBeigeDark:                UIColor { return CSSColor.Dark(.Beige).color                }
-  public static var cssCadetBlueDark:            UIColor { return CSSColor.Dark(.CadetBlue).color            }
-  public static var cssLightPinkDark:            UIColor { return CSSColor.Dark(.LightPink).color            }
-  public static var cssSeaShellDark:             UIColor { return CSSColor.Dark(.SeaShell).color             }
-  public static var cssFireBrickDark:            UIColor { return CSSColor.Dark(.FireBrick).color            }
-  public static var cssLightGreenDark:           UIColor { return CSSColor.Dark(.LightGreen).color           }
-  public static var cssDarkMagentaDark:          UIColor { return CSSColor.Dark(.DarkMagenta).color          }
-  public static var cssSalmonDark:               UIColor { return CSSColor.Dark(.Salmon).color               }
-  public static var cssSnowDark:                 UIColor { return CSSColor.Dark(.Snow).color                 }
-  public static var cssVioletDark:               UIColor { return CSSColor.Dark(.Violet).color               }
-  public static var cssWhiteDark:                UIColor { return CSSColor.Dark(.White).color                }
-  public static var cssBlanchedAlmondDark:       UIColor { return CSSColor.Dark(.BlanchedAlmond).color       }
-  public static var cssLightGrayDark:            UIColor { return CSSColor.Dark(.LightGray).color            }
-  public static var cssSteelBlueDark:            UIColor { return CSSColor.Dark(.SteelBlue).color            }
-  public static var cssAzureDark:                UIColor { return CSSColor.Dark(.Azure).color                }
-  public static var cssChocolateDark:            UIColor { return CSSColor.Dark(.Chocolate).color            }
-  public static var cssCornsilkDark:             UIColor { return CSSColor.Dark(.Cornsilk).color             }
-  public static var cssDarkOrangeDark:           UIColor { return CSSColor.Dark(.DarkOrange).color           }
-  public static var cssGrayDark:                 UIColor { return CSSColor.Dark(.Gray).color                 }
-  public static var cssGoldDark:                 UIColor { return CSSColor.Dark(.Gold).color                 }
-  public static var cssDarkTurquoiseDark:        UIColor { return CSSColor.Dark(.DarkTurquoise).color        }
-  public static var cssLightSkyBlueDark:         UIColor { return CSSColor.Dark(.LightSkyBlue).color         }
-  public static var cssPaleGreenDark:            UIColor { return CSSColor.Dark(.PaleGreen).color            }
-  public static var cssLavenderBlushDark:        UIColor { return CSSColor.Dark(.LavenderBlush).color        }
-  public static var cssMediumPurpleDark:         UIColor { return CSSColor.Dark(.MediumPurple).color         }
-  public static var cssAquamarineDark:           UIColor { return CSSColor.Dark(.Aquamarine).color           }
-  public static var cssLightCoralDark:           UIColor { return CSSColor.Dark(.LightCoral).color           }
-  public static var cssMediumOrchidDark:         UIColor { return CSSColor.Dark(.MediumOrchid).color         }
-  public static var cssFloralWhiteDark:          UIColor { return CSSColor.Dark(.FloralWhite).color          }
-  public static var cssLawnGreenDark:            UIColor { return CSSColor.Dark(.LawnGreen).color            }
-  public static var cssRebeccaPurpleDark:        UIColor { return CSSColor.Dark(.RebeccaPurple).color        }
-  public static var cssCoralDark:                UIColor { return CSSColor.Dark(.Coral).color                }
-  public static var cssLightSlateGrayDark:       UIColor { return CSSColor.Dark(.LightSlateGray).color       }
-  public static var cssBlueVioletDark:           UIColor { return CSSColor.Dark(.BlueViolet).color           }
-  public static var cssOrangeDark:               UIColor { return CSSColor.Dark(.Orange).color               }
-  public static var cssMidnightBlueDark:         UIColor { return CSSColor.Dark(.MidnightBlue).color         }
-  public static var cssLinenDark:                UIColor { return CSSColor.Dark(.Linen).color                }
-  public static var cssDarkSlateGrayDark:        UIColor { return CSSColor.Dark(.DarkSlateGray).color        }
-  public static var cssDarkGrayDark:             UIColor { return CSSColor.Dark(.DarkGray).color             }
-  public static var cssMediumVioletRedDark:      UIColor { return CSSColor.Dark(.MediumVioletRed).color      }
-  public static var cssPapayaWhipDark:           UIColor { return CSSColor.Dark(.PapayaWhip).color           }
-  public static var cssSlateGrayDark:            UIColor { return CSSColor.Dark(.SlateGray).color            }
-  public static var cssSpringGreenDark:          UIColor { return CSSColor.Dark(.SpringGreen).color          }
-  public static var cssDarkGoldenRodDark:        UIColor { return CSSColor.Dark(.DarkGoldenRod).color        }
-  public static var cssLimeGreenDark:            UIColor { return CSSColor.Dark(.LimeGreen).color            }
-  public static var cssDarkSalmonDark:           UIColor { return CSSColor.Dark(.DarkSalmon).color           }
-  public static var cssRoyalBlueDark:            UIColor { return CSSColor.Dark(.RoyalBlue).color            }
-  public static var cssOrangeRedDark:            UIColor { return CSSColor.Dark(.OrangeRed).color            }
-  public static var cssThistleDark:              UIColor { return CSSColor.Dark(.Thistle).color              }
-  public static var cssPinkDark:                 UIColor { return CSSColor.Dark(.Pink).color                 }
-  public static var cssChartreuseDark:           UIColor { return CSSColor.Dark(.Chartreuse).color           }
-  public static var cssBlueDark:                 UIColor { return CSSColor.Dark(.Blue).color                 }
-  public static var cssLightCyanDark:            UIColor { return CSSColor.Dark(.LightCyan).color            }
-  public static var cssGhostWhiteDark:           UIColor { return CSSColor.Dark(.GhostWhite).color           }
-  public static var cssTanDark:                  UIColor { return CSSColor.Dark(.Tan).color                  }
-  public static var cssTomatoDark:               UIColor { return CSSColor.Dark(.Tomato).color               }
-  public static var cssDarkOliveGreenDark:       UIColor { return CSSColor.Dark(.DarkOliveGreen).color       }
-  public static var cssIvoryDark:                UIColor { return CSSColor.Dark(.Ivory).color                }
-  public static var cssDarkCyanDark:             UIColor { return CSSColor.Dark(.DarkCyan).color             }
-  public static var cssDarkKhakiDark:            UIColor { return CSSColor.Dark(.DarkKhaki).color            }
-  public static var cssNavyDark:                 UIColor { return CSSColor.Dark(.Navy).color                 }
-  public static var cssRedDark:                  UIColor { return CSSColor.Dark(.Red).color                  }
-  public static var cssDarkVioletDark:           UIColor { return CSSColor.Dark(.DarkViolet).color           }
-  public static var cssDarkSeaGreenDark:         UIColor { return CSSColor.Dark(.DarkSeaGreen).color         }
-  public static var cssGoldenRodDark:            UIColor { return CSSColor.Dark(.GoldenRod).color            }
-  public static var cssRosyBrownDark:            UIColor { return CSSColor.Dark(.RosyBrown).color            }
-  public static var cssOliveDrabDark:            UIColor { return CSSColor.Dark(.OliveDrab).color            }
-  public static var cssTealDark:                 UIColor { return CSSColor.Dark(.Teal).color                 }
-  public static var cssHotPinkDark:              UIColor { return CSSColor.Dark(.HotPink).color              }
-  public static var cssPaleGoldenRodDark:        UIColor { return CSSColor.Dark(.PaleGoldenRod).color        }
-  public static var cssDeepSkyBlueDark:          UIColor { return CSSColor.Dark(.DeepSkyBlue).color          }
-  public static var cssDarkOrchidDark:           UIColor { return CSSColor.Dark(.DarkOrchid).color           }
-  public static var cssMediumSeaGreenDark:       UIColor { return CSSColor.Dark(.MediumSeaGreen).color       }
-  public static var cssOldLaceDark:              UIColor { return CSSColor.Dark(.OldLace).color              }
-  public static var cssLemonChiffonDark:         UIColor { return CSSColor.Dark(.LemonChiffon).color         }
-  public static var cssMediumSpringGreenDark:    UIColor { return CSSColor.Dark(.MediumSpringGreen).color    }
-  public static var cssGreenDark:                UIColor { return CSSColor.Dark(.Green).color                }
-  public static var cssIndigoDark:               UIColor { return CSSColor.Dark(.Indigo).color               }
-  public static var cssMoccasinDark:             UIColor { return CSSColor.Dark(.Moccasin).color             }
-  public static var cssFuchsiaDark:              UIColor { return CSSColor.Dark(.Fuchsia).color              }
-  public static var cssLightBlueDark:            UIColor { return CSSColor.Dark(.LightBlue).color            }
-  public static var cssSilverDark:               UIColor { return CSSColor.Dark(.Silver).color               }
-  public static var cssWhiteSmokeDark:           UIColor { return CSSColor.Dark(.WhiteSmoke).color           }
-  public static var cssPowderBlueDark:           UIColor { return CSSColor.Dark(.PowderBlue).color           }
-  public static var cssSaddleBrownDark:          UIColor { return CSSColor.Dark(.SaddleBrown).color          }
-  public static var cssLightGoldenRodYellowDark: UIColor { return CSSColor.Dark(.LightGoldenRodYellow).color }
-  public static var cssLightSalmonDark:          UIColor { return CSSColor.Dark(.LightSalmon).color          }
-  public static var cssSandyBrownDark:           UIColor { return CSSColor.Dark(.SandyBrown).color           }
-  public static var cssAntiqueWhiteDark:         UIColor { return CSSColor.Dark(.AntiqueWhite).color         }
-  public static var cssBlackDark:                UIColor { return CSSColor.Dark(.Black).color                }
-  public static var cssMintCreamDark:            UIColor { return CSSColor.Dark(.MintCream).color            }
-  public static var cssNavajoWhiteDark:          UIColor { return CSSColor.Dark(.NavajoWhite).color          }
-  public static var cssBurlyWoodDark:            UIColor { return CSSColor.Dark(.BurlyWood).color            }
-  public static var cssMediumSlateBlueDark:      UIColor { return CSSColor.Dark(.MediumSlateBlue).color      }
-  public static var cssIndianRedDark:            UIColor { return CSSColor.Dark(.IndianRed).color            }
-  public static var cssDodgerBlueDark:           UIColor { return CSSColor.Dark(.DodgerBlue).color           }
-  public static var cssGainsboroDark:            UIColor { return CSSColor.Dark(.Gainsboro).color            }
-  public static var cssYellowGreenDark:          UIColor { return CSSColor.Dark(.YellowGreen).color          }
-  public static var cssSlateBlueDark:            UIColor { return CSSColor.Dark(.SlateBlue).color            }
-  public static var cssPeachPuffDark:            UIColor { return CSSColor.Dark(.PeachPuff).color            }
-  public static var cssPurpleDark:               UIColor { return CSSColor.Dark(.Purple).color               }
-  public static var cssBrownDark:                UIColor { return CSSColor.Dark(.Brown).color                }
-  public static var cssLimeDark:                 UIColor { return CSSColor.Dark(.Lime).color                 }
-  public static var cssPaleVioletRedDark:        UIColor { return CSSColor.Dark(.PaleVioletRed).color        }
-  public static var cssKhakiDark:                UIColor { return CSSColor.Dark(.Khaki).color                }
-  public static var cssCrimsonDark:              UIColor { return CSSColor.Dark(.Crimson).color              }
-  public static var cssLightYellowDark:          UIColor { return CSSColor.Dark(.LightYellow).color          }
-  public static var cssMistyRoseDark:            UIColor { return CSSColor.Dark(.MistyRose).color            }
-  public static var cssCyanDark:                 UIColor { return CSSColor.Dark(.Cyan).color                 }
-  public static var cssDarkBlueDark:             UIColor { return CSSColor.Dark(.DarkBlue).color             }
-  public static var cssMediumAquaMarineDark:     UIColor { return CSSColor.Dark(.MediumAquaMarine).color     }
-  public static var cssMediumBlueDark:           UIColor { return CSSColor.Dark(.MediumBlue).color           }
-  public static var cssPaleTurquoiseDark:        UIColor { return CSSColor.Dark(.PaleTurquoise).color        }
-  public static var cssHoneyDewDark:             UIColor { return CSSColor.Dark(.HoneyDew).color             }
-  public static var cssDimGrayDark:              UIColor { return CSSColor.Dark(.DimGray).color              }
-  public static var cssLavenderDark:             UIColor { return CSSColor.Dark(.Lavender).color             }
-  public static var cssMagentaDark:              UIColor { return CSSColor.Dark(.Magenta).color              }
-  public static var cssDarkRedDark:              UIColor { return CSSColor.Dark(.DarkRed).color              }
-  public static var cssLightSeaGreenDark:        UIColor { return CSSColor.Dark(.LightSeaGreen).color        }
-  public static var cssMaroonDark:               UIColor { return CSSColor.Dark(.Maroon).color               }
-  public static var cssAquaDark:                 UIColor { return CSSColor.Dark(.Aqua).color                 }
-  public static var cssOliveDark:                UIColor { return CSSColor.Dark(.Olive).color                }
-  public static var cssPlumDark:                 UIColor { return CSSColor.Dark(.Plum).color                 }
-  public static var cssLightSteelBlueDark:       UIColor { return CSSColor.Dark(.LightSteelBlue).color       }
-  public static var cssOrchidDark:               UIColor { return CSSColor.Dark(.Orchid).color               }
-  public static var cssBisqueDark:               UIColor { return CSSColor.Dark(.Bisque).color               }
-  public static var cssMediumTurquoiseDark:      UIColor { return CSSColor.Dark(.MediumTurquoise).color      }
-  public static var cssPeruDark:                 UIColor { return CSSColor.Dark(.Peru).color                 }
-  public static var cssTurquoiseDark:            UIColor { return CSSColor.Dark(.Turquoise).color            }
-  public static var cssAliceBlueDark:            UIColor { return CSSColor.Dark(.AliceBlue).color            }
-  public static var cssYellowDark:               UIColor { return CSSColor.Dark(.Yellow).color               }
-  public static var cssDarkGreenDark:            UIColor { return CSSColor.Dark(.DarkGreen).color            }
-  public static var cssDeepPinkDark:             UIColor { return CSSColor.Dark(.DeepPink).color             }
-  public static var cssGreenYellowDark:          UIColor { return CSSColor.Dark(.GreenYellow).color          }
-  public static var cssSeaGreenDark:             UIColor { return CSSColor.Dark(.SeaGreen).color             }
-  public static var cssCornflowerBlueDark:       UIColor { return CSSColor.Dark(.CornflowerBlue).color       }
+  public static var cssForestGreenDark:          UIColor { return CSSColor.dark(.forestGreen).color          }
+  public static var cssSkyBlueDark:              UIColor { return CSSColor.dark(.skyBlue).color              }
+  public static var cssSiennaDark:               UIColor { return CSSColor.dark(.sienna).color               }
+  public static var cssDarkSlateBlueDark:        UIColor { return CSSColor.dark(.darkSlateBlue).color        }
+  public static var cssWheatDark:                UIColor { return CSSColor.dark(.wheat).color                }
+  public static var cssBeigeDark:                UIColor { return CSSColor.dark(.beige).color                }
+  public static var cssCadetBlueDark:            UIColor { return CSSColor.dark(.cadetBlue).color            }
+  public static var cssLightPinkDark:            UIColor { return CSSColor.dark(.lightPink).color            }
+  public static var cssSeaShellDark:             UIColor { return CSSColor.dark(.seaShell).color             }
+  public static var cssFireBrickDark:            UIColor { return CSSColor.dark(.fireBrick).color            }
+  public static var cssLightGreenDark:           UIColor { return CSSColor.dark(.lightGreen).color           }
+  public static var cssDarkMagentaDark:          UIColor { return CSSColor.dark(.darkMagenta).color          }
+  public static var cssSalmonDark:               UIColor { return CSSColor.dark(.salmon).color               }
+  public static var cssSnowDark:                 UIColor { return CSSColor.dark(.snow).color                 }
+  public static var cssVioletDark:               UIColor { return CSSColor.dark(.violet).color               }
+  public static var cssWhiteDark:                UIColor { return CSSColor.dark(.white).color                }
+  public static var cssBlanchedAlmondDark:       UIColor { return CSSColor.dark(.blanchedAlmond).color       }
+  public static var cssLightGrayDark:            UIColor { return CSSColor.dark(.lightGray).color            }
+  public static var cssSteelBlueDark:            UIColor { return CSSColor.dark(.steelBlue).color            }
+  public static var cssAzureDark:                UIColor { return CSSColor.dark(.azure).color                }
+  public static var cssChocolateDark:            UIColor { return CSSColor.dark(.chocolate).color            }
+  public static var cssCornsilkDark:             UIColor { return CSSColor.dark(.cornsilk).color             }
+  public static var cssDarkOrangeDark:           UIColor { return CSSColor.dark(.darkOrange).color           }
+  public static var cssGrayDark:                 UIColor { return CSSColor.dark(.gray).color                 }
+  public static var cssGoldDark:                 UIColor { return CSSColor.dark(.gold).color                 }
+  public static var cssDarkTurquoiseDark:        UIColor { return CSSColor.dark(.darkTurquoise).color        }
+  public static var cssLightSkyBlueDark:         UIColor { return CSSColor.dark(.lightSkyBlue).color         }
+  public static var cssPaleGreenDark:            UIColor { return CSSColor.dark(.paleGreen).color            }
+  public static var cssLavenderBlushDark:        UIColor { return CSSColor.dark(.lavenderBlush).color        }
+  public static var cssMediumPurpleDark:         UIColor { return CSSColor.dark(.mediumPurple).color         }
+  public static var cssAquamarineDark:           UIColor { return CSSColor.dark(.aquamarine).color           }
+  public static var cssLightCoralDark:           UIColor { return CSSColor.dark(.lightCoral).color           }
+  public static var cssMediumOrchidDark:         UIColor { return CSSColor.dark(.mediumOrchid).color         }
+  public static var cssFloralWhiteDark:          UIColor { return CSSColor.dark(.floralWhite).color          }
+  public static var cssLawnGreenDark:            UIColor { return CSSColor.dark(.lawnGreen).color            }
+  public static var cssRebeccaPurpleDark:        UIColor { return CSSColor.dark(.rebeccaPurple).color        }
+  public static var cssCoralDark:                UIColor { return CSSColor.dark(.coral).color                }
+  public static var cssLightSlateGrayDark:       UIColor { return CSSColor.dark(.lightSlateGray).color       }
+  public static var cssBlueVioletDark:           UIColor { return CSSColor.dark(.blueViolet).color           }
+  public static var cssOrangeDark:               UIColor { return CSSColor.dark(.orange).color               }
+  public static var cssMidnightBlueDark:         UIColor { return CSSColor.dark(.midnightBlue).color         }
+  public static var cssLinenDark:                UIColor { return CSSColor.dark(.linen).color                }
+  public static var cssDarkSlateGrayDark:        UIColor { return CSSColor.dark(.darkSlateGray).color        }
+  public static var cssDarkGrayDark:             UIColor { return CSSColor.dark(.darkGray).color             }
+  public static var cssMediumVioletRedDark:      UIColor { return CSSColor.dark(.mediumVioletRed).color      }
+  public static var cssPapayaWhipDark:           UIColor { return CSSColor.dark(.papayaWhip).color           }
+  public static var cssSlateGrayDark:            UIColor { return CSSColor.dark(.slateGray).color            }
+  public static var cssSpringGreenDark:          UIColor { return CSSColor.dark(.springGreen).color          }
+  public static var cssDarkGoldenRodDark:        UIColor { return CSSColor.dark(.darkGoldenRod).color        }
+  public static var cssLimeGreenDark:            UIColor { return CSSColor.dark(.limeGreen).color            }
+  public static var cssDarkSalmonDark:           UIColor { return CSSColor.dark(.darkSalmon).color           }
+  public static var cssRoyalBlueDark:            UIColor { return CSSColor.dark(.royalBlue).color            }
+  public static var cssOrangeRedDark:            UIColor { return CSSColor.dark(.orangeRed).color            }
+  public static var cssThistleDark:              UIColor { return CSSColor.dark(.thistle).color              }
+  public static var cssPinkDark:                 UIColor { return CSSColor.dark(.pink).color                 }
+  public static var cssChartreuseDark:           UIColor { return CSSColor.dark(.chartreuse).color           }
+  public static var cssBlueDark:                 UIColor { return CSSColor.dark(.blue).color                 }
+  public static var cssLightCyanDark:            UIColor { return CSSColor.dark(.lightCyan).color            }
+  public static var cssGhostWhiteDark:           UIColor { return CSSColor.dark(.ghostWhite).color           }
+  public static var cssTanDark:                  UIColor { return CSSColor.dark(.tan).color                  }
+  public static var cssTomatoDark:               UIColor { return CSSColor.dark(.tomato).color               }
+  public static var cssDarkOliveGreenDark:       UIColor { return CSSColor.dark(.darkOliveGreen).color       }
+  public static var cssIvoryDark:                UIColor { return CSSColor.dark(.ivory).color                }
+  public static var cssDarkCyanDark:             UIColor { return CSSColor.dark(.darkCyan).color             }
+  public static var cssDarkKhakiDark:            UIColor { return CSSColor.dark(.darkKhaki).color            }
+  public static var cssNavyDark:                 UIColor { return CSSColor.dark(.navy).color                 }
+  public static var cssRedDark:                  UIColor { return CSSColor.dark(.red).color                  }
+  public static var cssDarkVioletDark:           UIColor { return CSSColor.dark(.darkViolet).color           }
+  public static var cssDarkSeaGreenDark:         UIColor { return CSSColor.dark(.darkSeaGreen).color         }
+  public static var cssGoldenRodDark:            UIColor { return CSSColor.dark(.goldenRod).color            }
+  public static var cssRosyBrownDark:            UIColor { return CSSColor.dark(.rosyBrown).color            }
+  public static var cssOliveDrabDark:            UIColor { return CSSColor.dark(.oliveDrab).color            }
+  public static var cssTealDark:                 UIColor { return CSSColor.dark(.teal).color                 }
+  public static var cssHotPinkDark:              UIColor { return CSSColor.dark(.hotPink).color              }
+  public static var cssPaleGoldenRodDark:        UIColor { return CSSColor.dark(.paleGoldenRod).color        }
+  public static var cssDeepSkyBlueDark:          UIColor { return CSSColor.dark(.deepSkyBlue).color          }
+  public static var cssDarkOrchidDark:           UIColor { return CSSColor.dark(.darkOrchid).color           }
+  public static var cssMediumSeaGreenDark:       UIColor { return CSSColor.dark(.mediumSeaGreen).color       }
+  public static var cssOldLaceDark:              UIColor { return CSSColor.dark(.oldLace).color              }
+  public static var cssLemonChiffonDark:         UIColor { return CSSColor.dark(.lemonChiffon).color         }
+  public static var cssMediumSpringGreenDark:    UIColor { return CSSColor.dark(.mediumSpringGreen).color    }
+  public static var cssGreenDark:                UIColor { return CSSColor.dark(.green).color                }
+  public static var cssIndigoDark:               UIColor { return CSSColor.dark(.indigo).color               }
+  public static var cssMoccasinDark:             UIColor { return CSSColor.dark(.moccasin).color             }
+  public static var cssFuchsiaDark:              UIColor { return CSSColor.dark(.fuchsia).color              }
+  public static var cssLightBlueDark:            UIColor { return CSSColor.dark(.lightBlue).color            }
+  public static var cssSilverDark:               UIColor { return CSSColor.dark(.silver).color               }
+  public static var cssWhiteSmokeDark:           UIColor { return CSSColor.dark(.whiteSmoke).color           }
+  public static var cssPowderBlueDark:           UIColor { return CSSColor.dark(.powderBlue).color           }
+  public static var cssSaddleBrownDark:          UIColor { return CSSColor.dark(.saddleBrown).color          }
+  public static var cssLightGoldenRodYellowDark: UIColor { return CSSColor.dark(.lightGoldenRodYellow).color }
+  public static var cssLightSalmonDark:          UIColor { return CSSColor.dark(.lightSalmon).color          }
+  public static var cssSandyBrownDark:           UIColor { return CSSColor.dark(.sandyBrown).color           }
+  public static var cssAntiqueWhiteDark:         UIColor { return CSSColor.dark(.antiqueWhite).color         }
+  public static var cssBlackDark:                UIColor { return CSSColor.dark(.black).color                }
+  public static var cssMintCreamDark:            UIColor { return CSSColor.dark(.mintCream).color            }
+  public static var cssNavajoWhiteDark:          UIColor { return CSSColor.dark(.navajoWhite).color          }
+  public static var cssBurlyWoodDark:            UIColor { return CSSColor.dark(.burlyWood).color            }
+  public static var cssMediumSlateBlueDark:      UIColor { return CSSColor.dark(.mediumSlateBlue).color      }
+  public static var cssIndianRedDark:            UIColor { return CSSColor.dark(.indianRed).color            }
+  public static var cssDodgerBlueDark:           UIColor { return CSSColor.dark(.dodgerBlue).color           }
+  public static var cssGainsboroDark:            UIColor { return CSSColor.dark(.gainsboro).color            }
+  public static var cssYellowGreenDark:          UIColor { return CSSColor.dark(.yellowGreen).color          }
+  public static var cssSlateBlueDark:            UIColor { return CSSColor.dark(.slateBlue).color            }
+  public static var cssPeachPuffDark:            UIColor { return CSSColor.dark(.peachPuff).color            }
+  public static var cssPurpleDark:               UIColor { return CSSColor.dark(.purple).color               }
+  public static var cssBrownDark:                UIColor { return CSSColor.dark(.brown).color                }
+  public static var cssLimeDark:                 UIColor { return CSSColor.dark(.lime).color                 }
+  public static var cssPaleVioletRedDark:        UIColor { return CSSColor.dark(.paleVioletRed).color        }
+  public static var cssKhakiDark:                UIColor { return CSSColor.dark(.khaki).color                }
+  public static var cssCrimsonDark:              UIColor { return CSSColor.dark(.crimson).color              }
+  public static var cssLightYellowDark:          UIColor { return CSSColor.dark(.lightYellow).color          }
+  public static var cssMistyRoseDark:            UIColor { return CSSColor.dark(.mistyRose).color            }
+  public static var cssCyanDark:                 UIColor { return CSSColor.dark(.cyan).color                 }
+  public static var cssDarkBlueDark:             UIColor { return CSSColor.dark(.darkBlue).color             }
+  public static var cssMediumAquaMarineDark:     UIColor { return CSSColor.dark(.mediumAquaMarine).color     }
+  public static var cssMediumBlueDark:           UIColor { return CSSColor.dark(.mediumBlue).color           }
+  public static var cssPaleTurquoiseDark:        UIColor { return CSSColor.dark(.paleTurquoise).color        }
+  public static var cssHoneyDewDark:             UIColor { return CSSColor.dark(.honeyDew).color             }
+  public static var cssDimGrayDark:              UIColor { return CSSColor.dark(.dimGray).color              }
+  public static var cssLavenderDark:             UIColor { return CSSColor.dark(.lavender).color             }
+  public static var cssMagentaDark:              UIColor { return CSSColor.dark(.magenta).color              }
+  public static var cssDarkRedDark:              UIColor { return CSSColor.dark(.darkRed).color              }
+  public static var cssLightSeaGreenDark:        UIColor { return CSSColor.dark(.lightSeaGreen).color        }
+  public static var cssMaroonDark:               UIColor { return CSSColor.dark(.maroon).color               }
+  public static var cssAquaDark:                 UIColor { return CSSColor.dark(.aqua).color                 }
+  public static var cssOliveDark:                UIColor { return CSSColor.dark(.olive).color                }
+  public static var cssPlumDark:                 UIColor { return CSSColor.dark(.plum).color                 }
+  public static var cssLightSteelBlueDark:       UIColor { return CSSColor.dark(.lightSteelBlue).color       }
+  public static var cssOrchidDark:               UIColor { return CSSColor.dark(.orchid).color               }
+  public static var cssBisqueDark:               UIColor { return CSSColor.dark(.bisque).color               }
+  public static var cssMediumTurquoiseDark:      UIColor { return CSSColor.dark(.mediumTurquoise).color      }
+  public static var cssPeruDark:                 UIColor { return CSSColor.dark(.peru).color                 }
+  public static var cssTurquoiseDark:            UIColor { return CSSColor.dark(.turquoise).color            }
+  public static var cssAliceBlueDark:            UIColor { return CSSColor.dark(.aliceBlue).color            }
+  public static var cssYellowDark:               UIColor { return CSSColor.dark(.yellow).color               }
+  public static var cssDarkGreenDark:            UIColor { return CSSColor.dark(.darkGreen).color            }
+  public static var cssDeepPinkDark:             UIColor { return CSSColor.dark(.deepPink).color             }
+  public static var cssGreenYellowDark:          UIColor { return CSSColor.dark(.greenYellow).color          }
+  public static var cssSeaGreenDark:             UIColor { return CSSColor.dark(.seaGreen).color             }
+  public static var cssCornflowerBlueDark:       UIColor { return CSSColor.dark(.cornflowerBlue).color       }
 
   public enum CSSColor: ColorType {
-    case Light (CSSColorBase)
-    case Dark (CSSColorBase)
+    case light (CSSColorBase)
+    case dark (CSSColorBase)
     public enum CSSColorBase: ColorBaseType {
-      case ForestGreen, SkyBlue, Sienna, DarkSlateBlue, Wheat, Beige, CadetBlue, LightPink, SeaShell, FireBrick,
-           LightGreen, DarkMagenta, Salmon, Snow, Violet, White, BlanchedAlmond, LightGray, SteelBlue, Azure,
-           Chocolate, Cornsilk, DarkOrange, Gray, Gold, DarkTurquoise, LightSkyBlue, PaleGreen, LavenderBlush,
-           MediumPurple, Aquamarine, LightCoral, MediumOrchid, FloralWhite, LawnGreen, RebeccaPurple, Coral,
-           LightSlateGray, BlueViolet, Orange, MidnightBlue, Linen, DarkSlateGray, DarkGray, MediumVioletRed,
-           PapayaWhip, SlateGray, SpringGreen, DarkGoldenRod, LimeGreen, DarkSalmon, RoyalBlue, OrangeRed,
-           Thistle, Pink, Chartreuse, Blue, LightCyan, GhostWhite, Tan, Tomato, DarkOliveGreen, Ivory, DarkCyan,
-           DarkKhaki, Navy, Red, DarkViolet, DarkSeaGreen, GoldenRod, RosyBrown, OliveDrab, Teal, HotPink,
-           PaleGoldenRod, DeepSkyBlue, DarkOrchid, MediumSeaGreen, OldLace, LemonChiffon, MediumSpringGreen,
-           Green, Indigo, Moccasin, Fuchsia, LightBlue, Silver, WhiteSmoke, PowderBlue, SaddleBrown,
-           LightGoldenRodYellow, LightSalmon, SandyBrown, AntiqueWhite, Black, MintCream, NavajoWhite, BurlyWood,
-           MediumSlateBlue, IndianRed, DodgerBlue, Gainsboro, YellowGreen, SlateBlue, PeachPuff, Purple, Brown,
-           Lime, PaleVioletRed, Khaki, Crimson, LightYellow, MistyRose, Cyan, DarkBlue, MediumAquaMarine,
-           MediumBlue, PaleTurquoise, HoneyDew, DimGray, Lavender, Magenta, DarkRed, LightSeaGreen, Maroon, Aqua,
-           Olive, Plum, LightSteelBlue, Orchid, Bisque, MediumTurquoise, Peru, Turquoise, AliceBlue, Yellow,
-           DarkGreen, DeepPink, GreenYellow, SeaGreen, CornflowerBlue
+      case forestGreen, skyBlue, sienna, darkSlateBlue, wheat, beige, cadetBlue, lightPink, seaShell, fireBrick,
+           lightGreen, darkMagenta, salmon, snow, violet, white, blanchedAlmond, lightGray, steelBlue, azure,
+           chocolate, cornsilk, darkOrange, gray, gold, darkTurquoise, lightSkyBlue, paleGreen, lavenderBlush,
+           mediumPurple, aquamarine, lightCoral, mediumOrchid, floralWhite, lawnGreen, rebeccaPurple, coral,
+           lightSlateGray, blueViolet, orange, midnightBlue, linen, darkSlateGray, darkGray, mediumVioletRed,
+           papayaWhip, slateGray, springGreen, darkGoldenRod, limeGreen, darkSalmon, royalBlue, orangeRed,
+           thistle, pink, chartreuse, blue, lightCyan, ghostWhite, tan, tomato, darkOliveGreen, ivory, darkCyan,
+           darkKhaki, navy, red, darkViolet, darkSeaGreen, goldenRod, rosyBrown, oliveDrab, teal, hotPink,
+           paleGoldenRod, deepSkyBlue, darkOrchid, mediumSeaGreen, oldLace, lemonChiffon, mediumSpringGreen,
+           green, indigo, moccasin, fuchsia, lightBlue, silver, whiteSmoke, powderBlue, saddleBrown,
+           lightGoldenRodYellow, lightSalmon, sandyBrown, antiqueWhite, black, mintCream, navajoWhite, burlyWood,
+           mediumSlateBlue, indianRed, dodgerBlue, gainsboro, yellowGreen, slateBlue, peachPuff, purple, brown,
+           lime, paleVioletRed, khaki, crimson, lightYellow, mistyRose, cyan, darkBlue, mediumAquaMarine,
+           mediumBlue, paleTurquoise, honeyDew, dimGray, lavender, magenta, darkRed, lightSeaGreen, maroon, aqua,
+           olive, plum, lightSteelBlue, orchid, bisque, mediumTurquoise, peru, turquoise, aliceBlue, yellow,
+           darkGreen, deepPink, greenYellow, seaGreen, cornflowerBlue
 
        public static var all: [CSSColorBase] {
-         return [.ForestGreen, .SkyBlue, .Sienna, .DarkSlateBlue, .Wheat, .Beige, .CadetBlue, .LightPink,
-                 .SeaShell, .FireBrick, .LightGreen, .DarkMagenta, .Salmon, .Snow, .Violet, .White,
-                 .BlanchedAlmond, .LightGray, .SteelBlue, .Azure, .Chocolate, .Cornsilk, .DarkOrange, .Gray,
-                 .Gold, .DarkTurquoise, .LightSkyBlue, .PaleGreen, .LavenderBlush, .MediumPurple, .Aquamarine,
-                 .LightCoral, .MediumOrchid, .FloralWhite, .LawnGreen, .RebeccaPurple, .Coral, .LightSlateGray,
-                 .BlueViolet, .Orange, .MidnightBlue, .Linen, .DarkSlateGray, .DarkGray, .MediumVioletRed,
-                 .PapayaWhip, .SlateGray, .SpringGreen, .DarkGoldenRod, .LimeGreen, .DarkSalmon, .RoyalBlue,
-                 .OrangeRed, .Thistle, .Pink, .Chartreuse, .Blue, .LightCyan, .GhostWhite, .Tan, .Tomato,
-                 .DarkOliveGreen, .Ivory, .DarkCyan, .DarkKhaki, .Navy, .Red, .DarkViolet, .DarkSeaGreen,
-                 .GoldenRod, .RosyBrown, .OliveDrab, .Teal, .HotPink, .PaleGoldenRod, .DeepSkyBlue, .DarkOrchid,
-                 .MediumSeaGreen, .OldLace, .LemonChiffon, .MediumSpringGreen, .Green, .Indigo, .Moccasin,
-                 .Fuchsia, .LightBlue, .Silver, .WhiteSmoke, .PowderBlue, .SaddleBrown, .LightGoldenRodYellow,
-                 .LightSalmon, .SandyBrown, .AntiqueWhite, .Black, .MintCream, .NavajoWhite, .BurlyWood,
-                 .MediumSlateBlue, .IndianRed, .DodgerBlue, .Gainsboro, .YellowGreen, .SlateBlue, .PeachPuff,
-                 .Purple, .Brown, .Lime, .PaleVioletRed, .Khaki, .Crimson, .LightYellow, .MistyRose, .Cyan,
-                 .DarkBlue, .MediumAquaMarine, .MediumBlue, .PaleTurquoise, .HoneyDew, .DimGray, .Lavender,
-                 .Magenta, .DarkRed, .LightSeaGreen, .Maroon, .Aqua, .Olive, .Plum, .LightSteelBlue, .Orchid,
-                 .Bisque, .MediumTurquoise, .Peru, .Turquoise, .AliceBlue, .Yellow, .DarkGreen, .DeepPink,
-                 .GreenYellow, .SeaGreen, .CornflowerBlue]
+         return [.forestGreen, .skyBlue, .sienna, .darkSlateBlue, .wheat, .beige, .cadetBlue, .lightPink,
+                 .seaShell, .fireBrick, .lightGreen, .darkMagenta, .salmon, .snow, .violet, .white,
+                 .blanchedAlmond, .lightGray, .steelBlue, .azure, .chocolate, .cornsilk, .darkOrange, .gray,
+                 .gold, .darkTurquoise, .lightSkyBlue, .paleGreen, .lavenderBlush, .mediumPurple, .aquamarine,
+                 .lightCoral, .mediumOrchid, .floralWhite, .lawnGreen, .rebeccaPurple, .coral, .lightSlateGray,
+                 .blueViolet, .orange, .midnightBlue, .linen, .darkSlateGray, .darkGray, .mediumVioletRed,
+                 .papayaWhip, .slateGray, .springGreen, .darkGoldenRod, .limeGreen, .darkSalmon, .royalBlue,
+                 .orangeRed, .thistle, .pink, .chartreuse, .blue, .lightCyan, .ghostWhite, .tan, .tomato,
+                 .darkOliveGreen, .ivory, .darkCyan, .darkKhaki, .navy, .red, .darkViolet, .darkSeaGreen,
+                 .goldenRod, .rosyBrown, .oliveDrab, .teal, .hotPink, .paleGoldenRod, .deepSkyBlue, .darkOrchid,
+                 .mediumSeaGreen, .oldLace, .lemonChiffon, .mediumSpringGreen, .green, .indigo, .moccasin,
+                 .fuchsia, .lightBlue, .silver, .whiteSmoke, .powderBlue, .saddleBrown, .lightGoldenRodYellow,
+                 .lightSalmon, .sandyBrown, .antiqueWhite, .black, .mintCream, .navajoWhite, .burlyWood,
+                 .mediumSlateBlue, .indianRed, .dodgerBlue, .gainsboro, .yellowGreen, .slateBlue, .peachPuff,
+                 .purple, .brown, .lime, .paleVioletRed, .khaki, .crimson, .lightYellow, .mistyRose, .cyan,
+                 .darkBlue, .mediumAquaMarine, .mediumBlue, .paleTurquoise, .honeyDew, .dimGray, .lavender,
+                 .magenta, .darkRed, .lightSeaGreen, .maroon, .aqua, .olive, .plum, .lightSteelBlue, .orchid,
+                 .bisque, .mediumTurquoise, .peru, .turquoise, .aliceBlue, .yellow, .darkGreen, .deepPink,
+                 .greenYellow, .seaGreen, .cornflowerBlue]
        }
 
        public var name: String {
          switch self {
-           case .ForestGreen:          return "ForestGreen"
-           case .SkyBlue:              return "SkyBlue"
-           case .Sienna:               return "Sienna"
-           case .DarkSlateBlue:        return "DarkSlateBlue"
-           case .Wheat:                return "Wheat"
-           case .Beige:                return "Beige"
-           case .CadetBlue:            return "CadetBlue"
-           case .LightPink:            return "LightPink"
-           case .SeaShell:             return "SeaShell"
-           case .FireBrick:            return "FireBrick"
-           case .LightGreen:           return "LightGreen"
-           case .DarkMagenta:          return "DarkMagenta"
-           case .Salmon:               return "Salmon"
-           case .Snow:                 return "Snow"
-           case .Violet:               return "Violet"
-           case .White:                return "White"
-           case .BlanchedAlmond:       return "BlanchedAlmond"
-           case .LightGray:            return "LightGray"
-           case .SteelBlue:            return "SteelBlue"
-           case .Azure:                return "Azure"
-           case .Chocolate:            return "Chocolate"
-           case .Cornsilk:             return "Cornsilk"
-           case .DarkOrange:           return "DarkOrange"
-           case .Gray:                 return "Gray"
-           case .Gold:                 return "Gold"
-           case .DarkTurquoise:        return "DarkTurquoise"
-           case .LightSkyBlue:         return "LightSkyBlue"
-           case .PaleGreen:            return "PaleGreen"
-           case .LavenderBlush:        return "LavenderBlush"
-           case .MediumPurple:         return "MediumPurple"
-           case .Aquamarine:           return "Aquamarine"
-           case .LightCoral:           return "LightCoral"
-           case .MediumOrchid:         return "MediumOrchid"
-           case .FloralWhite:          return "FloralWhite"
-           case .LawnGreen:            return "LawnGreen"
-           case .RebeccaPurple:        return "RebeccaPurple"
-           case .Coral:                return "Coral"
-           case .LightSlateGray:       return "LightSlateGray"
-           case .BlueViolet:           return "BlueViolet"
-           case .Orange:               return "Orange"
-           case .MidnightBlue:         return "MidnightBlue"
-           case .Linen:                return "Linen"
-           case .DarkSlateGray:        return "DarkSlateGray"
-           case .DarkGray:             return "DarkGray"
-           case .MediumVioletRed:      return "MediumVioletRed"
-           case .PapayaWhip:           return "PapayaWhip"
-           case .SlateGray:            return "SlateGray"
-           case .SpringGreen:          return "SpringGreen"
-           case .DarkGoldenRod:        return "DarkGoldenRod"
-           case .LimeGreen:            return "LimeGreen"
-           case .DarkSalmon:           return "DarkSalmon"
-           case .RoyalBlue:            return "RoyalBlue"
-           case .OrangeRed:            return "OrangeRed"
-           case .Thistle:              return "Thistle"
-           case .Pink:                 return "Pink"
-           case .Chartreuse:           return "Chartreuse"
-           case .Blue:                 return "Blue"
-           case .LightCyan:            return "LightCyan"
-           case .GhostWhite:           return "GhostWhite"
-           case .Tan:                  return "Tan"
-           case .Tomato:               return "Tomato"
-           case .DarkOliveGreen:       return "DarkOliveGreen"
-           case .Ivory:                return "Ivory"
-           case .DarkCyan:             return "DarkCyan"
-           case .DarkKhaki:            return "DarkKhaki"
-           case .Navy:                 return "Navy"
-           case .Red:                  return "Red"
-           case .DarkViolet:           return "DarkViolet"
-           case .DarkSeaGreen:         return "DarkSeaGreen"
-           case .GoldenRod:            return "GoldenRod"
-           case .RosyBrown:            return "RosyBrown"
-           case .OliveDrab:            return "OliveDrab"
-           case .Teal:                 return "Teal"
-           case .HotPink:              return "HotPink"
-           case .PaleGoldenRod:        return "PaleGoldenRod"
-           case .DeepSkyBlue:          return "DeepSkyBlue"
-           case .DarkOrchid:           return "DarkOrchid"
-           case .MediumSeaGreen:       return "MediumSeaGreen"
-           case .OldLace:              return "OldLace"
-           case .LemonChiffon:         return "LemonChiffon"
-           case .MediumSpringGreen:    return "MediumSpringGreen"
-           case .Green:                return "Green"
-           case .Indigo:               return "Indigo"
-           case .Moccasin:             return "Moccasin"
-           case .Fuchsia:              return "Fuchsia"
-           case .LightBlue:            return "LightBlue"
-           case .Silver:               return "Silver"
-           case .WhiteSmoke:           return "WhiteSmoke"
-           case .PowderBlue:           return "PowderBlue"
-           case .SaddleBrown:          return "SaddleBrown"
-           case .LightGoldenRodYellow: return "LightGoldenRodYellow"
-           case .LightSalmon:          return "LightSalmon"
-           case .SandyBrown:           return "SandyBrown"
-           case .AntiqueWhite:         return "AntiqueWhite"
-           case .Black:                return "Black"
-           case .MintCream:            return "MintCream"
-           case .NavajoWhite:          return "NavajoWhite"
-           case .BurlyWood:            return "BurlyWood"
-           case .MediumSlateBlue:      return "MediumSlateBlue"
-           case .IndianRed:            return "IndianRed"
-           case .DodgerBlue:           return "DodgerBlue"
-           case .Gainsboro:            return "Gainsboro"
-           case .YellowGreen:          return "YellowGreen"
-           case .SlateBlue:            return "SlateBlue"
-           case .PeachPuff:            return "PeachPuff"
-           case .Purple:               return "Purple"
-           case .Brown:                return "Brown"
-           case .Lime:                 return "Lime"
-           case .PaleVioletRed:        return "PaleVioletRed"
-           case .Khaki:                return "Khaki"
-           case .Crimson:              return "Crimson"
-           case .LightYellow:          return "LightYellow"
-           case .MistyRose:            return "MistyRose"
-           case .Cyan:                 return "Cyan"
-           case .DarkBlue:             return "DarkBlue"
-           case .MediumAquaMarine:     return "MediumAquaMarine"
-           case .MediumBlue:           return "MediumBlue"
-           case .PaleTurquoise:        return "PaleTurquoise"
-           case .HoneyDew:             return "HoneyDew"
-           case .DimGray:              return "DimGray"
-           case .Lavender:             return "Lavender"
-           case .Magenta:              return "Magenta"
-           case .DarkRed:              return "DarkRed"
-           case .LightSeaGreen:        return "LightSeaGreen"
-           case .Maroon:               return "Maroon"
-           case .Aqua:                 return "Aqua"
-           case .Olive:                return "Olive"
-           case .Plum:                 return "Plum"
-           case .LightSteelBlue:       return "LightSteelBlue"
-           case .Orchid:               return "Orchid"
-           case .Bisque:               return "Bisque"
-           case .MediumTurquoise:      return "MediumTurquoise"
-           case .Peru:                 return "Peru"
-           case .Turquoise:            return "Turquoise"
-           case .AliceBlue:            return "AliceBlue"
-           case .Yellow:               return "Yellow"
-           case .DarkGreen:            return "DarkGreen"
-           case .DeepPink:             return "DeepPink"
-           case .GreenYellow:          return "GreenYellow"
-           case .SeaGreen:             return "SeaGreen"
-           case .CornflowerBlue:       return "CornflowerBlue"
+           case .forestGreen:          return "ForestGreen"
+           case .skyBlue:              return "SkyBlue"
+           case .sienna:               return "Sienna"
+           case .darkSlateBlue:        return "DarkSlateBlue"
+           case .wheat:                return "Wheat"
+           case .beige:                return "Beige"
+           case .cadetBlue:            return "CadetBlue"
+           case .lightPink:            return "LightPink"
+           case .seaShell:             return "SeaShell"
+           case .fireBrick:            return "FireBrick"
+           case .lightGreen:           return "LightGreen"
+           case .darkMagenta:          return "DarkMagenta"
+           case .salmon:               return "Salmon"
+           case .snow:                 return "Snow"
+           case .violet:               return "Violet"
+           case .white:                return "White"
+           case .blanchedAlmond:       return "BlanchedAlmond"
+           case .lightGray:            return "LightGray"
+           case .steelBlue:            return "SteelBlue"
+           case .azure:                return "Azure"
+           case .chocolate:            return "Chocolate"
+           case .cornsilk:             return "Cornsilk"
+           case .darkOrange:           return "DarkOrange"
+           case .gray:                 return "Gray"
+           case .gold:                 return "Gold"
+           case .darkTurquoise:        return "DarkTurquoise"
+           case .lightSkyBlue:         return "LightSkyBlue"
+           case .paleGreen:            return "PaleGreen"
+           case .lavenderBlush:        return "LavenderBlush"
+           case .mediumPurple:         return "MediumPurple"
+           case .aquamarine:           return "Aquamarine"
+           case .lightCoral:           return "LightCoral"
+           case .mediumOrchid:         return "MediumOrchid"
+           case .floralWhite:          return "FloralWhite"
+           case .lawnGreen:            return "LawnGreen"
+           case .rebeccaPurple:        return "RebeccaPurple"
+           case .coral:                return "Coral"
+           case .lightSlateGray:       return "LightSlateGray"
+           case .blueViolet:           return "BlueViolet"
+           case .orange:               return "Orange"
+           case .midnightBlue:         return "MidnightBlue"
+           case .linen:                return "Linen"
+           case .darkSlateGray:        return "DarkSlateGray"
+           case .darkGray:             return "DarkGray"
+           case .mediumVioletRed:      return "MediumVioletRed"
+           case .papayaWhip:           return "PapayaWhip"
+           case .slateGray:            return "SlateGray"
+           case .springGreen:          return "SpringGreen"
+           case .darkGoldenRod:        return "DarkGoldenRod"
+           case .limeGreen:            return "LimeGreen"
+           case .darkSalmon:           return "DarkSalmon"
+           case .royalBlue:            return "RoyalBlue"
+           case .orangeRed:            return "OrangeRed"
+           case .thistle:              return "Thistle"
+           case .pink:                 return "Pink"
+           case .chartreuse:           return "Chartreuse"
+           case .blue:                 return "Blue"
+           case .lightCyan:            return "LightCyan"
+           case .ghostWhite:           return "GhostWhite"
+           case .tan:                  return "Tan"
+           case .tomato:               return "Tomato"
+           case .darkOliveGreen:       return "DarkOliveGreen"
+           case .ivory:                return "Ivory"
+           case .darkCyan:             return "DarkCyan"
+           case .darkKhaki:            return "DarkKhaki"
+           case .navy:                 return "Navy"
+           case .red:                  return "Red"
+           case .darkViolet:           return "DarkViolet"
+           case .darkSeaGreen:         return "DarkSeaGreen"
+           case .goldenRod:            return "GoldenRod"
+           case .rosyBrown:            return "RosyBrown"
+           case .oliveDrab:            return "OliveDrab"
+           case .teal:                 return "Teal"
+           case .hotPink:              return "HotPink"
+           case .paleGoldenRod:        return "PaleGoldenRod"
+           case .deepSkyBlue:          return "DeepSkyBlue"
+           case .darkOrchid:           return "DarkOrchid"
+           case .mediumSeaGreen:       return "MediumSeaGreen"
+           case .oldLace:              return "OldLace"
+           case .lemonChiffon:         return "LemonChiffon"
+           case .mediumSpringGreen:    return "MediumSpringGreen"
+           case .green:                return "Green"
+           case .indigo:               return "Indigo"
+           case .moccasin:             return "Moccasin"
+           case .fuchsia:              return "Fuchsia"
+           case .lightBlue:            return "LightBlue"
+           case .silver:               return "Silver"
+           case .whiteSmoke:           return "WhiteSmoke"
+           case .powderBlue:           return "PowderBlue"
+           case .saddleBrown:          return "SaddleBrown"
+           case .lightGoldenRodYellow: return "LightGoldenRodYellow"
+           case .lightSalmon:          return "LightSalmon"
+           case .sandyBrown:           return "SandyBrown"
+           case .antiqueWhite:         return "AntiqueWhite"
+           case .black:                return "Black"
+           case .mintCream:            return "MintCream"
+           case .navajoWhite:          return "NavajoWhite"
+           case .burlyWood:            return "BurlyWood"
+           case .mediumSlateBlue:      return "MediumSlateBlue"
+           case .indianRed:            return "IndianRed"
+           case .dodgerBlue:           return "DodgerBlue"
+           case .gainsboro:            return "Gainsboro"
+           case .yellowGreen:          return "YellowGreen"
+           case .slateBlue:            return "SlateBlue"
+           case .peachPuff:            return "PeachPuff"
+           case .purple:               return "Purple"
+           case .brown:                return "Brown"
+           case .lime:                 return "Lime"
+           case .paleVioletRed:        return "PaleVioletRed"
+           case .khaki:                return "Khaki"
+           case .crimson:              return "Crimson"
+           case .lightYellow:          return "LightYellow"
+           case .mistyRose:            return "MistyRose"
+           case .cyan:                 return "Cyan"
+           case .darkBlue:             return "DarkBlue"
+           case .mediumAquaMarine:     return "MediumAquaMarine"
+           case .mediumBlue:           return "MediumBlue"
+           case .paleTurquoise:        return "PaleTurquoise"
+           case .honeyDew:             return "HoneyDew"
+           case .dimGray:              return "DimGray"
+           case .lavender:             return "Lavender"
+           case .magenta:              return "Magenta"
+           case .darkRed:              return "DarkRed"
+           case .lightSeaGreen:        return "LightSeaGreen"
+           case .maroon:               return "Maroon"
+           case .aqua:                 return "Aqua"
+           case .olive:                return "Olive"
+           case .plum:                 return "Plum"
+           case .lightSteelBlue:       return "LightSteelBlue"
+           case .orchid:               return "Orchid"
+           case .bisque:               return "Bisque"
+           case .mediumTurquoise:      return "MediumTurquoise"
+           case .peru:                 return "Peru"
+           case .turquoise:            return "Turquoise"
+           case .aliceBlue:            return "AliceBlue"
+           case .yellow:               return "Yellow"
+           case .darkGreen:            return "DarkGreen"
+           case .deepPink:             return "DeepPink"
+           case .greenYellow:          return "GreenYellow"
+           case .seaGreen:             return "SeaGreen"
+           case .cornflowerBlue:       return "CornflowerBlue"
          }
        }
 
      }
 
      static var all:      [CSSColor] { return allLight + allDark                }
-     static var allLight: [CSSColor] { return CSSColorBase.all.map {CSSColor.Light($0)} }
-     static var allDark:  [CSSColor] { return CSSColorBase.all.map {CSSColor.Dark($0)}  }
+     static var allLight: [CSSColor] { return CSSColorBase.all.map {CSSColor.light($0)} }
+     static var allDark:  [CSSColor] { return CSSColorBase.all.map {CSSColor.dark($0)}  }
 
-     public var name: String { switch self { case .Light(let b): return b.name; case .Dark(let b):  return b.name + "Dark"} }
-     public var base: CSSColorBase { switch self { case .Light(let b): return b; case .Dark(let b): return b } }
-     public var shade: Chameleon.Shade { switch self { case .Light: return .Light; case .Dark:  return .Dark } }
+     public var name: String { switch self { case .light(let b): return b.name; case .dark(let b):  return b.name + "Dark"} }
+     public var base: CSSColorBase { switch self { case .light(let b): return b; case .dark(let b): return b } }
+     public var shade: Chameleon.Shade { switch self { case .light: return .light; case .dark:  return .dark } }
 
      // MARK: CSS named colors
      public static let lightColors = [
-       CSSColorBase.ForestGreen.name:          rgb( 34, 139,  34),
-       CSSColorBase.SkyBlue.name:              rgb(135, 206, 235),
-       CSSColorBase.Sienna.name:               rgb(160,  82,  45),
-       CSSColorBase.DarkSlateBlue.name:        rgb(72,   61, 139),
-       CSSColorBase.Wheat.name:                rgb(245, 222, 179),
-       CSSColorBase.Beige.name:                rgb(245, 245, 220),
-       CSSColorBase.CadetBlue.name:            rgb( 95, 158, 160),
-       CSSColorBase.LightPink.name:            rgb(255, 182, 193),
-       CSSColorBase.SeaShell.name:             rgb(255, 245, 238),
-       CSSColorBase.FireBrick.name:            rgb(178,  34,  34),
-       CSSColorBase.LightGreen.name:           rgb(144, 238, 144),
-       CSSColorBase.DarkMagenta.name:          rgb(139,   0, 139),
-       CSSColorBase.Salmon.name:               rgb(250, 128, 114),
-       CSSColorBase.Snow.name:                 rgb(255, 250, 250),
-       CSSColorBase.Violet.name:               rgb(238, 130, 238),
-       CSSColorBase.White.name:                rgb(255, 255, 255),
-       CSSColorBase.BlanchedAlmond.name:       rgb(255, 235, 205),
-       CSSColorBase.LightGray.name:            rgb(211, 211, 211),
-       CSSColorBase.SteelBlue.name:            rgb( 70, 130, 180),
-       CSSColorBase.Azure.name:                rgb(240, 255, 255),
-       CSSColorBase.Chocolate.name:            rgb(210, 105,  30),
-       CSSColorBase.Cornsilk.name:             rgb(255, 248, 220),
-       CSSColorBase.DarkOrange.name:           rgb(255, 140,   0),
-       CSSColorBase.Gray.name:                 rgb(128, 128, 128),
-       CSSColorBase.Gold.name:                 rgb(255, 215,   0),
-       CSSColorBase.DarkTurquoise.name:        rgb(  0, 206, 209),
-       CSSColorBase.LightSkyBlue.name:         rgb(135, 206, 250),
-       CSSColorBase.PaleGreen.name:            rgb(152, 251, 152),
-       CSSColorBase.LavenderBlush.name:        rgb(255, 240, 245),
-       CSSColorBase.MediumPurple.name:         rgb(147, 112, 219),
-       CSSColorBase.Aquamarine.name:           rgb(127, 255, 212),
-       CSSColorBase.LightCoral.name:           rgb(240, 128, 128),
-       CSSColorBase.MediumOrchid.name:         rgb(186,  85, 211),
-       CSSColorBase.FloralWhite.name:          rgb(255, 250, 240),
-       CSSColorBase.LawnGreen.name:            rgb(124, 252,   0),
-       CSSColorBase.RebeccaPurple.name:        rgb(102,  51, 153),
-       CSSColorBase.Coral.name:                rgb(255, 127,  80),
-       CSSColorBase.LightSlateGray.name:       rgb(119, 136, 153),
-       CSSColorBase.BlueViolet.name:           rgb(138,  43, 226),
-       CSSColorBase.Orange.name:               rgb(255, 165,   0),
-       CSSColorBase.MidnightBlue.name:         rgb( 25,  25, 112),
-       CSSColorBase.Linen.name:                rgb(250, 240, 230),
-       CSSColorBase.DarkSlateGray.name:        rgb( 47,  79,  79),
-       CSSColorBase.DarkGray.name:             rgb(169, 169, 169),
-       CSSColorBase.MediumVioletRed.name:      rgb(199,  21, 133),
-       CSSColorBase.PapayaWhip.name:           rgb(255, 239, 213),
-       CSSColorBase.SlateGray.name:            rgb(112, 128, 144),
-       CSSColorBase.SpringGreen.name:          rgb(  0, 255, 127),
-       CSSColorBase.DarkGoldenRod.name:        rgb(184, 134,  11),
-       CSSColorBase.LimeGreen.name:            rgb( 50, 205,  50),
-       CSSColorBase.DarkSalmon.name:           rgb(233, 150, 122),
-       CSSColorBase.RoyalBlue.name:            rgb( 65, 105, 225),
-       CSSColorBase.OrangeRed.name:            rgb(255,  69,   0),
-       CSSColorBase.Thistle.name:              rgb(216, 191, 216),
-       CSSColorBase.Pink.name:                 rgb(255, 192, 203),
-       CSSColorBase.Chartreuse.name:           rgb(127, 255,   0),
-       CSSColorBase.Blue.name:                 rgb(  0,   0, 255),
-       CSSColorBase.LightCyan.name:            rgb(224, 255, 255),
-       CSSColorBase.GhostWhite.name:           rgb(248, 248, 255),
-       CSSColorBase.Tan.name:                  rgb(210, 180, 140),
-       CSSColorBase.Tomato.name:               rgb(255,  99,  71),
-       CSSColorBase.DarkOliveGreen.name:       rgb( 85, 107,  47),
-       CSSColorBase.Ivory.name:                rgb(255, 255, 240),
-       CSSColorBase.DarkCyan.name:             rgb(  0, 139, 139),
-       CSSColorBase.DarkKhaki.name:            rgb(189, 183, 107),
-       CSSColorBase.Navy.name:                 rgb(  0,   0, 128),
-       CSSColorBase.Red.name:                  rgb(255,   0,   0),
-       CSSColorBase.DarkViolet.name:           rgb(148,   0, 211),
-       CSSColorBase.DarkSeaGreen.name:         rgb(143, 188, 143),
-       CSSColorBase.GoldenRod.name:            rgb(218, 165,  32),
-       CSSColorBase.RosyBrown.name:            rgb(188, 143, 143),
-       CSSColorBase.OliveDrab.name:            rgb(107, 142,  35),
-       CSSColorBase.Teal.name:                 rgb(  0, 128, 128),
-       CSSColorBase.HotPink.name:              rgb(255, 105, 180),
-       CSSColorBase.PaleGoldenRod.name:        rgb(238, 232, 170),
-       CSSColorBase.DeepSkyBlue.name:          rgb(  0, 191, 255),
-       CSSColorBase.DarkOrchid.name:           rgb(153,  50, 204),
-       CSSColorBase.MediumSeaGreen.name:       rgb( 60, 179, 113),
-       CSSColorBase.OldLace.name:              rgb(253, 245, 230),
-       CSSColorBase.LemonChiffon.name:         rgb(255, 250, 205),
-       CSSColorBase.MediumSpringGreen.name:    rgb(  0, 250, 154),
-       CSSColorBase.Green.name:                rgb(  0, 128,   0),
-       CSSColorBase.Indigo.name:               rgb( 75,   0, 130),
-       CSSColorBase.Moccasin.name:             rgb(255, 228, 181),
-       CSSColorBase.Fuchsia.name:              rgb(255,   0, 255),
-       CSSColorBase.LightBlue.name:            rgb(173, 216, 230),
-       CSSColorBase.Silver.name:               rgb(192, 192, 192),
-       CSSColorBase.WhiteSmoke.name:           rgb(245, 245, 245),
-       CSSColorBase.PowderBlue.name:           rgb(176, 224, 230),
-       CSSColorBase.SaddleBrown.name:          rgb(139,  69,  19),
-       CSSColorBase.LightGoldenRodYellow.name: rgb(250, 250, 210),
-       CSSColorBase.LightSalmon.name:          rgb(255, 160, 122),
-       CSSColorBase.SandyBrown.name:           rgb(244, 164,  96),
-       CSSColorBase.AntiqueWhite.name:         rgb(250, 235, 215),
-       CSSColorBase.Black.name:                rgb(  0,   0,   0),
-       CSSColorBase.MintCream.name:            rgb(245, 255, 250),
-       CSSColorBase.NavajoWhite.name:          rgb(255, 222, 173),
-       CSSColorBase.BurlyWood.name:            rgb(222, 184, 135),
-       CSSColorBase.MediumSlateBlue.name:      rgb(123, 104, 238),
-       CSSColorBase.IndianRed.name:            rgb(205,  92,  92),
-       CSSColorBase.DodgerBlue.name:           rgb( 30, 144, 255),
-       CSSColorBase.Gainsboro.name:            rgb(220, 220, 220),
-       CSSColorBase.YellowGreen.name:          rgb(154, 205,  50),
-       CSSColorBase.SlateBlue.name:            rgb(106,  90, 205),
-       CSSColorBase.PeachPuff.name:            rgb(255, 218, 185),
-       CSSColorBase.Purple.name:               rgb(128,   0, 128),
-       CSSColorBase.Brown.name:                rgb(165,  42,  42),
-       CSSColorBase.Lime.name:                 rgb(  0, 255,   0),
-       CSSColorBase.PaleVioletRed.name:        rgb(219, 112, 147),
-       CSSColorBase.Khaki.name:                rgb(240, 230, 140),
-       CSSColorBase.Crimson.name:              rgb(220, 20,   60),
-       CSSColorBase.LightYellow.name:          rgb(255, 255, 224),
-       CSSColorBase.MistyRose.name:            rgb(255, 228, 225),
-       CSSColorBase.Cyan.name:                 rgb(  0, 255, 255),
-       CSSColorBase.DarkBlue.name:             rgb(  0,   0, 139),
-       CSSColorBase.MediumAquaMarine.name:     rgb(102, 205, 170),
-       CSSColorBase.MediumBlue.name:           rgb(  0,   0, 205),
-       CSSColorBase.PaleTurquoise.name:        rgb(175, 238, 238),
-       CSSColorBase.HoneyDew.name:             rgb(240, 255, 240),
-       CSSColorBase.DimGray.name:              rgb(105, 105, 105),
-       CSSColorBase.Lavender.name:             rgb(230, 230, 250),
-       CSSColorBase.Magenta.name:              rgb(255,   0, 255),
-       CSSColorBase.DarkRed.name:              rgb(139,   0,   0),
-       CSSColorBase.LightSeaGreen.name:        rgb( 32, 178, 170),
-       CSSColorBase.Maroon.name:               rgb(128,   0,   0),
-       CSSColorBase.Aqua.name:                 rgb(  0, 255, 255),
-       CSSColorBase.Olive.name:                rgb(128, 128,   0),
-       CSSColorBase.Plum.name:                 rgb(221, 160, 221),
-       CSSColorBase.LightSteelBlue.name:       rgb(176, 196, 222),
-       CSSColorBase.Orchid.name:               rgb(218, 112, 214),
-       CSSColorBase.Bisque.name:               rgb(255, 228, 196),
-       CSSColorBase.MediumTurquoise.name:      rgb( 72, 209, 204),
-       CSSColorBase.Peru.name:                 rgb(205, 133,  63),
-       CSSColorBase.Turquoise.name:            rgb (64, 224, 208),
-       CSSColorBase.AliceBlue.name:            rgb(240, 248, 255),
-       CSSColorBase.Yellow.name:               rgb(255, 255,   0),
-       CSSColorBase.DarkGreen.name:            rgb( 0,  100,   0),
-       CSSColorBase.DeepPink.name:             rgb(255,  20, 147),
-       CSSColorBase.GreenYellow.name:          rgb(173, 255,  47),
-       CSSColorBase.SeaGreen.name:             rgb( 46, 139,  87),
-       CSSColorBase.CornflowerBlue.name:       rgb(100, 149, 237)
+       CSSColorBase.forestGreen.name:          rgb( 34, 139,  34),
+       CSSColorBase.skyBlue.name:              rgb(135, 206, 235),
+       CSSColorBase.sienna.name:               rgb(160,  82,  45),
+       CSSColorBase.darkSlateBlue.name:        rgb(72,   61, 139),
+       CSSColorBase.wheat.name:                rgb(245, 222, 179),
+       CSSColorBase.beige.name:                rgb(245, 245, 220),
+       CSSColorBase.cadetBlue.name:            rgb( 95, 158, 160),
+       CSSColorBase.lightPink.name:            rgb(255, 182, 193),
+       CSSColorBase.seaShell.name:             rgb(255, 245, 238),
+       CSSColorBase.fireBrick.name:            rgb(178,  34,  34),
+       CSSColorBase.lightGreen.name:           rgb(144, 238, 144),
+       CSSColorBase.darkMagenta.name:          rgb(139,   0, 139),
+       CSSColorBase.salmon.name:               rgb(250, 128, 114),
+       CSSColorBase.snow.name:                 rgb(255, 250, 250),
+       CSSColorBase.violet.name:               rgb(238, 130, 238),
+       CSSColorBase.white.name:                rgb(255, 255, 255),
+       CSSColorBase.blanchedAlmond.name:       rgb(255, 235, 205),
+       CSSColorBase.lightGray.name:            rgb(211, 211, 211),
+       CSSColorBase.steelBlue.name:            rgb( 70, 130, 180),
+       CSSColorBase.azure.name:                rgb(240, 255, 255),
+       CSSColorBase.chocolate.name:            rgb(210, 105,  30),
+       CSSColorBase.cornsilk.name:             rgb(255, 248, 220),
+       CSSColorBase.darkOrange.name:           rgb(255, 140,   0),
+       CSSColorBase.gray.name:                 rgb(128, 128, 128),
+       CSSColorBase.gold.name:                 rgb(255, 215,   0),
+       CSSColorBase.darkTurquoise.name:        rgb(  0, 206, 209),
+       CSSColorBase.lightSkyBlue.name:         rgb(135, 206, 250),
+       CSSColorBase.paleGreen.name:            rgb(152, 251, 152),
+       CSSColorBase.lavenderBlush.name:        rgb(255, 240, 245),
+       CSSColorBase.mediumPurple.name:         rgb(147, 112, 219),
+       CSSColorBase.aquamarine.name:           rgb(127, 255, 212),
+       CSSColorBase.lightCoral.name:           rgb(240, 128, 128),
+       CSSColorBase.mediumOrchid.name:         rgb(186,  85, 211),
+       CSSColorBase.floralWhite.name:          rgb(255, 250, 240),
+       CSSColorBase.lawnGreen.name:            rgb(124, 252,   0),
+       CSSColorBase.rebeccaPurple.name:        rgb(102,  51, 153),
+       CSSColorBase.coral.name:                rgb(255, 127,  80),
+       CSSColorBase.lightSlateGray.name:       rgb(119, 136, 153),
+       CSSColorBase.blueViolet.name:           rgb(138,  43, 226),
+       CSSColorBase.orange.name:               rgb(255, 165,   0),
+       CSSColorBase.midnightBlue.name:         rgb( 25,  25, 112),
+       CSSColorBase.linen.name:                rgb(250, 240, 230),
+       CSSColorBase.darkSlateGray.name:        rgb( 47,  79,  79),
+       CSSColorBase.darkGray.name:             rgb(169, 169, 169),
+       CSSColorBase.mediumVioletRed.name:      rgb(199,  21, 133),
+       CSSColorBase.papayaWhip.name:           rgb(255, 239, 213),
+       CSSColorBase.slateGray.name:            rgb(112, 128, 144),
+       CSSColorBase.springGreen.name:          rgb(  0, 255, 127),
+       CSSColorBase.darkGoldenRod.name:        rgb(184, 134,  11),
+       CSSColorBase.limeGreen.name:            rgb( 50, 205,  50),
+       CSSColorBase.darkSalmon.name:           rgb(233, 150, 122),
+       CSSColorBase.royalBlue.name:            rgb( 65, 105, 225),
+       CSSColorBase.orangeRed.name:            rgb(255,  69,   0),
+       CSSColorBase.thistle.name:              rgb(216, 191, 216),
+       CSSColorBase.pink.name:                 rgb(255, 192, 203),
+       CSSColorBase.chartreuse.name:           rgb(127, 255,   0),
+       CSSColorBase.blue.name:                 rgb(  0,   0, 255),
+       CSSColorBase.lightCyan.name:            rgb(224, 255, 255),
+       CSSColorBase.ghostWhite.name:           rgb(248, 248, 255),
+       CSSColorBase.tan.name:                  rgb(210, 180, 140),
+       CSSColorBase.tomato.name:               rgb(255,  99,  71),
+       CSSColorBase.darkOliveGreen.name:       rgb( 85, 107,  47),
+       CSSColorBase.ivory.name:                rgb(255, 255, 240),
+       CSSColorBase.darkCyan.name:             rgb(  0, 139, 139),
+       CSSColorBase.darkKhaki.name:            rgb(189, 183, 107),
+       CSSColorBase.navy.name:                 rgb(  0,   0, 128),
+       CSSColorBase.red.name:                  rgb(255,   0,   0),
+       CSSColorBase.darkViolet.name:           rgb(148,   0, 211),
+       CSSColorBase.darkSeaGreen.name:         rgb(143, 188, 143),
+       CSSColorBase.goldenRod.name:            rgb(218, 165,  32),
+       CSSColorBase.rosyBrown.name:            rgb(188, 143, 143),
+       CSSColorBase.oliveDrab.name:            rgb(107, 142,  35),
+       CSSColorBase.teal.name:                 rgb(  0, 128, 128),
+       CSSColorBase.hotPink.name:              rgb(255, 105, 180),
+       CSSColorBase.paleGoldenRod.name:        rgb(238, 232, 170),
+       CSSColorBase.deepSkyBlue.name:          rgb(  0, 191, 255),
+       CSSColorBase.darkOrchid.name:           rgb(153,  50, 204),
+       CSSColorBase.mediumSeaGreen.name:       rgb( 60, 179, 113),
+       CSSColorBase.oldLace.name:              rgb(253, 245, 230),
+       CSSColorBase.lemonChiffon.name:         rgb(255, 250, 205),
+       CSSColorBase.mediumSpringGreen.name:    rgb(  0, 250, 154),
+       CSSColorBase.green.name:                rgb(  0, 128,   0),
+       CSSColorBase.indigo.name:               rgb( 75,   0, 130),
+       CSSColorBase.moccasin.name:             rgb(255, 228, 181),
+       CSSColorBase.fuchsia.name:              rgb(255,   0, 255),
+       CSSColorBase.lightBlue.name:            rgb(173, 216, 230),
+       CSSColorBase.silver.name:               rgb(192, 192, 192),
+       CSSColorBase.whiteSmoke.name:           rgb(245, 245, 245),
+       CSSColorBase.powderBlue.name:           rgb(176, 224, 230),
+       CSSColorBase.saddleBrown.name:          rgb(139,  69,  19),
+       CSSColorBase.lightGoldenRodYellow.name: rgb(250, 250, 210),
+       CSSColorBase.lightSalmon.name:          rgb(255, 160, 122),
+       CSSColorBase.sandyBrown.name:           rgb(244, 164,  96),
+       CSSColorBase.antiqueWhite.name:         rgb(250, 235, 215),
+       CSSColorBase.black.name:                rgb(  0,   0,   0),
+       CSSColorBase.mintCream.name:            rgb(245, 255, 250),
+       CSSColorBase.navajoWhite.name:          rgb(255, 222, 173),
+       CSSColorBase.burlyWood.name:            rgb(222, 184, 135),
+       CSSColorBase.mediumSlateBlue.name:      rgb(123, 104, 238),
+       CSSColorBase.indianRed.name:            rgb(205,  92,  92),
+       CSSColorBase.dodgerBlue.name:           rgb( 30, 144, 255),
+       CSSColorBase.gainsboro.name:            rgb(220, 220, 220),
+       CSSColorBase.yellowGreen.name:          rgb(154, 205,  50),
+       CSSColorBase.slateBlue.name:            rgb(106,  90, 205),
+       CSSColorBase.peachPuff.name:            rgb(255, 218, 185),
+       CSSColorBase.purple.name:               rgb(128,   0, 128),
+       CSSColorBase.brown.name:                rgb(165,  42,  42),
+       CSSColorBase.lime.name:                 rgb(  0, 255,   0),
+       CSSColorBase.paleVioletRed.name:        rgb(219, 112, 147),
+       CSSColorBase.khaki.name:                rgb(240, 230, 140),
+       CSSColorBase.crimson.name:              rgb(220, 20,   60),
+       CSSColorBase.lightYellow.name:          rgb(255, 255, 224),
+       CSSColorBase.mistyRose.name:            rgb(255, 228, 225),
+       CSSColorBase.cyan.name:                 rgb(  0, 255, 255),
+       CSSColorBase.darkBlue.name:             rgb(  0,   0, 139),
+       CSSColorBase.mediumAquaMarine.name:     rgb(102, 205, 170),
+       CSSColorBase.mediumBlue.name:           rgb(  0,   0, 205),
+       CSSColorBase.paleTurquoise.name:        rgb(175, 238, 238),
+       CSSColorBase.honeyDew.name:             rgb(240, 255, 240),
+       CSSColorBase.dimGray.name:              rgb(105, 105, 105),
+       CSSColorBase.lavender.name:             rgb(230, 230, 250),
+       CSSColorBase.magenta.name:              rgb(255,   0, 255),
+       CSSColorBase.darkRed.name:              rgb(139,   0,   0),
+       CSSColorBase.lightSeaGreen.name:        rgb( 32, 178, 170),
+       CSSColorBase.maroon.name:               rgb(128,   0,   0),
+       CSSColorBase.aqua.name:                 rgb(  0, 255, 255),
+       CSSColorBase.olive.name:                rgb(128, 128,   0),
+       CSSColorBase.plum.name:                 rgb(221, 160, 221),
+       CSSColorBase.lightSteelBlue.name:       rgb(176, 196, 222),
+       CSSColorBase.orchid.name:               rgb(218, 112, 214),
+       CSSColorBase.bisque.name:               rgb(255, 228, 196),
+       CSSColorBase.mediumTurquoise.name:      rgb( 72, 209, 204),
+       CSSColorBase.peru.name:                 rgb(205, 133,  63),
+       CSSColorBase.turquoise.name:            rgb (64, 224, 208),
+       CSSColorBase.aliceBlue.name:            rgb(240, 248, 255),
+       CSSColorBase.yellow.name:               rgb(255, 255,   0),
+       CSSColorBase.darkGreen.name:            rgb( 0,  100,   0),
+       CSSColorBase.deepPink.name:             rgb(255,  20, 147),
+       CSSColorBase.greenYellow.name:          rgb(173, 255,  47),
+       CSSColorBase.seaGreen.name:             rgb( 46, 139,  87),
+       CSSColorBase.cornflowerBlue.name:       rgb(100, 149, 237)
      ]
 
      public static let darkColors: [String:UIColor] = {
@@ -653,161 +653,161 @@ extension Chameleon {
 
      public var color: UIColor {
        switch self {
-         case .Light(let b): return CSSColor.lightColors[b.name]!
-         case .Dark(let b): return CSSColor.darkColors[b.name]!
+         case .light(let b): return CSSColor.lightColors[b.name]!
+         case .dark(let b): return CSSColor.darkColors[b.name]!
        }
      }
 
-     public init(base: CSSColorBase, shade: Chameleon.Shade = .Light) {
+     public init(base: CSSColorBase, shade: Chameleon.Shade = .light) {
        switch shade {
-         case .Dark: self = .Dark(base)
-         default: self = .Light(base)
+         case .dark: self = .dark(base)
+         default: self = .light(base)
        }
      }
 
-     public init?(name: String, shade: Chameleon.Shade = .Light) {
-       switch name.lowercaseString {
-         case CSSColorBase.ForestGreen.name.lowercaseString:          self = CSSColor(base: .ForestGreen,          shade: shade)
-         case CSSColorBase.SkyBlue.name.lowercaseString:              self = CSSColor(base: .SkyBlue,              shade: shade)
-         case CSSColorBase.Sienna.name.lowercaseString:               self = CSSColor(base: .Sienna,               shade: shade)
-         case CSSColorBase.DarkSlateBlue.name.lowercaseString:        self = CSSColor(base: .DarkSlateBlue,        shade: shade)
-         case CSSColorBase.Wheat.name.lowercaseString:                self = CSSColor(base: .Wheat,                shade: shade)
-         case CSSColorBase.Beige.name.lowercaseString:                self = CSSColor(base: .Beige,                shade: shade)
-         case CSSColorBase.CadetBlue.name.lowercaseString:            self = CSSColor(base: .CadetBlue,            shade: shade)
-         case CSSColorBase.LightPink.name.lowercaseString:            self = CSSColor(base: .LightPink,            shade: shade)
-         case CSSColorBase.SeaShell.name.lowercaseString:             self = CSSColor(base: .SeaShell,             shade: shade)
-         case CSSColorBase.FireBrick.name.lowercaseString:            self = CSSColor(base: .FireBrick,            shade: shade)
-         case CSSColorBase.LightGreen.name.lowercaseString:           self = CSSColor(base: .LightGreen,           shade: shade)
-         case CSSColorBase.DarkMagenta.name.lowercaseString:          self = CSSColor(base: .DarkMagenta,          shade: shade)
-         case CSSColorBase.Salmon.name.lowercaseString:               self = CSSColor(base: .Salmon,               shade: shade)
-         case CSSColorBase.Snow.name.lowercaseString:                 self = CSSColor(base: .Snow,                 shade: shade)
-         case CSSColorBase.Violet.name.lowercaseString:               self = CSSColor(base: .Violet,               shade: shade)
-         case CSSColorBase.White.name.lowercaseString:                self = CSSColor(base: .White,                shade: shade)
-         case CSSColorBase.BlanchedAlmond.name.lowercaseString:       self = CSSColor(base: .BlanchedAlmond,       shade: shade)
-         case CSSColorBase.LightGray.name.lowercaseString:            self = CSSColor(base: .LightGray,            shade: shade)
-         case CSSColorBase.SteelBlue.name.lowercaseString:            self = CSSColor(base: .SteelBlue,            shade: shade)
-         case CSSColorBase.Azure.name.lowercaseString:                self = CSSColor(base: .Azure,                shade: shade)
-         case CSSColorBase.Chocolate.name.lowercaseString:            self = CSSColor(base: .Chocolate,            shade: shade)
-         case CSSColorBase.Cornsilk.name.lowercaseString:             self = CSSColor(base: .Cornsilk,             shade: shade)
-         case CSSColorBase.DarkOrange.name.lowercaseString:           self = CSSColor(base: .DarkOrange,           shade: shade)
-         case CSSColorBase.Gray.name.lowercaseString:                 self = CSSColor(base: .Gray,                 shade: shade)
-         case CSSColorBase.Gold.name.lowercaseString:                 self = CSSColor(base: .Gold,                 shade: shade)
-         case CSSColorBase.DarkTurquoise.name.lowercaseString:        self = CSSColor(base: .DarkTurquoise,        shade: shade)
-         case CSSColorBase.LightSkyBlue.name.lowercaseString:         self = CSSColor(base: .LightSkyBlue,         shade: shade)
-         case CSSColorBase.PaleGreen.name.lowercaseString:            self = CSSColor(base: .PaleGreen,            shade: shade)
-         case CSSColorBase.LavenderBlush.name.lowercaseString:        self = CSSColor(base: .LavenderBlush,        shade: shade)
-         case CSSColorBase.MediumPurple.name.lowercaseString:         self = CSSColor(base: .MediumPurple,         shade: shade)
-         case CSSColorBase.Aquamarine.name.lowercaseString:           self = CSSColor(base: .Aquamarine,           shade: shade)
-         case CSSColorBase.LightCoral.name.lowercaseString:           self = CSSColor(base: .LightCoral,           shade: shade)
-         case CSSColorBase.MediumOrchid.name.lowercaseString:         self = CSSColor(base: .MediumOrchid,         shade: shade)
-         case CSSColorBase.FloralWhite.name.lowercaseString:          self = CSSColor(base: .FloralWhite,          shade: shade)
-         case CSSColorBase.LawnGreen.name.lowercaseString:            self = CSSColor(base: .LawnGreen,            shade: shade)
-         case CSSColorBase.RebeccaPurple.name.lowercaseString:        self = CSSColor(base: .RebeccaPurple,        shade: shade)
-         case CSSColorBase.Coral.name.lowercaseString:                self = CSSColor(base: .Coral,                shade: shade)
-         case CSSColorBase.LightSlateGray.name.lowercaseString:       self = CSSColor(base: .LightSlateGray,       shade: shade)
-         case CSSColorBase.BlueViolet.name.lowercaseString:           self = CSSColor(base: .BlueViolet,           shade: shade)
-         case CSSColorBase.Orange.name.lowercaseString:               self = CSSColor(base: .Orange,               shade: shade)
-         case CSSColorBase.MidnightBlue.name.lowercaseString:         self = CSSColor(base: .MidnightBlue,         shade: shade)
-         case CSSColorBase.Linen.name.lowercaseString:                self = CSSColor(base: .Linen,                shade: shade)
-         case CSSColorBase.DarkSlateGray.name.lowercaseString:        self = CSSColor(base: .DarkSlateGray,        shade: shade)
-         case CSSColorBase.DarkGray.name.lowercaseString:             self = CSSColor(base: .DarkGray,             shade: shade)
-         case CSSColorBase.MediumVioletRed.name.lowercaseString:      self = CSSColor(base: .MediumVioletRed,      shade: shade)
-         case CSSColorBase.PapayaWhip.name.lowercaseString:           self = CSSColor(base: .PapayaWhip,           shade: shade)
-         case CSSColorBase.SlateGray.name.lowercaseString:            self = CSSColor(base: .SlateGray,            shade: shade)
-         case CSSColorBase.SpringGreen.name.lowercaseString:          self = CSSColor(base: .SpringGreen,          shade: shade)
-         case CSSColorBase.DarkGoldenRod.name.lowercaseString:        self = CSSColor(base: .DarkGoldenRod,        shade: shade)
-         case CSSColorBase.LimeGreen.name.lowercaseString:            self = CSSColor(base: .LimeGreen,            shade: shade)
-         case CSSColorBase.DarkSalmon.name.lowercaseString:           self = CSSColor(base: .DarkSalmon,           shade: shade)
-         case CSSColorBase.RoyalBlue.name.lowercaseString:            self = CSSColor(base: .RoyalBlue,            shade: shade)
-         case CSSColorBase.OrangeRed.name.lowercaseString:            self = CSSColor(base: .OrangeRed,            shade: shade)
-         case CSSColorBase.Thistle.name.lowercaseString:              self = CSSColor(base: .Thistle,              shade: shade)
-         case CSSColorBase.Pink.name.lowercaseString:                 self = CSSColor(base: .Pink,                 shade: shade)
-         case CSSColorBase.Chartreuse.name.lowercaseString:           self = CSSColor(base: .Chartreuse,           shade: shade)
-         case CSSColorBase.Blue.name.lowercaseString:                 self = CSSColor(base: .Blue,                 shade: shade)
-         case CSSColorBase.LightCyan.name.lowercaseString:            self = CSSColor(base: .LightCyan,            shade: shade)
-         case CSSColorBase.GhostWhite.name.lowercaseString:           self = CSSColor(base: .GhostWhite,           shade: shade)
-         case CSSColorBase.Tan.name.lowercaseString:                  self = CSSColor(base: .Tan,                  shade: shade)
-         case CSSColorBase.Tomato.name.lowercaseString:               self = CSSColor(base: .Tomato,               shade: shade)
-         case CSSColorBase.DarkOliveGreen.name.lowercaseString:       self = CSSColor(base: .DarkOliveGreen,       shade: shade)
-         case CSSColorBase.Ivory.name.lowercaseString:                self = CSSColor(base: .Ivory,                shade: shade)
-         case CSSColorBase.DarkCyan.name.lowercaseString:             self = CSSColor(base: .DarkCyan,             shade: shade)
-         case CSSColorBase.DarkKhaki.name.lowercaseString:            self = CSSColor(base: .DarkKhaki,            shade: shade)
-         case CSSColorBase.Navy.name.lowercaseString:                 self = CSSColor(base: .Navy,                 shade: shade)
-         case CSSColorBase.Red.name.lowercaseString:                  self = CSSColor(base: .Red,                  shade: shade)
-         case CSSColorBase.DarkViolet.name.lowercaseString:           self = CSSColor(base: .DarkViolet,           shade: shade)
-         case CSSColorBase.DarkSeaGreen.name.lowercaseString:         self = CSSColor(base: .DarkSeaGreen,         shade: shade)
-         case CSSColorBase.GoldenRod.name.lowercaseString:            self = CSSColor(base: .GoldenRod,            shade: shade)
-         case CSSColorBase.RosyBrown.name.lowercaseString:            self = CSSColor(base: .RosyBrown,            shade: shade)
-         case CSSColorBase.OliveDrab.name.lowercaseString:            self = CSSColor(base: .OliveDrab,            shade: shade)
-         case CSSColorBase.Teal.name.lowercaseString:                 self = CSSColor(base: .Teal,                 shade: shade)
-         case CSSColorBase.HotPink.name.lowercaseString:              self = CSSColor(base: .HotPink,              shade: shade)
-         case CSSColorBase.PaleGoldenRod.name.lowercaseString:        self = CSSColor(base: .PaleGoldenRod,        shade: shade)
-         case CSSColorBase.DeepSkyBlue.name.lowercaseString:          self = CSSColor(base: .DeepSkyBlue,          shade: shade)
-         case CSSColorBase.DarkOrchid.name.lowercaseString:           self = CSSColor(base: .DarkOrchid,           shade: shade)
-         case CSSColorBase.MediumSeaGreen.name.lowercaseString:       self = CSSColor(base: .MediumSeaGreen,       shade: shade)
-         case CSSColorBase.OldLace.name.lowercaseString:              self = CSSColor(base: .OldLace,              shade: shade)
-         case CSSColorBase.LemonChiffon.name.lowercaseString:         self = CSSColor(base: .LemonChiffon,         shade: shade)
-         case CSSColorBase.MediumSpringGreen.name.lowercaseString:    self = CSSColor(base: .MediumSpringGreen,    shade: shade)
-         case CSSColorBase.Green.name.lowercaseString:                self = CSSColor(base: .Green,                shade: shade)
-         case CSSColorBase.Indigo.name.lowercaseString:               self = CSSColor(base: .Indigo,               shade: shade)
-         case CSSColorBase.Moccasin.name.lowercaseString:             self = CSSColor(base: .Moccasin,             shade: shade)
-         case CSSColorBase.Fuchsia.name.lowercaseString:              self = CSSColor(base: .Fuchsia,              shade: shade)
-         case CSSColorBase.LightBlue.name.lowercaseString:            self = CSSColor(base: .LightBlue,            shade: shade)
-         case CSSColorBase.Silver.name.lowercaseString:               self = CSSColor(base: .Silver,               shade: shade)
-         case CSSColorBase.WhiteSmoke.name.lowercaseString:           self = CSSColor(base: .WhiteSmoke,           shade: shade)
-         case CSSColorBase.PowderBlue.name.lowercaseString:           self = CSSColor(base: .PowderBlue,           shade: shade)
-         case CSSColorBase.SaddleBrown.name.lowercaseString:          self = CSSColor(base: .SaddleBrown,          shade: shade)
-         case CSSColorBase.LightGoldenRodYellow.name.lowercaseString: self = CSSColor(base: .LightGoldenRodYellow, shade: shade)
-         case CSSColorBase.LightSalmon.name.lowercaseString:          self = CSSColor(base: .LightSalmon,          shade: shade)
-         case CSSColorBase.SandyBrown.name.lowercaseString:           self = CSSColor(base: .SandyBrown,           shade: shade)
-         case CSSColorBase.AntiqueWhite.name.lowercaseString:         self = CSSColor(base: .AntiqueWhite,         shade: shade)
-         case CSSColorBase.Black.name.lowercaseString:                self = CSSColor(base: .Black,                shade: shade)
-         case CSSColorBase.MintCream.name.lowercaseString:            self = CSSColor(base: .MintCream,            shade: shade)
-         case CSSColorBase.NavajoWhite.name.lowercaseString:          self = CSSColor(base: .NavajoWhite,          shade: shade)
-         case CSSColorBase.BurlyWood.name.lowercaseString:            self = CSSColor(base: .BurlyWood,            shade: shade)
-         case CSSColorBase.MediumSlateBlue.name.lowercaseString:      self = CSSColor(base: .MediumSlateBlue,      shade: shade)
-         case CSSColorBase.IndianRed.name.lowercaseString:            self = CSSColor(base: .IndianRed,            shade: shade)
-         case CSSColorBase.DodgerBlue.name.lowercaseString:           self = CSSColor(base: .DodgerBlue,           shade: shade)
-         case CSSColorBase.Gainsboro.name.lowercaseString:            self = CSSColor(base: .Gainsboro,            shade: shade)
-         case CSSColorBase.YellowGreen.name.lowercaseString:          self = CSSColor(base: .YellowGreen,          shade: shade)
-         case CSSColorBase.SlateBlue.name.lowercaseString:            self = CSSColor(base: .SlateBlue,            shade: shade)
-         case CSSColorBase.PeachPuff.name.lowercaseString:            self = CSSColor(base: .PeachPuff,            shade: shade)
-         case CSSColorBase.Purple.name.lowercaseString:               self = CSSColor(base: .Purple,               shade: shade)
-         case CSSColorBase.Brown.name.lowercaseString:                self = CSSColor(base: .Brown,                shade: shade)
-         case CSSColorBase.Lime.name.lowercaseString:                 self = CSSColor(base: .Lime,                 shade: shade)
-         case CSSColorBase.PaleVioletRed.name.lowercaseString:        self = CSSColor(base: .PaleVioletRed,        shade: shade)
-         case CSSColorBase.Khaki.name.lowercaseString:                self = CSSColor(base: .Khaki,                shade: shade)
-         case CSSColorBase.Crimson.name.lowercaseString:              self = CSSColor(base: .Crimson,              shade: shade)
-         case CSSColorBase.LightYellow.name.lowercaseString:          self = CSSColor(base: .LightYellow,          shade: shade)
-         case CSSColorBase.MistyRose.name.lowercaseString:            self = CSSColor(base: .MistyRose,            shade: shade)
-         case CSSColorBase.Cyan.name.lowercaseString:                 self = CSSColor(base: .Cyan,                 shade: shade)
-         case CSSColorBase.DarkBlue.name.lowercaseString:             self = CSSColor(base: .DarkBlue,             shade: shade)
-         case CSSColorBase.MediumAquaMarine.name.lowercaseString:     self = CSSColor(base: .MediumAquaMarine,     shade: shade)
-         case CSSColorBase.MediumBlue.name.lowercaseString:           self = CSSColor(base: .MediumBlue,           shade: shade)
-         case CSSColorBase.PaleTurquoise.name.lowercaseString:        self = CSSColor(base: .PaleTurquoise,        shade: shade)
-         case CSSColorBase.HoneyDew.name.lowercaseString:             self = CSSColor(base: .HoneyDew,             shade: shade)
-         case CSSColorBase.DimGray.name.lowercaseString:              self = CSSColor(base: .DimGray,              shade: shade)
-         case CSSColorBase.Lavender.name.lowercaseString:             self = CSSColor(base: .Lavender,             shade: shade)
-         case CSSColorBase.Magenta.name.lowercaseString:              self = CSSColor(base: .Magenta,              shade: shade)
-         case CSSColorBase.DarkRed.name.lowercaseString:              self = CSSColor(base: .DarkRed,              shade: shade)
-         case CSSColorBase.LightSeaGreen.name.lowercaseString:        self = CSSColor(base: .LightSeaGreen,        shade: shade)
-         case CSSColorBase.Maroon.name.lowercaseString:               self = CSSColor(base: .Maroon,               shade: shade)
-         case CSSColorBase.Aqua.name.lowercaseString:                 self = CSSColor(base: .Aqua,                 shade: shade)
-         case CSSColorBase.Olive.name.lowercaseString:                self = CSSColor(base: .Olive,                shade: shade)
-         case CSSColorBase.Plum.name.lowercaseString:                 self = CSSColor(base: .Plum,                 shade: shade)
-         case CSSColorBase.LightSteelBlue.name.lowercaseString:       self = CSSColor(base: .LightSteelBlue,       shade: shade)
-         case CSSColorBase.Orchid.name.lowercaseString:               self = CSSColor(base: .Orchid,               shade: shade)
-         case CSSColorBase.Bisque.name.lowercaseString:               self = CSSColor(base: .Bisque,               shade: shade)
-         case CSSColorBase.MediumTurquoise.name.lowercaseString:      self = CSSColor(base: .MediumTurquoise,      shade: shade)
-         case CSSColorBase.Peru.name.lowercaseString:                 self = CSSColor(base: .Peru,                 shade: shade)
-         case CSSColorBase.Turquoise.name.lowercaseString:            self = CSSColor(base: .Turquoise,            shade: shade)
-         case CSSColorBase.AliceBlue.name.lowercaseString:            self = CSSColor(base: .AliceBlue,            shade: shade)
-         case CSSColorBase.Yellow.name.lowercaseString:               self = CSSColor(base: .Yellow,               shade: shade)
-         case CSSColorBase.DarkGreen.name.lowercaseString:            self = CSSColor(base: .DarkGreen,            shade: shade)
-         case CSSColorBase.DeepPink.name.lowercaseString:             self = CSSColor(base: .DeepPink,             shade: shade)
-         case CSSColorBase.GreenYellow.name.lowercaseString:          self = CSSColor(base: .GreenYellow,          shade: shade)
-         case CSSColorBase.SeaGreen.name.lowercaseString:             self = CSSColor(base: .SeaGreen,             shade: shade)
-         case CSSColorBase.CornflowerBlue.name.lowercaseString:       self = CSSColor(base: .CornflowerBlue,       shade: shade)
+     public init?(name: String, shade: Chameleon.Shade = .light) {
+       switch name.lowercased() {
+         case CSSColorBase.forestGreen.name.lowercased():          self = CSSColor(base: .forestGreen,          shade: shade)
+         case CSSColorBase.skyBlue.name.lowercased():              self = CSSColor(base: .skyBlue,              shade: shade)
+         case CSSColorBase.sienna.name.lowercased():               self = CSSColor(base: .sienna,               shade: shade)
+         case CSSColorBase.darkSlateBlue.name.lowercased():        self = CSSColor(base: .darkSlateBlue,        shade: shade)
+         case CSSColorBase.wheat.name.lowercased():                self = CSSColor(base: .wheat,                shade: shade)
+         case CSSColorBase.beige.name.lowercased():                self = CSSColor(base: .beige,                shade: shade)
+         case CSSColorBase.cadetBlue.name.lowercased():            self = CSSColor(base: .cadetBlue,            shade: shade)
+         case CSSColorBase.lightPink.name.lowercased():            self = CSSColor(base: .lightPink,            shade: shade)
+         case CSSColorBase.seaShell.name.lowercased():             self = CSSColor(base: .seaShell,             shade: shade)
+         case CSSColorBase.fireBrick.name.lowercased():            self = CSSColor(base: .fireBrick,            shade: shade)
+         case CSSColorBase.lightGreen.name.lowercased():           self = CSSColor(base: .lightGreen,           shade: shade)
+         case CSSColorBase.darkMagenta.name.lowercased():          self = CSSColor(base: .darkMagenta,          shade: shade)
+         case CSSColorBase.salmon.name.lowercased():               self = CSSColor(base: .salmon,               shade: shade)
+         case CSSColorBase.snow.name.lowercased():                 self = CSSColor(base: .snow,                 shade: shade)
+         case CSSColorBase.violet.name.lowercased():               self = CSSColor(base: .violet,               shade: shade)
+         case CSSColorBase.white.name.lowercased():                self = CSSColor(base: .white,                shade: shade)
+         case CSSColorBase.blanchedAlmond.name.lowercased():       self = CSSColor(base: .blanchedAlmond,       shade: shade)
+         case CSSColorBase.lightGray.name.lowercased():            self = CSSColor(base: .lightGray,            shade: shade)
+         case CSSColorBase.steelBlue.name.lowercased():            self = CSSColor(base: .steelBlue,            shade: shade)
+         case CSSColorBase.azure.name.lowercased():                self = CSSColor(base: .azure,                shade: shade)
+         case CSSColorBase.chocolate.name.lowercased():            self = CSSColor(base: .chocolate,            shade: shade)
+         case CSSColorBase.cornsilk.name.lowercased():             self = CSSColor(base: .cornsilk,             shade: shade)
+         case CSSColorBase.darkOrange.name.lowercased():           self = CSSColor(base: .darkOrange,           shade: shade)
+         case CSSColorBase.gray.name.lowercased():                 self = CSSColor(base: .gray,                 shade: shade)
+         case CSSColorBase.gold.name.lowercased():                 self = CSSColor(base: .gold,                 shade: shade)
+         case CSSColorBase.darkTurquoise.name.lowercased():        self = CSSColor(base: .darkTurquoise,        shade: shade)
+         case CSSColorBase.lightSkyBlue.name.lowercased():         self = CSSColor(base: .lightSkyBlue,         shade: shade)
+         case CSSColorBase.paleGreen.name.lowercased():            self = CSSColor(base: .paleGreen,            shade: shade)
+         case CSSColorBase.lavenderBlush.name.lowercased():        self = CSSColor(base: .lavenderBlush,        shade: shade)
+         case CSSColorBase.mediumPurple.name.lowercased():         self = CSSColor(base: .mediumPurple,         shade: shade)
+         case CSSColorBase.aquamarine.name.lowercased():           self = CSSColor(base: .aquamarine,           shade: shade)
+         case CSSColorBase.lightCoral.name.lowercased():           self = CSSColor(base: .lightCoral,           shade: shade)
+         case CSSColorBase.mediumOrchid.name.lowercased():         self = CSSColor(base: .mediumOrchid,         shade: shade)
+         case CSSColorBase.floralWhite.name.lowercased():          self = CSSColor(base: .floralWhite,          shade: shade)
+         case CSSColorBase.lawnGreen.name.lowercased():            self = CSSColor(base: .lawnGreen,            shade: shade)
+         case CSSColorBase.rebeccaPurple.name.lowercased():        self = CSSColor(base: .rebeccaPurple,        shade: shade)
+         case CSSColorBase.coral.name.lowercased():                self = CSSColor(base: .coral,                shade: shade)
+         case CSSColorBase.lightSlateGray.name.lowercased():       self = CSSColor(base: .lightSlateGray,       shade: shade)
+         case CSSColorBase.blueViolet.name.lowercased():           self = CSSColor(base: .blueViolet,           shade: shade)
+         case CSSColorBase.orange.name.lowercased():               self = CSSColor(base: .orange,               shade: shade)
+         case CSSColorBase.midnightBlue.name.lowercased():         self = CSSColor(base: .midnightBlue,         shade: shade)
+         case CSSColorBase.linen.name.lowercased():                self = CSSColor(base: .linen,                shade: shade)
+         case CSSColorBase.darkSlateGray.name.lowercased():        self = CSSColor(base: .darkSlateGray,        shade: shade)
+         case CSSColorBase.darkGray.name.lowercased():             self = CSSColor(base: .darkGray,             shade: shade)
+         case CSSColorBase.mediumVioletRed.name.lowercased():      self = CSSColor(base: .mediumVioletRed,      shade: shade)
+         case CSSColorBase.papayaWhip.name.lowercased():           self = CSSColor(base: .papayaWhip,           shade: shade)
+         case CSSColorBase.slateGray.name.lowercased():            self = CSSColor(base: .slateGray,            shade: shade)
+         case CSSColorBase.springGreen.name.lowercased():          self = CSSColor(base: .springGreen,          shade: shade)
+         case CSSColorBase.darkGoldenRod.name.lowercased():        self = CSSColor(base: .darkGoldenRod,        shade: shade)
+         case CSSColorBase.limeGreen.name.lowercased():            self = CSSColor(base: .limeGreen,            shade: shade)
+         case CSSColorBase.darkSalmon.name.lowercased():           self = CSSColor(base: .darkSalmon,           shade: shade)
+         case CSSColorBase.royalBlue.name.lowercased():            self = CSSColor(base: .royalBlue,            shade: shade)
+         case CSSColorBase.orangeRed.name.lowercased():            self = CSSColor(base: .orangeRed,            shade: shade)
+         case CSSColorBase.thistle.name.lowercased():              self = CSSColor(base: .thistle,              shade: shade)
+         case CSSColorBase.pink.name.lowercased():                 self = CSSColor(base: .pink,                 shade: shade)
+         case CSSColorBase.chartreuse.name.lowercased():           self = CSSColor(base: .chartreuse,           shade: shade)
+         case CSSColorBase.blue.name.lowercased():                 self = CSSColor(base: .blue,                 shade: shade)
+         case CSSColorBase.lightCyan.name.lowercased():            self = CSSColor(base: .lightCyan,            shade: shade)
+         case CSSColorBase.ghostWhite.name.lowercased():           self = CSSColor(base: .ghostWhite,           shade: shade)
+         case CSSColorBase.tan.name.lowercased():                  self = CSSColor(base: .tan,                  shade: shade)
+         case CSSColorBase.tomato.name.lowercased():               self = CSSColor(base: .tomato,               shade: shade)
+         case CSSColorBase.darkOliveGreen.name.lowercased():       self = CSSColor(base: .darkOliveGreen,       shade: shade)
+         case CSSColorBase.ivory.name.lowercased():                self = CSSColor(base: .ivory,                shade: shade)
+         case CSSColorBase.darkCyan.name.lowercased():             self = CSSColor(base: .darkCyan,             shade: shade)
+         case CSSColorBase.darkKhaki.name.lowercased():            self = CSSColor(base: .darkKhaki,            shade: shade)
+         case CSSColorBase.navy.name.lowercased():                 self = CSSColor(base: .navy,                 shade: shade)
+         case CSSColorBase.red.name.lowercased():                  self = CSSColor(base: .red,                  shade: shade)
+         case CSSColorBase.darkViolet.name.lowercased():           self = CSSColor(base: .darkViolet,           shade: shade)
+         case CSSColorBase.darkSeaGreen.name.lowercased():         self = CSSColor(base: .darkSeaGreen,         shade: shade)
+         case CSSColorBase.goldenRod.name.lowercased():            self = CSSColor(base: .goldenRod,            shade: shade)
+         case CSSColorBase.rosyBrown.name.lowercased():            self = CSSColor(base: .rosyBrown,            shade: shade)
+         case CSSColorBase.oliveDrab.name.lowercased():            self = CSSColor(base: .oliveDrab,            shade: shade)
+         case CSSColorBase.teal.name.lowercased():                 self = CSSColor(base: .teal,                 shade: shade)
+         case CSSColorBase.hotPink.name.lowercased():              self = CSSColor(base: .hotPink,              shade: shade)
+         case CSSColorBase.paleGoldenRod.name.lowercased():        self = CSSColor(base: .paleGoldenRod,        shade: shade)
+         case CSSColorBase.deepSkyBlue.name.lowercased():          self = CSSColor(base: .deepSkyBlue,          shade: shade)
+         case CSSColorBase.darkOrchid.name.lowercased():           self = CSSColor(base: .darkOrchid,           shade: shade)
+         case CSSColorBase.mediumSeaGreen.name.lowercased():       self = CSSColor(base: .mediumSeaGreen,       shade: shade)
+         case CSSColorBase.oldLace.name.lowercased():              self = CSSColor(base: .oldLace,              shade: shade)
+         case CSSColorBase.lemonChiffon.name.lowercased():         self = CSSColor(base: .lemonChiffon,         shade: shade)
+         case CSSColorBase.mediumSpringGreen.name.lowercased():    self = CSSColor(base: .mediumSpringGreen,    shade: shade)
+         case CSSColorBase.green.name.lowercased():                self = CSSColor(base: .green,                shade: shade)
+         case CSSColorBase.indigo.name.lowercased():               self = CSSColor(base: .indigo,               shade: shade)
+         case CSSColorBase.moccasin.name.lowercased():             self = CSSColor(base: .moccasin,             shade: shade)
+         case CSSColorBase.fuchsia.name.lowercased():              self = CSSColor(base: .fuchsia,              shade: shade)
+         case CSSColorBase.lightBlue.name.lowercased():            self = CSSColor(base: .lightBlue,            shade: shade)
+         case CSSColorBase.silver.name.lowercased():               self = CSSColor(base: .silver,               shade: shade)
+         case CSSColorBase.whiteSmoke.name.lowercased():           self = CSSColor(base: .whiteSmoke,           shade: shade)
+         case CSSColorBase.powderBlue.name.lowercased():           self = CSSColor(base: .powderBlue,           shade: shade)
+         case CSSColorBase.saddleBrown.name.lowercased():          self = CSSColor(base: .saddleBrown,          shade: shade)
+         case CSSColorBase.lightGoldenRodYellow.name.lowercased(): self = CSSColor(base: .lightGoldenRodYellow, shade: shade)
+         case CSSColorBase.lightSalmon.name.lowercased():          self = CSSColor(base: .lightSalmon,          shade: shade)
+         case CSSColorBase.sandyBrown.name.lowercased():           self = CSSColor(base: .sandyBrown,           shade: shade)
+         case CSSColorBase.antiqueWhite.name.lowercased():         self = CSSColor(base: .antiqueWhite,         shade: shade)
+         case CSSColorBase.black.name.lowercased():                self = CSSColor(base: .black,                shade: shade)
+         case CSSColorBase.mintCream.name.lowercased():            self = CSSColor(base: .mintCream,            shade: shade)
+         case CSSColorBase.navajoWhite.name.lowercased():          self = CSSColor(base: .navajoWhite,          shade: shade)
+         case CSSColorBase.burlyWood.name.lowercased():            self = CSSColor(base: .burlyWood,            shade: shade)
+         case CSSColorBase.mediumSlateBlue.name.lowercased():      self = CSSColor(base: .mediumSlateBlue,      shade: shade)
+         case CSSColorBase.indianRed.name.lowercased():            self = CSSColor(base: .indianRed,            shade: shade)
+         case CSSColorBase.dodgerBlue.name.lowercased():           self = CSSColor(base: .dodgerBlue,           shade: shade)
+         case CSSColorBase.gainsboro.name.lowercased():            self = CSSColor(base: .gainsboro,            shade: shade)
+         case CSSColorBase.yellowGreen.name.lowercased():          self = CSSColor(base: .yellowGreen,          shade: shade)
+         case CSSColorBase.slateBlue.name.lowercased():            self = CSSColor(base: .slateBlue,            shade: shade)
+         case CSSColorBase.peachPuff.name.lowercased():            self = CSSColor(base: .peachPuff,            shade: shade)
+         case CSSColorBase.purple.name.lowercased():               self = CSSColor(base: .purple,               shade: shade)
+         case CSSColorBase.brown.name.lowercased():                self = CSSColor(base: .brown,                shade: shade)
+         case CSSColorBase.lime.name.lowercased():                 self = CSSColor(base: .lime,                 shade: shade)
+         case CSSColorBase.paleVioletRed.name.lowercased():        self = CSSColor(base: .paleVioletRed,        shade: shade)
+         case CSSColorBase.khaki.name.lowercased():                self = CSSColor(base: .khaki,                shade: shade)
+         case CSSColorBase.crimson.name.lowercased():              self = CSSColor(base: .crimson,              shade: shade)
+         case CSSColorBase.lightYellow.name.lowercased():          self = CSSColor(base: .lightYellow,          shade: shade)
+         case CSSColorBase.mistyRose.name.lowercased():            self = CSSColor(base: .mistyRose,            shade: shade)
+         case CSSColorBase.cyan.name.lowercased():                 self = CSSColor(base: .cyan,                 shade: shade)
+         case CSSColorBase.darkBlue.name.lowercased():             self = CSSColor(base: .darkBlue,             shade: shade)
+         case CSSColorBase.mediumAquaMarine.name.lowercased():     self = CSSColor(base: .mediumAquaMarine,     shade: shade)
+         case CSSColorBase.mediumBlue.name.lowercased():           self = CSSColor(base: .mediumBlue,           shade: shade)
+         case CSSColorBase.paleTurquoise.name.lowercased():        self = CSSColor(base: .paleTurquoise,        shade: shade)
+         case CSSColorBase.honeyDew.name.lowercased():             self = CSSColor(base: .honeyDew,             shade: shade)
+         case CSSColorBase.dimGray.name.lowercased():              self = CSSColor(base: .dimGray,              shade: shade)
+         case CSSColorBase.lavender.name.lowercased():             self = CSSColor(base: .lavender,             shade: shade)
+         case CSSColorBase.magenta.name.lowercased():              self = CSSColor(base: .magenta,              shade: shade)
+         case CSSColorBase.darkRed.name.lowercased():              self = CSSColor(base: .darkRed,              shade: shade)
+         case CSSColorBase.lightSeaGreen.name.lowercased():        self = CSSColor(base: .lightSeaGreen,        shade: shade)
+         case CSSColorBase.maroon.name.lowercased():               self = CSSColor(base: .maroon,               shade: shade)
+         case CSSColorBase.aqua.name.lowercased():                 self = CSSColor(base: .aqua,                 shade: shade)
+         case CSSColorBase.olive.name.lowercased():                self = CSSColor(base: .olive,                shade: shade)
+         case CSSColorBase.plum.name.lowercased():                 self = CSSColor(base: .plum,                 shade: shade)
+         case CSSColorBase.lightSteelBlue.name.lowercased():       self = CSSColor(base: .lightSteelBlue,       shade: shade)
+         case CSSColorBase.orchid.name.lowercased():               self = CSSColor(base: .orchid,               shade: shade)
+         case CSSColorBase.bisque.name.lowercased():               self = CSSColor(base: .bisque,               shade: shade)
+         case CSSColorBase.mediumTurquoise.name.lowercased():      self = CSSColor(base: .mediumTurquoise,      shade: shade)
+         case CSSColorBase.peru.name.lowercased():                 self = CSSColor(base: .peru,                 shade: shade)
+         case CSSColorBase.turquoise.name.lowercased():            self = CSSColor(base: .turquoise,            shade: shade)
+         case CSSColorBase.aliceBlue.name.lowercased():            self = CSSColor(base: .aliceBlue,            shade: shade)
+         case CSSColorBase.yellow.name.lowercased():               self = CSSColor(base: .yellow,               shade: shade)
+         case CSSColorBase.darkGreen.name.lowercased():            self = CSSColor(base: .darkGreen,            shade: shade)
+         case CSSColorBase.deepPink.name.lowercased():             self = CSSColor(base: .deepPink,             shade: shade)
+         case CSSColorBase.greenYellow.name.lowercased():          self = CSSColor(base: .greenYellow,          shade: shade)
+         case CSSColorBase.seaGreen.name.lowercased():             self = CSSColor(base: .seaGreen,             shade: shade)
+         case CSSColorBase.cornflowerBlue.name.lowercased():       self = CSSColor(base: .cornflowerBlue,       shade: shade)
          default: return nil
        }
      }

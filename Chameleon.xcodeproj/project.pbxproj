@@ -26,20 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C201B2BA1B02EE8700983F73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0CC0046019812351008E24FD;
-			remoteInfo = ChameleonDemo;
-		};
-		C201B2BC1B02EE8700983F73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0CC0048119812352008E24FD;
-			remoteInfo = ChameleonDemoTests;
-		};
 		C2D994491B01A76100745137 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C29649921B010E39000C2D4A /* Project object */;
@@ -64,7 +50,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChameleonDemo.xcodeproj; path = ../ChameleonDemo/ChameleonDemo.xcodeproj; sourceTree = "<group>"; };
 		C202DA161B03919C007ADD80 /* Chameleon.FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.FlatColor.swift; sourceTree = "<group>"; };
 		C202DA1A1B03922E007ADD80 /* Chameleon.CSSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chameleon.CSSColor.swift; sourceTree = "<group>"; };
 		C22FE8DC1B0428EC0052749C /* Conversions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Conversions.playground; sourceTree = "<group>"; };
@@ -107,19 +92,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C201B2B61B02EE8600983F73 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C201B2BB1B02EE8700983F73 /* ChameleonDemo.app */,
-				C201B2BD1B02EE8700983F73 /* ChameleonDemoTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C29649911B010E39000C2D4A = {
 			isa = PBXGroup;
 			children = (
-				C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */,
 				C296499D1B010E39000C2D4A /* Chameleon */,
 				C2D994261B01A72D00745137 /* ChameleonApp */,
 				C296499C1B010E39000C2D4A /* Products */,
@@ -243,11 +218,12 @@
 			attributes = {
 				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Moondeer Studios";
 				TargetAttributes = {
 					C296499A1B010E39000C2D4A = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					C2D994241B01A72D00745137 = {
 						CreatedOnToolsVersion = 6.4;
@@ -266,12 +242,6 @@
 			mainGroup = C29649911B010E39000C2D4A;
 			productRefGroup = C296499C1B010E39000C2D4A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C201B2B61B02EE8600983F73 /* Products */;
-					ProjectRef = C201B2B51B02EE8600983F73 /* ChameleonDemo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C296499A1B010E39000C2D4A /* Chameleon */,
@@ -279,23 +249,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C201B2BB1B02EE8700983F73 /* ChameleonDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ChameleonDemo.app;
-			remoteRef = C201B2BA1B02EE8700983F73 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C201B2BD1B02EE8700983F73 /* ChameleonDemoTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChameleonDemoTests.xctest;
-			remoteRef = C201B2BC1B02EE8700983F73 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C29649991B010E39000C2D4A /* Resources */ = {
@@ -420,16 +373,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = "Debug-Verbose";
 		};
 		C2562D021C63A5240086789D /* Debug-Verbose */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -510,16 +464,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Profile;
 		};
 		C274C7E71C5A89B600A5FC23 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -642,6 +597,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -663,16 +619,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		C2D994411B01A72D00745137 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -690,16 +647,17 @@
 		C2D994421B01A72D00745137 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ChameleonApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moondeerstudios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = $TARGET_NAME;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
