@@ -431,7 +431,7 @@ extension UIColor {
     // Helper function to generate an appropriate random number
     func randomColorIndex() -> Int { return Int(arc4random_uniform(UInt32(colors.count))) }
 
-    let defaults = UserDefaults.standard()
+    let defaults = UserDefaults.standard
     let key = "Chameleon.RandomColorIndex"
 
     //Chose one of those colors at random
