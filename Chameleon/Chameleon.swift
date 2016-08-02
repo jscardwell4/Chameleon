@@ -263,7 +263,7 @@ public final class Chameleon {
   public static func gradientWithStyle(_ style: GradientStyle, withFrame frame:CGRect, andColors colors: [UIColor]) -> UIColor {
 
     if colors.count == 1 { return colors[0] }
-    else if colors.count == 0 { return UIColor.clear() }
+    else if colors.count == 0 { return UIColor.clear }
 
     //Create our background gradient layer
     let backgroundGradientLayer = CAGradientLayer()
@@ -285,12 +285,12 @@ public final class Chameleon {
         backgroundGradientLayer.colors = cgColors
 
         //Convert our CALayer to a UIImage object
-        UIGraphicsBeginImageContextWithOptions(backgroundGradientLayer.bounds.size, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(backgroundGradientLayer.bounds.size, false, UIScreen.main.scale)
         backgroundGradientLayer.render(in: UIGraphicsGetCurrentContext()!)
         backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
       case .radial:
-        UIGraphicsBeginImageContextWithOptions(frame.size, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(frame.size, false, UIScreen.main.scale)
         //Specific the spread of the gradient (For now this gradient only takes 2 locations)
         var locations: [CGFloat] = [0.0, 1.0]
         //Create our Fradient

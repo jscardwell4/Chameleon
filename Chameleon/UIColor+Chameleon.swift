@@ -310,8 +310,9 @@ extension UIColor {
     t += CGFloat(0.32 * cos(3 * meanHPrime + CGFloat(6 * M_PI/180)))
     t -= CGFloat(0.20 * cos(4 * meanHPrime - CGFloat(63 * M_PI/180)))
 
-
-    let sL = CGFloat(1 + (0.015 * pow((meanL - 50), 2))/sqrt(20.0 + pow((meanL - 50.0), 2)))
+    let x = pow((meanL - 50), 2)
+    let y = pow((meanL - 50.0), 2)
+    let sL = CGFloat(1 + (0.015 * x)/sqrt(20.0 + y))
     let sC = CGFloat(1 + 0.045 * meanCPrime)
     let sH = CGFloat(1 + 0.015 * meanCPrime * t)
 
@@ -374,7 +375,7 @@ extension UIColor {
       let (l2, a2, b2) = color.LAB
       return UIColor.totalSumOfDifferencesFromL1(l1, L2: l2, A1: a1, A2: a2, B1: b1, B2: b2)
     }
-    let color = zip(flatColors, totalDifferences).reduce((UIColor.clear(), CGFloat.greatestFiniteMagnitude), combine: {$0.1 < $1.1 ? $0 : $1}).0
+    let color = zip(flatColors, totalDifferences).reduce((UIColor.clear, CGFloat.greatestFiniteMagnitude), {$0.1 < $1.1 ? $0 : $1}).0
     return color
   }
 

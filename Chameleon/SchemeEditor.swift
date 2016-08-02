@@ -44,7 +44,7 @@ class ColorView: UIView {
 
 public final class SchemeEditor: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-  override public func prefersStatusBarHidden() -> Bool { return true }
+  override public var prefersStatusBarHidden: Bool { return true }
 
   // Some typealiases of convenience
   typealias ColorScheme     = Chameleon.ColorScheme
