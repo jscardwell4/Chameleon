@@ -294,7 +294,7 @@ public final class Chameleon {
         //Specific the spread of the gradient (For now this gradient only takes 2 locations)
         var locations: [CGFloat] = [0.0, 1.0]
         //Create our Fradient
-        let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: Array(cgColors[0...1]), locations: &locations)
+        let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: Array(cgColors[0...1]) as CFArray, locations: &locations)
         // Normalise the 0-1 ranged inputs to the width of the image
         let point = CGPoint(x: 0.5 * frame.width, y: 0.5 * frame.height)
         let radius = min(frame.width, frame.height)

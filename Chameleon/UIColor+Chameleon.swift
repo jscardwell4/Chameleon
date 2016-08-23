@@ -360,7 +360,8 @@ extension UIColor {
     gradientImage.draw(in: CGRect(origin: CGPoint.zero, size: size), blendMode: .copy, alpha:1)
 
     //Read the RGB values from the context's buffer
-    let data = UnsafePointer<UInt8>(ctx?.data)
+    let data = ctx?.data?.bindMemory(to: UInt8.self, capacity: 3)
+//    let data = UnsafePointer<UInt8>(ctx?.data.bind)
     let result = UIColor(red: CGFloat((data?[2])!) / 255, green: CGFloat((data?[1])!) / 255, blue: CGFloat((data?[0])!) / 255, alpha: 1)
 
     UIGraphicsEndImageContext()
