@@ -72,16 +72,16 @@ extension Chameleon {
     public var shade: Chameleon.Shade { switch self { case .light: return .light; case .dark:  return .dark } }
 
     public static let lightColors = [
-      QuietLighBase.lilyWhite.name:    UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1),
-      QuietLighBase.charcoal.name:     UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1),
-      QuietLighBase.gray.name:         UIColor(red: 0.56, green: 0.56, blue: 0.56, alpha: 1),
-      QuietLighBase.lobLolly.name:     UIColor(red: 0.73, green: 0.73, blue: 0.73, alpha: 1),
-      QuietLighBase.apple.name:        UIColor(red: 0.33, green: 0.6, blue: 0.23, alpha: 1),
-      QuietLighBase.copper.name:       UIColor(red: 0.73, green: 0.47, blue: 0.22, alpha: 1),
-      QuietLighBase.danube.name:       UIColor(red: 0.37, green: 0.6, blue: 0.83, alpha: 1),
-      QuietLighBase.paleCerulean.name: UIColor(red: 0.64, green: 0.76, blue: 0.9, alpha: 1),
-      QuietLighBase.crayonPurple.name: UIColor(red: 0.55, green: 0.35, blue: 0.67, alpha: 1),
-      QuietLighBase.deepChestnut.name: UIColor(red: 0.72, green: 0.3, blue: 0.26, alpha: 1),
+      QuietLighBase.lilyWhite.name:    #colorLiteral(red: 0.92, green: 0.92, blue: 0.92, alpha: 1),
+      QuietLighBase.charcoal.name:     #colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1),
+      QuietLighBase.gray.name:         #colorLiteral(red: 0.56, green: 0.56, blue: 0.56, alpha: 1),
+      QuietLighBase.lobLolly.name:     #colorLiteral(red: 0.73, green: 0.73, blue: 0.73, alpha: 1),
+      QuietLighBase.apple.name:        #colorLiteral(red: 0.33, green: 0.6, blue: 0.23, alpha: 1),
+      QuietLighBase.copper.name:       #colorLiteral(red: 0.73, green: 0.47, blue: 0.22, alpha: 1),
+      QuietLighBase.danube.name:       #colorLiteral(red: 0.37, green: 0.6, blue: 0.83, alpha: 1),
+      QuietLighBase.paleCerulean.name: #colorLiteral(red: 0.64, green: 0.76, blue: 0.9, alpha: 1),
+      QuietLighBase.crayonPurple.name: #colorLiteral(red: 0.55, green: 0.35, blue: 0.67, alpha: 1),
+      QuietLighBase.deepChestnut.name: #colorLiteral(red: 0.72, green: 0.3, blue: 0.26, alpha: 1),
     ]
 
     public static let darkColors: [String:UIColor] = {

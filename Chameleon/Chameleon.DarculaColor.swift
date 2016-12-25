@@ -96,24 +96,24 @@ extension Chameleon {
     public var shade: Chameleon.Shade { switch self { case .light: return .light; case .dark:  return .dark } }
 
     public static let lightColors = [
-      DarculaColorBase.mauve.name:         UIColor(red: 0.88, green: 0.65, blue: 0.99, alpha: 1),
-      DarculaColorBase.athensGray.name:    UIColor(red: 0.88, green: 0.87, blue: 0.88, alpha: 1),
-      DarculaColorBase.mountainMist.name:  UIColor(red: 0.57, green: 0.57, blue: 0.57, alpha: 1),
-      DarculaColorBase.hippieGreen.name:   UIColor(red: 0.39, green: 0.59, blue: 0.35, alpha: 1),
-      DarculaColorBase.axolotl.name:       UIColor(red: 0.33, green: 0.42, blue: 0.29, alpha: 1),
-      DarculaColorBase.celery.name:        UIColor(red: 0.65, green: 0.76, blue: 0.38, alpha: 1),
-      DarculaColorBase.moonstoneBlue.name: UIColor(red: 0.49, green: 0.66, blue: 0.78, alpha: 1),
-      DarculaColorBase.flamenco.name:      UIColor(red: 0.89, green: 0.53, blue: 0.26, alpha: 1),
-      DarculaColorBase.limerick.name:      UIColor(red: 0.56, green: 0.73, blue: 0.13, alpha: 1),
-      DarculaColorBase.mayaBlue.name:      UIColor(red: 0.42, green: 0.69, blue: 0.96, alpha: 1),
-      DarculaColorBase.eastSide.name:      UIColor(red: 0.64, green: 0.54, blue: 0.7, alpha: 1),
-      DarculaColorBase.seaNymph.name:      UIColor(red: 0.53, green: 0.71, blue: 0.64, alpha: 1),
-      DarculaColorBase.reefGold.name:      UIColor(red: 0.64, green: 0.53, blue: 0.23, alpha: 1),
-      DarculaColorBase.indianYellow.name:  UIColor(red: 0.88, green: 0.65, blue: 0.35, alpha: 1),
-      DarculaColorBase.moonRaker.name:     UIColor(red: 0.82, green: 0.83, blue: 0.96, alpha: 1),
-      DarculaColorBase.montana.name:       UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1),
-      DarculaColorBase.solitude.name:      UIColor(red: 0.91, green: 0.95, blue: 1, alpha: 1),
-      DarculaColorBase.silverChalice.name: UIColor(red: 0.66, green: 0.71, blue: 0.65, alpha: 1)
+      DarculaColorBase.mauve.name:         #colorLiteral(red: 0.88, green: 0.65, blue: 0.99, alpha: 1),
+      DarculaColorBase.athensGray.name:    #colorLiteral(red: 0.88, green: 0.87, blue: 0.88, alpha: 1),
+      DarculaColorBase.mountainMist.name:  #colorLiteral(red: 0.57, green: 0.57, blue: 0.57, alpha: 1),
+      DarculaColorBase.hippieGreen.name:   #colorLiteral(red: 0.39, green: 0.59, blue: 0.35, alpha: 1),
+      DarculaColorBase.axolotl.name:       #colorLiteral(red: 0.33, green: 0.42, blue: 0.29, alpha: 1),
+      DarculaColorBase.celery.name:        #colorLiteral(red: 0.65, green: 0.76, blue: 0.38, alpha: 1),
+      DarculaColorBase.moonstoneBlue.name: #colorLiteral(red: 0.49, green: 0.66, blue: 0.78, alpha: 1),
+      DarculaColorBase.flamenco.name:      #colorLiteral(red: 0.89, green: 0.53, blue: 0.26, alpha: 1),
+      DarculaColorBase.limerick.name:      #colorLiteral(red: 0.56, green: 0.73, blue: 0.13, alpha: 1),
+      DarculaColorBase.mayaBlue.name:      #colorLiteral(red: 0.42, green: 0.69, blue: 0.96, alpha: 1),
+      DarculaColorBase.eastSide.name:      #colorLiteral(red: 0.64, green: 0.54, blue: 0.7, alpha: 1),
+      DarculaColorBase.seaNymph.name:      #colorLiteral(red: 0.53, green: 0.71, blue: 0.64, alpha: 1),
+      DarculaColorBase.reefGold.name:      #colorLiteral(red: 0.64, green: 0.53, blue: 0.23, alpha: 1),
+      DarculaColorBase.indianYellow.name:  #colorLiteral(red: 0.88, green: 0.65, blue: 0.35, alpha: 1),
+      DarculaColorBase.moonRaker.name:     #colorLiteral(red: 0.82, green: 0.83, blue: 0.96, alpha: 1),
+      DarculaColorBase.montana.name:       #colorLiteral(red: 0.22, green: 0.22, blue: 0.22, alpha: 1),
+      DarculaColorBase.solitude.name:      #colorLiteral(red: 0.91, green: 0.95, blue: 1, alpha: 1),
+      DarculaColorBase.silverChalice.name: #colorLiteral(red: 0.66, green: 0.71, blue: 0.65, alpha: 1)
     ]
 
     public static let darkColors: [String:UIColor] = {
